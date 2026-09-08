@@ -33,11 +33,7 @@ All packages target the `native1.12-tchmi` framework. Install them through the T
 
 ## Build and Test
 
-### CNC PLC Project
-
-1. Open `CNC Project 4 Axis and Spindle/CNC Demo.tsproj` in TwinCAT XAE (Visual Studio with the TwinCAT extension installed).
-2. Make sure the `TC3_CNCPLCBase` PLC project resolves its library references (see `_Libraries`); install any missing libraries through the TwinCAT Library Repository if needed.
-3. Build the PLC project and activate the configuration on a local or remote TwinCAT runtime to test the CNC channel and axis/spindle behavior.
+The HMI project is the primary sample in this repository. The CNC PLC project is required alongside it, since it contains all the necessary CNC configuration and settings that the HMI connects to.
 
 ### HMI Project
 
@@ -45,6 +41,12 @@ All packages target the `native1.12-tchmi` framework. Install them through the T
 2. Open `TF5310_HmiProject/TwinCAT-HMI-CNC.sln` in Visual Studio.
 3. Build the solution; TwinCAT HMI will restore any remaining NuGet-style package references automatically.
 4. Run/deploy the HMI project (e.g. via the built-in HMI server) and connect it to the CNC PLC project to test the full application end to end.
+
+### CNC PLC Project
+
+1. Open `CNC Project 4 Axis and Spindle/CNC Demo.tsproj` in TwinCAT XAE (Visual Studio with the TwinCAT extension installed).
+2. Make sure the `TC3_CNCPLCBase` PLC project resolves its library references (see `_Libraries`); install any missing libraries through the TwinCAT Library Repository if needed.
+3. Build and activate the PLC project on a local or remote TwinCAT runtime. It provides all the CNC settings and configuration required by the HMI project, so it must be running for the HMI to work correctly.
 
 
 
