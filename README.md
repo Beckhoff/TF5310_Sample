@@ -31,3 +31,20 @@ The HMI project (`TF5310_HmiProject`) depends on a number of Beckhoff TwinCAT HM
 
 All packages target the `native1.12-tchmi` framework. Install them through the TwinCAT HMI Package Manager (or restore them via `packages.config`) before opening the solution in Visual Studio/TwinCAT Engineering.
 
+## Build and Test
+
+### CNC PLC Project
+
+1. Open `CNC Project 4 Axis and Spindle/CNC Demo.tsproj` in TwinCAT XAE (Visual Studio with the TwinCAT extension installed).
+2. Make sure the `TC3_CNCPLCBase` PLC project resolves its library references (see `_Libraries`); install any missing libraries through the TwinCAT Library Repository if needed.
+3. Build the PLC project and activate the configuration on a local or remote TwinCAT runtime to test the CNC channel and axis/spindle behavior.
+
+### HMI Project
+
+1. Install the Beckhoff HMI packages listed above via the Package Manager.
+2. Open `TF5310_HmiProject/TwinCAT-HMI-CNC.sln` in Visual Studio.
+3. Build the solution; TwinCAT HMI will restore any remaining NuGet-style package references automatically.
+4. Run/deploy the HMI project (e.g. via the built-in HMI server) and connect it to the CNC PLC project to test the full application end to end.
+
+
+
