@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# TF5310 Samples
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Introduction
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+This repository currently contains two sample projects:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+- **TF5310_HmiProject** – a template HMI project for TE2000 (TwinCAT HMI), showcasing a CNC-oriented user interface.
+- **CNC Project 4 Axis and Spindle** – a sample TwinCAT PLC project implementing a 4-axis CNC channel with spindle control.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Getting Started
+
+### HMI Project Dependencies
+
+The HMI project (`TF5310_HmiProject`) depends on a number of Beckhoff TwinCAT HMI packages. These packages are not included in the repository and must be installed via the Beckhoff Package Manager before the project can be opened and built:
+
+| Package ID | Version |
+| --- | --- |
+| Beckhoff.TwinCAT.HMI.Analytics.Controls | 1.36.63 |
+| Beckhoff.TwinCAT.HMI.Analytics.ControlsExtension | 1.36.63 |
+| Beckhoff.TwinCAT.HMI.BaseTemplate | 14.4.4 |
+| Beckhoff.TwinCAT.HMI.CNC.Base | 0.0.122 |
+| Beckhoff.TwinCAT.HMI.CNC.Server | 0.2.3 |
+| Beckhoff.TwinCAT.HMI.Controls | 14.6.20 |
+| Beckhoff.TwinCAT.HMI.EcDiagnostics | 23.0.198 |
+| Beckhoff.TwinCAT.HMI.EcDiagnosticsControl | 14.4.3 |
+| Beckhoff.TwinCAT.HMI.EventLogger | 23.0.421 |
+| Beckhoff.TwinCAT.HMI.Framework | 14.4.42 |
+| Beckhoff.TwinCAT.HMI.Functions | 14.4.3 |
+| Beckhoff.TwinCAT.HMI.Mdp | 23.0.198 |
+| Beckhoff.TwinCAT.HMI.PDFViewer | 14.4.4 |
+
+All packages target the `native1.12-tchmi` framework. Install them through the TwinCAT HMI Package Manager (or restore them via `packages.config`) before opening the solution in Visual Studio/TwinCAT Engineering.
+
