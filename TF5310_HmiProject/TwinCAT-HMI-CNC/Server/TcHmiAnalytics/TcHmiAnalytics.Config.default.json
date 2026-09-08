@@ -1,0 +1,800 @@
+{
+    "ContentPermissionStore": {},
+    "DataSourcesStorage": {},
+    "InteractiveChartStorage": {},
+    "InteractiveContentStore": {},
+    "KeyValueStore": {
+        "Admin": {
+            "keyValueEntries": [
+                {
+                    "key": "Dashboard_Localization",
+                    "value": "en"
+                },
+                {
+                    "key": "Dashboard_Theme",
+                    "value": "Base"
+                }
+            ],
+            "userID": "Admin"
+        },
+        "User1": {
+            "keyValueEntries": [
+                {
+                    "key": "Dashboard_Localization",
+                    "value": "en"
+                },
+                {
+                    "key": "Dashboard_Theme",
+                    "value": "Base"
+                }
+            ],
+            "userID": "User1"
+        },
+        "__SystemUser": {
+            "keyValueEntries": [
+                {
+                    "key": "Dashboard_Localization",
+                    "value": "en"
+                },
+                {
+                    "key": "Dashboard_Theme",
+                    "value": "Base"
+                }
+            ],
+            "userID": "__SystemUser"
+        }
+    },
+    "LayoutPropertiesKeyValueStore": {
+        "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1": {
+            "keyValueEntries": [
+                {
+                    "key": "TcHmiCncConfigurableButton_2Icon",
+                    "value": "Edit.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0NameAlias",
+                    "value": "New MCP Button 1"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1NameAlias",
+                    "value": "New MCP Button 2"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2NameAlias",
+                    "value": "New MCP Button 3"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3NameAlias",
+                    "value": "New MCP Button 4"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4NameAlias",
+                    "value": "New MCP Button 5"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5NameAlias",
+                    "value": "New MCP Button 6"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6NameAlias",
+                    "value": "New MCP Button 7"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7NameAlias",
+                    "value": "New MCP Button 8"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8NameAlias",
+                    "value": "New MCP Button 9"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9NameAlias",
+                    "value": "New MCP Button 10"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10NameAlias",
+                    "value": "New MCP Button 11"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11NameAlias",
+                    "value": "New MCP Button 12"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12NameAlias",
+                    "value": "New MCP Button 13"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13NameAlias",
+                    "value": "New MCP Button 14"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14NameAlias",
+                    "value": "New MCP Button 15"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15NameAlias",
+                    "value": "New MCP Button 16"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0Icon",
+                    "value": "Automatic_Mode.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0Text",
+                    "value": "Auto"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1Text",
+                    "value": "MDI"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1Icon",
+                    "value": "MDI_Mode.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1_ExecuteCncFunction_FunctionArgument3",
+                    "value": "MDI Mode"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11Text",
+                    "value": "NC-Editor"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11Icon",
+                    "value": "Edit.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.OpenNCEditor\",\"fnParams\":[],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3Icon",
+                    "value": "Homing_Mode.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3Text",
+                    "value": "Ref"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Reference Mode"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2Icon",
+                    "value": "Manual_Mode.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2Text",
+                    "value": "Manual"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Manual Mode"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6Text",
+                    "value": "Start"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6Icon",
+                    "value": "NC_Start.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5Text",
+                    "value": "Start (2)"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5Icon",
+                    "value": "NC_Start.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9Text",
+                    "value": "Reset"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9Icon",
+                    "value": "NC_Reset.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9_ExecuteCncFunction_FunctionArgument3",
+                    "value": "NC Reset"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8Text",
+                    "value": "Stop"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8_ExecuteCncFunction_FunctionArgument3",
+                    "value": "NC Stop"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10Text",
+                    "value": "Enable"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.TogglePLCVariable\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:general#/definitions/String\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10_TogglePLCVariable_FunctionArgument2",
+                    "value": "PLC1.Global_HMI.PLCAxisEnable"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8Icon",
+                    "value": "NC_Stop.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7Text",
+                    "value": "Feedhold"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7Icon",
+                    "value": "Feedhold.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Feedhold"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Enable M1"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15Text",
+                    "value": "M1"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15Icon",
+                    "value": "Enable_M1.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14Text",
+                    "value": "Backward"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14Icon",
+                    "value": "Backward_Motion.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Backward Motion"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13Text",
+                    "value": "Block Ig"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13Icon",
+                    "value": "Block_Ignore.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Block Ignore"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12Text",
+                    "value": "Single Bl"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12Icon",
+                    "value": "Single_Block.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Single Block"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12ResponseFunction",
+                    "value": "Same as execute"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11PlcButtonControlStructure",
+                    "value": ""
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16NameAlias",
+                    "value": "New MCP Button 17"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6PlcButtonControlStructure",
+                    "value": ""
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton17NameAlias",
+                    "value": "New MCP Button 18"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton18NameAlias",
+                    "value": "New MCP Button 19"
+                },
+                {
+                    "key": "TcHmiCncConfigurableButton_3PlcButtonControlStructure",
+                    "value": ""
+                },
+                {
+                    "key": "TcHmiCncConfigurableButton_3ResponseFunction",
+                    "value": "{\"objectType\":\"Function\",\"active\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.WriteServerSymbol\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"valueType\":\"tchmi:general#/definitions/Boolean\",\"value\":true},{\"objectType\":\"Symbol\",\"valueType\":\"tchmi:general#/definitions/String\",\"symbolExpression\":\"%s%PLC1.MAIN.stHmi.enable%/s%\"},{\"objectType\":\"StaticValue\",\"valueType\":\"tchmi:general#/definitions/String\",\"value\":null}]}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8PlcButtonControlStructure",
+                    "value": ""
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5_ExecuteCncFunction_FunctionArgument3",
+                    "value": "NC Start"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4Icon",
+                    "value": "3D-View.svg"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4Text",
+                    "value": "G-Code View"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.OpenGCodeView\",\"fnParams\":[],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Standby Mode"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0_ExecuteCncFunction_FunctionArgument3",
+                    "value": "Automatic Mode"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16Text",
+                    "value": "Standby"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16SelectedFunction",
+                    "value": "{\"acitve\":true,\"fn\":\"TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction\",\"fnParams\":[{\"objectType\":\"StaticValue\",\"value\":null,\"valueType\":\"tchmi:framework#/definitions/ContextReference\"},{\"objectType\":\"StaticValue\",\"value\":\"Selected Channel\",\"valueType\":\"tchmi:framework#/definitions/CncChannelSelection\"},{\"objectType\":\"StaticValue\",\"value\":\"NC Start\",\"valueType\":\"tchmi:framework#/definitions/CncFunctionEnum\"}],\"objectType\":\"Function\"}"
+                },
+                {
+                    "key": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton17_ExecuteCncFunction_FunctionArgument3",
+                    "value": "NC Start Program"
+                }
+            ],
+            "layoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1"
+        }
+    },
+    "LayoutStore": {
+        "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__0": {
+            "InteractiveControls": [
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                }
+            ],
+            "LayoutHash": [],
+            "LayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__0",
+            "LayoutValue": []
+        },
+        "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__2": {
+            "InteractiveControls": [
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                },
+                {
+                    "CId": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16_GridElement",
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton"
+                }
+            ],
+            "LayoutHash": [
+                {
+                    "CType": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton",
+                    "Cnt": 18
+                },
+                {
+                    "CType": "",
+                    "Cnt": 1
+                }
+            ],
+            "LayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__2",
+            "LayoutValue": [
+                {
+                    "cE": 9,
+                    "cS": 7,
+                    "id": "TcHmiCncConfigurableButton_2_GridElement",
+                    "rE": 5,
+                    "rS": 4,
+                    "vis": false
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton0_GridElement",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 2,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton1_GridElement",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": true
+                },
+                {
+                    "cE": 4,
+                    "cS": 3,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton2_GridElement",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": true
+                },
+                {
+                    "cE": 5,
+                    "cS": 4,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton3_GridElement",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 2,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton5_GridElement",
+                    "rE": 4,
+                    "rS": 3,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton6_GridElement",
+                    "rE": 4,
+                    "rS": 3,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton7_GridElement",
+                    "rE": 8,
+                    "rS": 7,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton8_GridElement",
+                    "rE": 5,
+                    "rS": 4,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 2,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton9_GridElement",
+                    "rE": 5,
+                    "rS": 4,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton10_GridElement",
+                    "rE": 6,
+                    "rS": 5,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton11_GridElement",
+                    "rE": 11,
+                    "rS": 10,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton12_GridElement",
+                    "rE": 9,
+                    "rS": 8,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 2,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton13_GridElement",
+                    "rE": 9,
+                    "rS": 8,
+                    "vis": true
+                },
+                {
+                    "cE": 4,
+                    "cS": 3,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton14_GridElement",
+                    "rE": 9,
+                    "rS": 8,
+                    "vis": true
+                },
+                {
+                    "cE": 3,
+                    "cS": 2,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton15_GridElement",
+                    "rE": 8,
+                    "rS": 7,
+                    "vis": true
+                },
+                {
+                    "cE": 5,
+                    "cS": 3,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton4_GridElement",
+                    "rE": 11,
+                    "rS": 10,
+                    "vis": true
+                },
+                {
+                    "cE": 6,
+                    "cS": 5,
+                    "id": "TcHmiCncLayoutManager_1TcHmi_Controls_TcHmiCncBase_TcHmiCncConfigurableButton16_GridElement",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": true
+                },
+                {
+                    "cE": 2,
+                    "cS": 1,
+                    "id": "grid-buffer-cell-id",
+                    "rE": 2,
+                    "rS": 1,
+                    "vis": false
+                }
+            ]
+        }
+    },
+    "UserLayoutStore": {
+        "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__0": {
+            "ContentID": "MachineControl_1",
+            "DisplayMode": "SMARTPHONE",
+            "LayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__0",
+            "UserID": "__SystemUser",
+            "UserLayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__0"
+        },
+        "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__2": {
+            "ContentID": "MachineControl_1",
+            "DisplayMode": "MONITOR",
+            "LayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__2",
+            "UserID": "__SystemUser",
+            "UserLayoutID": "__SystemUser__MachineControl_1__TcHmiCncLayoutManager_1__2"
+        }
+    }
+}

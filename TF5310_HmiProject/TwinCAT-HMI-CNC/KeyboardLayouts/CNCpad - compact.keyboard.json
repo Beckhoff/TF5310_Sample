@@ -1,0 +1,390 @@
+{
+  "useIndirectInput": false,
+  "hasNumPad": true,
+  "displayName": "CNCpad (+/-)",
+  "localeName": null,
+  "layouts": [
+    {
+      "name": "default",
+      "dimensions": {
+        "width": 360,
+        "height": 230
+      },
+      "keys": [
+        {
+          "geometry": {
+            "left": 36.11111111111111,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad1",
+          "key": "1",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 52.77777777777778,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad2",
+          "key": "2",
+          "location": "numpad",
+          "labels": [
+            {
+              "text": "2",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 69.44444444444444,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad3",
+          "key": "3",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 36.11111111111111,
+            "top": 26.08695652173913,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad4",
+          "key": "4",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "4"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 52.77777777777778,
+            "top": 26.08695652173913,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad5",
+          "key": "5",
+          "labels": [
+            {
+              "type": "text",
+              "text": "5"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 69.44444444444444,
+            "top": 26.08695652173913,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad6",
+          "key": "6",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "6"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 36.11111111111111,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad7",
+          "key": "7",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "7"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 52.77777777777778,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad8",
+          "key": "8",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "8"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 69.44444444444444,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad9",
+          "key": "9",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "9"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 52.77777777777778,
+            "top": 78.26086956521739,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Numpad0",
+          "key": "0",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "0"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 36.11111111111111,
+            "top": 78.26086956521739,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "PlusMinus",
+          "key": "PlusMinus",
+          "type": "edit",
+          "labels": [
+            {
+              "type": "text",
+              "text": "+/-"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 69.44444444444444,
+            "top": 78.26086956521739,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "NumpadDecimal",
+          "key": ".",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "text",
+              "text": "."
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 86.11111111111111,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 47.82608695652174
+          },
+          "code": "Backspace",
+          "key": "Backspace",
+          "type": "edit",
+          "labels": [
+            {
+              "type": "svg",
+              "svg": {
+                "path": "M 0.5 7 L 7 0.5 L 21.5 0.5 L 21.5 13.5 L 7 13.5 Z M 10 3 L 18 11 M 10 11 L 18 3",
+                "dimensions": {
+                  "width": 22,
+                  "height": 14
+                }
+              }
+            }
+          ],
+          "longpressAction": "repeat"
+        },
+        {
+          "geometry": {
+            "left": 86.11111111111111,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 47.82608695652174
+          },
+          "code": "NumpadEnter",
+          "key": "Enter",
+          "shiftKey": "Enter",
+          "location": "numpad",
+          "labels": [
+            {
+              "type": "svg",
+              "svg": {
+                "path": "M 21.5 8.5 L 21.5 0.5 L 21.5 8.5 L 5.5 8.5 M 5.5 3.5 L 0.5 8.5 L 5.5 13.5",
+                "dimensions": {
+                  "width": 22,
+                  "height": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 0,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyG",
+          "key": "G",
+          "labels": [
+            {
+              "type": "text",
+              "text": "G"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 16.666666666666664,
+            "top": 0,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyX",
+          "key": "X",
+          "labels": [
+            {
+              "type": "text",
+              "text": "X"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 16.666666666666664,
+            "top": 26.08695652173913,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyZ",
+          "key": "Y",
+          "labels": [
+            {
+              "type": "text",
+              "text": "Y"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 16.666666666666664,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyY",
+          "key": "Z",
+          "labels": [
+            {
+              "type": "text",
+              "text": "Z"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 0,
+            "top": 26.08695652173913,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyF",
+          "key": "F",
+          "labels": [
+            {
+              "type": "text",
+              "text": "F"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 0,
+            "top": 52.17391304347826,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyM",
+          "key": "M",
+          "labels": [
+            {
+              "type": "text",
+              "text": "M"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 0,
+            "top": 78.26086956521739,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "KeyT",
+          "key": "T",
+          "labels": [
+            {
+              "type": "text",
+              "text": "T"
+            }
+          ]
+        },
+        {
+          "geometry": {
+            "left": 16.666666666666664,
+            "top": 78.26086956521739,
+            "width": 13.88888888888889,
+            "height": 21.73913043478261
+          },
+          "code": "Space",
+          "key": " "
+        }
+      ]
+    }
+  ]
+} 

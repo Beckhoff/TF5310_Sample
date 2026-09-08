@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PRG_CNCDiagnostics" Id="{6696336b-5503-4742-bdb3-3e9cfb3c1521}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CNCDiagnostics
+VAR
+	fbCNCDiagnosisUpload : FB_CNCDiagnosisUpload;
+	bUploadDiagData: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbCNCDiagnosisUpload(
+	bExecute:= bUploadDiagData, 
+	strFileName:= 'C:\temp\diag_data.txt', 
+	nHistory:= 0, 
+	strTopic:= 'ALL', 
+	bBusy=> , 
+	bError=> , 
+	nErrorID=> );]]></ST>
+    </Implementation>
+    <LineIds Name="PRG_CNCDiagnostics">
+      <LineId Id="1" Count="7" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,63 @@
+<div id="Tools" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1280">
+
+
+
+
+
+
+<div id="TcHmiCncToolList_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncToolList" data-tchmicnc-tooldecimalplaces="2" data-tchmi-height-unit="px" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="55" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="5" data-tchmi-bottom="10" data-tchmi-datasymbol="%s%CNC.Data::ChannelClientSelected%/s%" data-tchmi-toolshowchannelid="False" data-tchmi-toolteststyle="False" data-tchmi-showhorizontallines="True" data-tchmicnc-magazineenabled="False">
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-toolelementtoshow" type="application/json">
+[
+  {
+    "DataPath": "descriptionText",
+    "DataType": "string",
+    "DisplayText": "Description",
+    "Style": "min-width: 250px; width: 100%; text-align: left"
+  },
+  {
+    "DataPath": "tool_desc.tool_id.basic",
+    "DisplayText": "T",
+    "Style": "width: 50px;"
+  },
+  {
+    "DataPath": "tool_desc.tool_id.sister",
+    "DisplayText": "S",
+    "Style": "width: 50px;"
+  },
+  {
+    "DataPath": "tool_desc.tool_id.variant",
+    "DisplayText": "V",
+    "Style": "width: 50px;"
+  },
+  {
+    "Convertion": 0.0001,
+    "DataPath": "laenge",
+    "DataType": "double",
+    "DisplayText": "Length"
+  },
+  {
+    "Convertion": 0.0001,
+    "DataPath": "radius",
+    "DataType": "double",
+    "DisplayText": "Radius"
+  },
+  {
+    "Convertion": 1.0,
+    "DataPath": "tool_desc.param.0",
+    "DataType": "double",
+    "DisplayText": "Param 0"
+  },
+  {
+    "DataPath": "tool_desc.valid",
+    "DataType": "boolean",
+    "DisplayText": "Valid"
+  }
+]
+</script>
+</div>
+<div id="TcHmiCncChannelStatus_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncChannelStatus" data-tchmi-channelstatus-stopconditionsfilter1="0x1000 | 0x200" data-tchmi-channelstatus-stopconditionsfilter2="0b10000000" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="5" data-tchmi-channelstatus-stopconditions2="%s%CNC.Data.ChannelClientSelected.StopConditions2%/s%" data-tchmi-channelstatus-channelmode="%s%CNC.Data.ChannelClientSelected.Mode%/s%" data-tchmi-channelstatus-channelstate="%s%CNC.Data.ChannelClientSelected.State%/s%" data-tchmi-channelstatus-stopconditions1="%s%CNC.Data.ChannelClientSelected.StopConditions1%/s%">
+</div>
+</div>

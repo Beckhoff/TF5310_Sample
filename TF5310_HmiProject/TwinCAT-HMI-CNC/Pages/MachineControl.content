@@ -1,0 +1,215 @@
+<div id="MachineControl_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+
+<div id="TcHmiCncLayoutManager_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLayoutManager" data-tchmi-allow-keyboard-shortcuts="True" data-tchmi-allow-layout-edit="True" data-tchmi-always-show-edit-button="False" data-tchmi-button-size="35" data-tchmi-column-number="2" data-tchmi-custom-row-height="%f%%ctrl%TcHmiCncLayoutManager_1::RenderedWidth%/ctrl%/%ctrl%TcHmiCncLayoutManager_1::ColumnNumber%/ctrl%%/f%" data-tchmi-default-control-distance="10" data-tchmi-disable-animations="False" data-tchmi-interactivity-lock="True" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-mobile-view-width="0" data-tchmi-monitor-view-width="1000" data-tchmi-show-add-chart-button="False" data-tchmi-show-add-custom-ctrl-button="True" data-tchmi-show-edit-button-top-right="True" data-tchmi-show-popup-messages="True" data-tchmi-show-username-button="False" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-use-custom-row-height="True" data-tchmi-width="110" data-tchmi-width-unit="px" data-tchmi-bottom="5" data-tchmi-hide-scrollbar="False">
+<script data-tchmi-target-attribute="data-tchmi-header-color-light" type="application/json">
+{
+  "objectType": "SolidColor",
+  "color": "rgba(249, 250, 251,1)"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-header-color-dark" type="application/json">
+{
+  "objectType": "SolidColor",
+  "color": "rgba(68, 68, 68, 1)"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-grid-line-color" type="application/json">
+{
+  "objectType": "SolidColor",
+  "color": "rgba(135, 134, 134, 1)"
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-custom-ctrl-types" type="application/json">
+[
+  {
+    "sControlName": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton",
+    "sDisplayName": "MCP Button"
+  }
+]
+</script>
+<div id="TcHmiCncConfigurableButton_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton" data-tchmi-amount-decimals="2" data-tchmi-cncconfigbutton-icon="edit.svg" data-tchmi-cncconfigbutton-schowtext="True" data-tchmi-cncconfigbutton-text="Edit MCP" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="50" data-tchmi-left-unit="px" data-tchmi-show-edit-properties="False" data-tchmi-show-popup-messages="True" data-tchmi-show-reset="False" data-tchmi-show-title="False" data-tchmi-top="50" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px">
+<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
+[
+  "Default"
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-functionlist" type="application/json">
+[
+  {
+    "objectType": "Function",
+    "active": true,
+    "fn": "TcHmi.Functions.TcHmiCncBase.ToggleEditMode",
+    "fnParams": []
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-responsefunctionlist" type="application/json">
+[
+  {
+    "acitve": true,
+    "fn": "TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction",
+    "fnParams": [
+      {
+        "objectType": "StaticValue",
+        "value": null,
+        "valueType": "tchmi:framework#/definitions/ContextReference"
+      },
+      {
+        "objectType": "StaticValue",
+        "value": "Selected Channel",
+        "valueType": "tchmi:framework#/definitions/CncChannelSelection"
+      },
+      {
+        "objectType": "StaticValue",
+        "value": "NC Start",
+        "valueType": "tchmi:framework#/definitions/CncFunctionEnum"
+      }
+    ],
+    "objectType": "Function"
+  },
+  {
+    "acitve": true,
+    "fn": "TcHmi.Functions.TcHmiCncBase.WriteServerSymbol",
+    "fnParams": [
+      {
+        "objectType": "StaticValue",
+        "value": null,
+        "valueType": "tchmi:framework#/definitions/ContextReference"
+      },
+      {
+        "objectType": "StaticValue",
+        "value": null,
+        "valueType": "tchmi:general#/definitions/String"
+      },
+      {
+        "objectType": "StaticValue",
+        "value": null,
+        "valueType": "tchmi:general#/definitions/Any"
+      }
+    ],
+    "objectType": "Function"
+  }
+]
+</script>
+
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-selectedfunc" type="application/json">
+{
+  "objectType": "Function",
+  "active": true,
+  "fn": "TcHmi.Functions.TcHmiCncBase.ToggleEditMode",
+  "fnParams": []
+}
+</script>
+</div>
+
+
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMoved",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "let layoutmanager = TcHmi.Controls.get(\"TcHmiCncLayoutManager_1\");",
+          "let availableWidth = layoutmanager.__element[0].parentElement.offsetWidth - 15",
+          "let layColumns = layoutmanager.getColumnNumber();",
+          "",
+          "if(availableWidth/(layColumns + 1) >= 53 || availableWidth/layColumns < 53){",
+          "    ",
+          "    // While loops to determin the ColumnNumber",
+          "    while((availableWidth/(layColumns + 1)) >= 53){",
+          "\t\tlayoutmanager.setColumnNumber(layColumns + 1);",
+          "    \tlayColumns = layoutmanager.getColumnNumber();",
+          "\t} ",
+          "\twhile((availableWidth/layColumns) < 53){",
+          "\t\tlayoutmanager.setColumnNumber(layColumns - 1);",
+          "    \tlayColumns = layoutmanager.getColumnNumber();",
+          "\t}    ",
+          "    ",
+          "    layoutmanager.setWidth(layColumns * 55);",
+          "    let layHeight = layoutmanager.getRenderedHeight();",
+          "    let layWidth = layoutmanager.getRenderedWidth();",
+          "    ",
+          "\t// Determin the RowHeight",
+          "\tlet gridGap = layoutmanager.getElement().find('.tchmi-layout-manager-grid')[0].style.gridGap.replace('px', '');;",
+          "\t// Determin the widht of each element, to get a standard rowHeight",
+          "\tlet buff1 = gridGap*(layColumns)",
+          "\tlet buff2 = layWidth - buff1",
+          "\tlet rowHeight = (buff2/layColumns);",
+          "\t// We want any multiple of rowHeight to equal the height of the layoutmanager",
+          "\t// See how many rows fit into the current height (this could be a decimal)",
+          "\tlet rowCount = layHeight/rowHeight;",
+          "\t// the first calculation hadn't taken in account the gaps which should be done in some way.",
+          "\trowCount = (layHeight-(gridGap*rowCount))/rowHeight",
+          "\t// Make sure that this is not a decimal",
+          "\trowCount = Math.ceil(rowCount);",
+          "\t// What ever rowCount is now, it should fit perfectly into the height of the layoutmanager",
+          "\tlayoutmanager.setCustomRowHeight((layHeight-(gridGap*(rowCount+1)))/rowCount);",
+          "}"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onResized",
+    "actions": [
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "let layoutmanager = TcHmi.Controls.get(\"TcHmiCncLayoutManager_1\");",
+          "let availableWidth = layoutmanager.__element[0].parentElement.offsetWidth - 15",
+          "let layColumns = layoutmanager.getColumnNumber();",
+          "",
+          "if(availableWidth/(layColumns + 1) >= 53 || availableWidth/layColumns < 53){",
+          "    ",
+          "    // While loops to determin the ColumnNumber",
+          "    while((availableWidth/(layColumns + 1)) >= 53){",
+          "\t\tlayoutmanager.setColumnNumber(layColumns + 1);",
+          "    \tlayColumns = layoutmanager.getColumnNumber();",
+          "\t} ",
+          "\twhile((availableWidth/layColumns) < 53){",
+          "\t\tlayoutmanager.setColumnNumber(layColumns - 1);",
+          "    \tlayColumns = layoutmanager.getColumnNumber();",
+          "\t}    ",
+          "    ",
+          "    layoutmanager.setWidth(layColumns * 55);",
+          "    let layHeight = layoutmanager.getRenderedHeight();",
+          "    let layWidth = layoutmanager.getRenderedWidth();",
+          "    ",
+          "\t// Determin the RowHeight",
+          "\tlet gridGap = layoutmanager.getElement().find('.tchmi-layout-manager-grid')[0].style.gridGap.replace('px', '');;",
+          "\t// Determin the widht of each element, to get a standard rowHeight",
+          "\tlet buff1 = gridGap*(layColumns)",
+          "\tlet buff2 = layWidth - buff1",
+          "\tlet rowHeight = (buff2/layColumns);",
+          "\t// We want any multiple of rowHeight to equal the height of the layoutmanager",
+          "\t// See how many rows fit into the current height (this could be a decimal)",
+          "\tlet rowCount = layHeight/rowHeight;",
+          "\t// the first calculation hadn't taken in account the gaps which should be done in some way.",
+          "\trowCount = (layHeight-(gridGap*rowCount))/rowHeight",
+          "\t// Make sure that this is not a decimal",
+          "\trowCount = Math.ceil(rowCount);",
+          "\t// What ever rowCount is now, it should fit perfectly into the height of the layoutmanager",
+          "\tlayoutmanager.setCustomRowHeight((layHeight-(gridGap*(rowCount+1)))/rowCount);",
+          "}"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+</div>
+</div>

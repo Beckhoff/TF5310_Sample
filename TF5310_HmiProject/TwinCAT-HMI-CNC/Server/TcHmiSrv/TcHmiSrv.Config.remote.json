@@ -1,0 +1,15 @@
+{
+    "CERTIFICATEEXPIRATION": "P14000D",
+    "MAXREQUESTSIZE": 1048576,
+    "REQUIREAUTH": 0,
+    "VIRTUALDIRECTORIES": {
+        "/": "www",
+        "/Beckhoff.TwinCAT.HMI.Analytics.Controls": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Controls.1.35.79\\runtimes\\native1.12-tchmi",
+        "/TcHmiCncComponentsFolder": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc",
+        "/TcHmiCncComponentsFolder/Cycles": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc\\Cycles",
+        "/TcHmiCncExternalLibs": "..\\..\\TwinCAT-HMI-CNC\\TcHmiCncExternalLibs",
+        "/TcHmiCncFileFolder": "..\\..\\..\\..\\cnc",
+        "/TcHmiCncSimulation": "..\\..\\TcHmiCncSimulation",
+        "/TcHmiGLSimulation": "..\\..\\TcHmiGLSimulation"
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/LocalizationDescription.Schema.json",
+  "locale": "de",
+  "localizedText": {
+    "SysCalibDetermineKinematic": "Kinematik bestimmen",
+    "SysCalibDetermineKinematic-Description": "Kalibrierung, Bestimmung der Kinematik",
+    "SysCalibFit": "Justierung",
+    "SysCalibFit-Description": "Kalibrierungseinstellung",
+    "SysCalibFitAddRecord": "Justierung Datensatz",
+    "SysCalibFitAddRecord-Description": "Kalibrierung – Anpassung – Datensatz hinzufügen",
+    "SysCalibFitFinalize": "Justierung abschließen",
+    "SysCalibFitFinalize-Description": "Kalibrierung, Justierung, Fertigstellung",
+    "SysCalibFitInit": "Justierung initialisieren",
+    "SysCalibFitInit-Description": "Kalibrierung, Justierung, Initialisierung"
+  }
+}
