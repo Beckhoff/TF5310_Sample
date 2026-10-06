@@ -31,6 +31,46 @@
     </script>
     <div id="TcHmiCncScaleRegions_5" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncScaleRegions" data-tchmi-cell-wrap="False" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
 <div id="TcHmiCncSettings_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncSettings" data-tchmi-height-unit="%" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="%" data-tchmi-settings-treeview-jsontree="%s%CNC.Settings|Interval=100|UniqueHash=True%/s%" data-tchmi-settings-treeview-hierarchical-data-property="subSections" data-tchmi-settings-treeview-hierarchical-name-data-property="name" data-tchmi-left="10" data-tchmi-top="10" data-tchmi-width="98.9" data-tchmi-height="100">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Deny"
+  }
+]
+</script>
 </div>
 
 <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
@@ -45,6 +85,46 @@
     "width": 1,
     "widthMode": "Value",
     "widthUnit": "factor"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
   }
 ]
 </script>

@@ -1,5 +1,5 @@
 {
-  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/LocalizationDescription.Schema.json",
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.4.42/runtimes/native1.12-tchmi/Schema/LocalizationDescription.Schema.json",
   "locale": "de",
   "localizedText": {
     "CNC-Distance_to_go": "Restweg",
@@ -11,7 +11,7 @@
     "CNC-SelectCycle-Other": "Sonstiges",
     "TcHmiCncTextEditor-Ln": "Zeile",
     "TcHmiCncTextEditor-Ch": "Sp",
-    "TcHmiCncTextEditor-Total Lines": "Gesamtzeilen",
+    "TcHmiCncTextEditor-TotalLines": "Gesamtzeilen",
     "TcHmiCncTextEditor-Opened": "Geöffnet",
     "TcHmiCncContourWorkbench-Unit-1µm": "1 µm",
     "TcHmiCncContourWorkbench-Unit-10µm": "10 µm",
@@ -19,12 +19,12 @@
     "TcHmiCncContourWorkbench-Unit-1mm": "1 mm",
     "TcHmiCncContourWorkbench-Unit-10mm": "10 mm",
     "TcHmiCncContourWorkbench-Unit-10cm": "10 cm",
-    "TcHmiCncContourWorkbench-TransformShiftX": "Verschiebung X :",
-    "TcHmiCncContourWorkbench-TransformShiftY": "Verschiebung Y :",
-    "TcHmiCncContourWorkbench-TransformScale": "Skalierung :",
-    "TcHmiCncContourWorkbench-TransformRotation": "Drehung :",
-    "TcHmiCncContourWorkbench-TransformShiftWidth": "Verschiebungsbreite :",
-    "TcHmiCncContourWorkbench-TransformRotationSteps": "Drehschritte :",
+    "TcHmiCncContourWorkbench-TransformShiftX": "Verschiebung X",
+    "TcHmiCncContourWorkbench-TransformShiftY": "Verschiebung Y",
+    "TcHmiCncContourWorkbench-TransformScale": "Skalierung",
+    "TcHmiCncContourWorkbench-TransformRotation": "Drehung",
+    "TcHmiCncContourWorkbench-TransformShiftWidth": "Verschiebungsbreite",
+    "TcHmiCncContourWorkbench-TransformRotationSteps": "Drehschritte",
     "TcHmiCncContourWorkbench-CreateMatrixBtn": "Matrix erstellen"
   }
 }

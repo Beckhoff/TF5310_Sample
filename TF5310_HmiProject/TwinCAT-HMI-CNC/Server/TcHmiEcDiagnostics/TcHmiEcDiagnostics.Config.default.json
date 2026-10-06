@@ -3,7 +3,7 @@
         "Device1": {
             "enabled": true,
             "masterNetId": "0.0.0.0.2.1",
-            "targetNetId": "199.4.42.250.1.1"
+            "targetNetId": "127.0.0.1.1.1"
         }
     },
     "runtimeStateCheckTimeout": "PT5S",

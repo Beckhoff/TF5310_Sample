@@ -116,36 +116,230 @@
                               }
                             ]</script>
         </div>
-        <div id="TcHmiAdsState_TcSysService" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiAdsState" data-tchmi-ads-runtime="TcSysService" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-width-mode="Value" data-tchmi-max-height-unit="px" data-tchmi-max-width-unit="px" data-tchmi-width="50" data-tchmi-height="50" data-tchmi-bottom-unit="px" data-tchmi-right-unit="px">
-            <script data-tchmi-target-attribute="data-tchmi-state-images" type="application/json">
-                {
-                  "Config": "Images/TwinCAT/twincat-config.svg",
-                  "Exception": "Images/TwinCAT/twincat-exeption.svg",
-                  "Fallback": "Images/TwinCAT/twincat-fallback.svg",
-                  "Run": "Images/TwinCAT/twincat-run.svg",
-                  "Stop": "Images/TwinCAT/twincat-stop.svg"
-                }
-            </script>
-        </div>
-        <div id="TcHmiAdsState_PLC1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiAdsState" data-tchmi-ads-runtime="PLC1" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-height="50" data-tchmi-right-unit="px" data-tchmi-bottom-unit="px">
-            <script data-tchmi-target-attribute="data-tchmi-state-images" type="application/json">
-                {
-                  "Config": "Images/PLC/plc-config.svg",
-                  "Exception": "Images/PLC/plc-exeption.svg",
-                  "Fallback": "Images/PLC/plc-fallback.svg",
-                  "Run": "Images/PLC/plc-run.svg",
-                  "Stop": "Images/PLC/plc-stop.svg"
-                }
-            </script>
-        </div>
-        <div id="TcHmiUserManagement_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiUserManagement" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-allow-switch-user="True">
+                        <div id="TcHmiUserManagement_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiUserManagement" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-allow-switch-user="True">
         </div>
         <div id="TcHmiDateTimeDisplay_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDateTimeDisplay" data-tchmi-grid-column-index="4" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-time-display-layout="TimeDateMultiLine">
         </div>
         <div id="TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-src="Images/Beckhoff_Logo.svg">
         </div>
 
-    </div>
+    <div id="TcHmiCncAdsState_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncAdsState" data-tchmi-ads-runtime="PLC1" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-iconpath="Images/PLC/plc.svg">
+<script data-tchmi-target-attribute="data-tchmi-fallback-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-invalid-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-idle-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reset-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-init-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-start-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-run-color" type="application/json">
+{
+  "color": "#4CAF50"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stop-color" type="application/json">
+{
+  "color": "#D9534F"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-save-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-load-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-failure-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-good-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-error-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-shutdown-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-suspend-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-resume-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-config-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reconfig-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stopping-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-incompatible-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-exception-color" type="application/json">
+{
+  "color": "#D9A441"
+}
+</script>
+
+</div>
+<div id="TcHmiCncAdsState_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncAdsState" data-tchmi-ads-runtime="TcSysService" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-iconpath="Images/TwinCAT/system.svg">
+<script data-tchmi-target-attribute="data-tchmi-fallback-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-invalid-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-idle-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reset-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-init-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-start-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-run-color" type="application/json">
+{
+  "color": "#4CAF50"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stop-color" type="application/json">
+{
+  "color": "#D9534F"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-save-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-load-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-failure-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-good-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-error-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-shutdown-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-suspend-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-resume-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-config-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reconfig-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stopping-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-incompatible-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-exception-color" type="application/json">
+{
+  "color": "#D9A441"
+}
+</script>
+
+</div>
+</div>
     <div id="Container_Navigation_Left" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="%f%%ctrl%Header_Top::RenderedTop%/ctrl%+%ctrl%Header_Top::RenderedHeight%/ctrl%%/f%" data-tchmi-top-unit="px" data-tchmi-bottom="0" data-tchmi-right-unit="px" data-tchmi-width-mode="Content">
     </div>
 
@@ -196,22 +390,189 @@
 
 
         <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
-            [
-              {
-                "overflow": false,
-                "width": 1,
-                "widthMode": "Value",
-                "widthUnit": "factor"
-              },
-              {
-                "minWidth": 60.0,
-                "width": 300.0,
-                "widthMode": "Value",
-                "widthUnit": "px"
-              }
-            ]
-        </script>
+[
+  {
+    "minWidth": 955.0,
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
+  },
+  {
+    "minWidth": 60.0,
+    "width": 300.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
+  }
+]
+</script>
         <div id="TcHmiRegion_1" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-target-content="Pages/MachineControl.content">
         </div>
-    </div>
+    
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div id="Proxy_TcHmiCncFileExplorer" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="1095" data-tchmi-left-unit="px" data-tchmi-top="1120" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div id="Proxy_xFixedTcHmiId_ContourWorkbench_Detached" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="938" data-tchmi-left-unit="px" data-tchmi-top="1070" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div id="Proxy_xFixedTcHmiId_NCEditor_Detached" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="780" data-tchmi-left-unit="px" data-tchmi-top="1020" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
 </div>

@@ -23,7 +23,7 @@
     <HmiCommunicationRouterPort>10142</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.42</HmiInitial>
-    <HmiRecent>14.18.27.1</HmiRecent>
+    <HmiRecent>14.19.7.1</HmiRecent>
     <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
     <HmiServerNodeAdvancedSettingsView>True</HmiServerNodeAdvancedSettingsView>
     <NuGetPackageImportStamp>
@@ -56,7 +56,7 @@
     <PlatformTarget>TwinCAT HMI</PlatformTarget>
     <DefaultNamespace>TwinCAT_HMI_CNC</DefaultNamespace>
     <ServerParameters />
-    <HmiCommunicationServerPort>3066</HmiCommunicationServerPort>
+    <HmiCommunicationServerPort>3099</HmiCommunicationServerPort>
     <HmiCommunicationServerAuthPort>13006</HmiCommunicationServerAuthPort>
     <HmiCommunicationRouterPort>10291</HmiCommunicationRouterPort>
     <ListenOnAllInterfaces>False</ListenOnAllInterfaces>
@@ -202,6 +202,9 @@
     <Content Include="Images\message.svg">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Images\PLC\plc.svg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Images\settings1.svg">
       <SubType>Content</SubType>
     </Content>
@@ -209,6 +212,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\spindle.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\TwinCAT\system.svg">
       <SubType>Content</SubType>
     </Content>
     <Content Include="KeyboardLayouts\CNCpad - compact.keyboard.json">
@@ -623,46 +629,6 @@
       <Visible>true</Visible>
     </Content>
     <Content Include="Images\Manifest\launcher-icon-4x.png">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\PLC\plc-config.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\PLC\plc-exeption.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\PLC\plc-fallback.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\PLC\plc-run.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\PLC\plc-stop.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\TwinCAT\twincat-config.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\TwinCAT\twincat-exeption.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\TwinCAT\twincat-fallback.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\TwinCAT\twincat-run.svg">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
-    <Content Include="Images\TwinCAT\twincat-stop.svg">
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>

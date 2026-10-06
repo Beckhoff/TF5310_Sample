@@ -207,8 +207,8 @@
   },
   "packages": [
     {
-      "name": "Beckhoff.TwinCAT.HMI.Analytics.Controls",
-      "basePath": "/Beckhoff.TwinCAT.HMI.Analytics.Controls",
+      "name": "Beckhoff.TwinCAT.HMI.Analytics.Framework",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Analytics.Framework",
       "symbols": {
         "package": {}
       }

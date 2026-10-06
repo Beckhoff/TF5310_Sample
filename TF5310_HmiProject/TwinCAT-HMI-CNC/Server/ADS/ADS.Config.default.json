@@ -16,7 +16,7 @@
     "RUNTIMES": {
         "CNC10000": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 10000,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -24,7 +24,7 @@
         },
         "CNC551": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 551,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -32,7 +32,7 @@
         },
         "CNC552": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 552,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -40,7 +40,7 @@
         },
         "CNC553": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 553,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -48,7 +48,7 @@
         },
         "PLC1": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 851,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -56,7 +56,7 @@
         },
         "TcSysService": {
             "ENABLED": true,
-            "NETID": "199.4.42.250.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 10000,
             "READ_ONLY": false,
             "SYMBOLS": {},
