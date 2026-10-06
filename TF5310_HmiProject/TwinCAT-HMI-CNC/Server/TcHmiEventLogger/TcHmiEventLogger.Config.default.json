@@ -3,7 +3,7 @@
     "PRELOAD_TRANSLATIONS": false,
     "TARGET_SYSTEMS": {
         "Local": {
-            "ADDRESS": "199.4.42.250.1.1",
+            "ADDRESS": "127.0.0.1.1.1",
             "ENABLED": true
         }
     },

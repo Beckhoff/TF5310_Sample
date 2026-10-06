@@ -8,6 +8,7 @@
 <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
 [
   {
+    "minWidth": 420.0,
     "overflow": false,
     "width": 1,
     "widthMode": "Value",
@@ -29,6 +30,7 @@
     "height": 1,
     "heightMode": "Value",
     "heightUnit": "factor",
+    "minHeight": 240.0,
     "overflow": false
   },
   {
@@ -40,7 +42,47 @@
 </script>
 <div id="TcHmiCncAxisList" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncAxisList" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-popupcontrol="%ctrl%TcHmiPopupAxisDetails%/ctrl%" data-tchmi-manualoperation="%s%CNC.CncControlChannelSelected::ManualOperation|UniqueHash=True%/s%" data-tchmi-showchannelid="False" data-tchmi-channelconnect="%s%CNC.Data::ChannelClientSelected%/s%" data-tchmi-channelsymbol="%s%CNC.Data::ChannelClientSelected|Interval=100%/s%" data-tchmi-datasymbol="%s%CNC.Data.ChannelClientSelected|Interval=100%/s%" data-tchmi-showchannelstatus="False" data-tchmi-axislistchannelstatus-stopconditionsfilter2="0b10000000" data-tchmi-axislistchannelstatus-stopconditionsfilter1="0x200 | 0x1000" data-tchmi-rowheight="40" data-tchmi-showhorizontallines="True" data-tchmi-right="5" data-tchmi-bottom="5">
 
-    </div>
+    
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
 <div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncTextEditor_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncTextEditor" data-tchmi-allowedit="true" data-tchmi-displaymode="true" data-tchmi-height-unit="px" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-maineditor="false" data-tchmi-mdimode="false" data-tchmi-textsize="16" data-tchmi-bottom="5" data-tchmi-nc-code="%s%CNC.Data.ChannelClientSelected::ProgAct%/s%" data-tchmi-mdicode="%s%CNC.Data.ChannelClientSelected::Control::MdiString|BindingMode=TwoWay|UniqueHash=True%/s%" data-tchmi-datasymbol="%s%CNC.Data.ChannelClientSelected%/s%" data-tchmi-right="5" data-tchmi-top="%f%%ctrl%TcHmiTextblock_4::RenderedTop%/ctrl%+%ctrl%TcHmiTextblock_4::RenderedHeight%/ctrl% +5%/f%">
 <script data-tchmi-target-attribute="data-tchmi-linehighlightingcolor" type="application/json">
                 {
@@ -52,8 +94,48 @@
 
 
 
-        </div>
-<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiTextblock_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="35" data-tchmi-height-unit="px" data-tchmi-left="%f%%ctrl%TcHmiTextblock_4::RenderedLeft%/ctrl%+%ctrl%TcHmiTextblock_4::RenderedWidth%/ctrl% +5%/f%" data-tchmi-left-unit="px" data-tchmi-text="%s%CNC.Data::ChannelClientSelected::ProgName%/s%" data-tchmi-word-wrap="false" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-top="5" data-tchmi-right="5">
+        
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiTextblock_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="35" data-tchmi-height-unit="px" data-tchmi-left="35" data-tchmi-left-unit="px" data-tchmi-text="%s%CNC.Data::ChannelClientSelected::ProgName%/s%" data-tchmi-word-wrap="false" data-tchmi-text-horizontal-alignment="Left" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size="20" data-tchmi-top="5" data-tchmi-right="10">
 <script data-tchmi-target-attribute="data-tchmi-border-style" type="application/json">
             {
               "left": "Dotted",
@@ -124,17 +206,6 @@
                   "objectType": "StaticValue",
                   "valueType": "tchmi:framework#/definitions/Visibility",
                   "value": "Collapsed"
-                },
-                "asyncWait": true
-              },
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%TcHmiCncTextEditor_2::Top%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:framework#/definitions/MeasurementValue",
-                  "value": 5.0
                 },
                 "asyncWait": true
               }
@@ -330,17 +401,6 @@
                   "value": "Collapsed"
                 },
                 "asyncWait": true
-              },
-              {
-                "objectType": "WriteToSymbol",
-                "active": true,
-                "symbolExpression": "%ctrl%TcHmiCncTextEditor_2::Top%/ctrl%",
-                "value": {
-                  "objectType": "StaticValue",
-                  "valueType": "tchmi:general#/definitions/String",
-                  "value": 5.0
-                },
-                "asyncWait": true
               }
             ]
           },
@@ -486,7 +546,87 @@
   }
 ]
 </script>
-    </div>
+    
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  }
+]
+</script>
 </div>
 <div id="TcHmiCncScaleRegions_4" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncScaleRegions" data-tchmi-cell-wrap="False" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-height-mode="Value">
 
@@ -501,10 +641,170 @@
 </script>
 <div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncTechnoData" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncTechnoData" data-tchmi-version="%s%CNC.Data::Version%/s%" data-tchmi-technodata="%s%CNC.Data::ChannelClientSelected::TechnoData%/s%" data-tchmi-left="0" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_3::RenderedHeight%/ctrl% + %ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl% + 5%/f%" data-tchmi-top="0" data-tchmi-technodata-show-g="True" data-tchmi-technodata-show-m="True" data-tchmi-technodata-show-h="False" data-tchmi-technodata-show-n="True" data-tchmi-technodata-show-msg="True" data-tchmi-right="5">
 </div>
-<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="F" data-tchmi-cncoverride-realvalue100percent="%s%CNC.Data.ChannelClientSelected.CommandFeedrate|Interval=150%/s%" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="mm/min" data-tchmi-bottom="5" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCFeedOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/feedrate.svg" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-cncoverride-currvaluepercentdisplay="%s%CNC.Data.ChannelClientSelected.Override%/s%" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCFeedOverride|Interval=150%/s%" data-tchmi-cncoverride-realityvaluepercent="%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%" data-tchmi-cncoverride-displaytexttopleft="%f%%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-cncoverride-displaytexttopright="%f%%s%CNC.Data.ChannelClientSelected.CommandFeedrate%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-left="-5" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-right="10">
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="F" data-tchmi-cncoverride-realvalue100percent="%s%CNC.Data.ChannelClientSelected.CommandFeedrate|Interval=150%/s%" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="mm/min" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCFeedOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/feedrate.svg" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-cncoverride-currvaluepercentdisplay="%s%CNC.Data.ChannelClientSelected.Override%/s%" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCFeedOverride|Interval=150%/s%" data-tchmi-cncoverride-realityvaluepercent="%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%" data-tchmi-cncoverride-displaytexttopleft="%f%%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-cncoverride-displaytexttopright="%f%%s%CNC.Data.ChannelClientSelected.CommandFeedrate%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-left="0" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-right="5" data-tchmi-bottom="5">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
 </div>
-<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="S" data-tchmi-cncoverride-maxvaluepercent="100" data-tchmi-cncoverride-minvaluepercent="0" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="rpm" data-tchmi-top-unit="px" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCSpindleOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/spindle.svg" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCSpindleOverride%/s%" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-cncoverride-spindlesymbol="%s%CNC.Data.ChannelClientSelected::MainSpindle|Interval=150%/s%" data-tchmi-cncoverride-spindlecontrollingenable="%s%CNC.Data.ChannelClientSelected::ManualModeActive%/s%" data-tchmi-cncoverride-spindlecontrolsymbol="%s%ADS.PLC1.PRG_CNCAxesHandler.SpindleControl%/s%" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl%+5%/f%" data-tchmi-right="5" data-tchmi-cncoverride-rediucedmode="False">
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="S" data-tchmi-cncoverride-maxvaluepercent="100" data-tchmi-cncoverride-minvaluepercent="0" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="rpm" data-tchmi-top-unit="px" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCSpindleOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/spindle.svg" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCSpindleOverride%/s%" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-cncoverride-spindlesymbol="%s%CNC.Data.ChannelClientSelected.Spindles|Interval=150%/s%" data-tchmi-cncoverride-spindlecontrolsymbol="%s%ADS.PLC1.PRG_CNCAxesHandler.SpindleControl%/s%" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl%+5%/f%" data-tchmi-right="5" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-cncoverride-spindlecontrollingenable="%f%%s%CNC.Data.ChannelClientSelected.Mode%/s%==4 || %s%CNC.Data.ChannelClientSelected.Mode%/s%==3 %/f%">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
 </div>
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  }
+]
+</script>
 </div>
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
 </div>
 </div>

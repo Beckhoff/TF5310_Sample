@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>CNC TcHMI</title>
-  <meta name="tchmi-buildtime" content="2026-08-28T09:38:59">
+  <meta name="tchmi-buildtime" content="2026-10-06T11:26:38">
 
   <!-- target-densitydpi=device-dpi -->
   <meta name="viewport" content="width=device-width"><script>
@@ -13,17 +13,17 @@
 </script><script>
 	TCHMI_TARGET_PARTIAL = new URL(window.location.href).searchParams.get('TargetPartial') ?? undefined;
 </script><script>TCHMI_NUGET_METADATA = {
-  "Beckhoff.TwinCAT.HMI.Analytics.Controls": {
-    "version": "1.36.63",
-    "authors": "Beckhoff Automation GmbH & Co KG",
-    "title": "Analytics Framework Package",
-    "description": "HMI Framework controls for TwinCAT Analytics algorithms. The Beckhoff license terms apply."
-  },
   "Beckhoff.TwinCAT.HMI.Analytics.ControlsExtension": {
-    "version": "1.36.63",
+    "version": "1.36.88",
     "authors": "",
     "title": "",
     "description": ""
+  },
+  "Beckhoff.TwinCAT.HMI.Analytics.Framework": {
+    "version": "1.36.88",
+    "authors": "Beckhoff Automation GmbH & Co KG",
+    "title": "Analytics Framework Package",
+    "description": "Base classes (AnalyticsControl), LayoutManager, charting library and helpers for TwinCAT Analytics HMI controls. The Beckhoff license terms apply."
   },
   "Beckhoff.TwinCAT.HMI.BaseTemplate": {
     "version": "14.4.4",
@@ -32,13 +32,13 @@
     "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides controls for TwinCAT HMI project templates."
   },
   "Beckhoff.TwinCAT.HMI.CNC.Base": {
-    "version": "0.0.115",
+    "version": "0.0.155",
     "authors": "Beckhoff",
     "title": "TcHmiCncBase",
     "description": "HMI Framework controls for TwinCAT CNC. The Beckhoff license terms apply."
   },
   "Beckhoff.TwinCAT.HMI.CNC.Server": {
-    "version": "0.1.41",
+    "version": "0.3.25",
     "authors": "",
     "title": "",
     "description": ""
@@ -50,7 +50,7 @@
     "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides the controls for the TwinCAT HMI client."
   },
   "Beckhoff.TwinCAT.HMI.EcDiagnostics": {
-    "version": "23.0.198",
+    "version": "25.0.100",
     "authors": "",
     "title": "",
     "description": ""
@@ -62,7 +62,7 @@
     "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a control for fieldbus diagnostics of EtherCAT topologies in TwinCAT HMI applications."
   },
   "Beckhoff.TwinCAT.HMI.EventLogger": {
-    "version": "23.0.421",
+    "version": "25.0.100",
     "authors": "",
     "title": "",
     "description": ""
@@ -80,7 +80,7 @@
     "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides functions for use in the \"Actions and Conditions Editor\" and symbol expressions."
   },
   "Beckhoff.TwinCAT.HMI.Mdp": {
-    "version": "23.0.198",
+    "version": "25.0.100",
     "authors": "",
     "title": "",
     "description": ""
@@ -92,7 +92,7 @@
     "description": "TwinCAT HMI is a development environment for web-based HMIs (Human Machine Interfaces). This package provides a PDF.js based control to view PDF documents in TwinCAT HMI applications."
   },
   "Beckhoff.TwinCAT.HMI.Server.Engineering": {
-    "version": "23.0.421",
+    "version": "25.0.100",
     "authors": "",
     "title": "",
     "description": ""
@@ -114,7 +114,7 @@
 			"tcHmiServer": {
 				"websocketOverwrite": {
 					"host": "127.0.0.1",
-					"port": 3066
+					"port": 3099
 				},
 				"websocketIntervalTime": 200
 			}
@@ -130,8 +130,8 @@
   <script type="importmap">
 {
   "imports": {
-    "Beckhoff.TwinCAT.HMI.Analytics.Controls/": "./Beckhoff.TwinCAT.HMI.Analytics.Controls/",
-    "Beckhoff.TwinCAT.HMI.Analytics.Controls": "./Beckhoff.TwinCAT.HMI.Analytics.Controls/index.esm.js",
+    "Beckhoff.TwinCAT.HMI.Analytics.Framework/": "./Beckhoff.TwinCAT.HMI.Analytics.Framework/",
+    "Beckhoff.TwinCAT.HMI.Analytics.Framework": "./Beckhoff.TwinCAT.HMI.Analytics.Framework/index.esm.js",
     "Beckhoff.TwinCAT.HMI.BaseTemplate/": "./Beckhoff.TwinCAT.HMI.BaseTemplate/",
     "Beckhoff.TwinCAT.HMI.BaseTemplate": "./Beckhoff.TwinCAT.HMI.BaseTemplate/index.esm.js",
     "Beckhoff.TwinCAT.HMI.CNC.Base/": "./Beckhoff.TwinCAT.HMI.CNC.Base/",
@@ -148,8 +148,8 @@
     "Beckhoff.TwinCAT.HMI.PDFViewer": "./Beckhoff.TwinCAT.HMI.PDFViewer/index.esm.js"
   },
   "scopes": {
-    "./Beckhoff.TwinCAT.HMI.Analytics.Controls/": {
-      "@beckhoff/native-ui/dist/index.mjs": "./Beckhoff.TwinCAT.HMI.Analytics.Controls/node_modules/@beckhoff/native-ui/dist/index.mjs"
+    "./Beckhoff.TwinCAT.HMI.Analytics.Framework/": {
+      "@beckhoff/native-ui": "./Beckhoff.TwinCAT.HMI.Analytics.Framework/node_modules/@beckhoff/native-ui/dist/index.mjs"
     },
     "./Beckhoff.TwinCAT.HMI.CNC.Base/": {
       "vue3": "./Beckhoff.TwinCAT.HMI.CNC.Base/./vue.js-esm/vue.esm-browser.js",
@@ -247,96 +247,28 @@
 <script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserGuidance/TcHmiUserGuidance.esm.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiUserManagement/TcHmiUserManagement.esm.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.Controls/dist/TcHmiVideo/TcHmiVideo.esm.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/1_Library/Charting/Charting.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/AnalyticsControl/AnalyticsControlExt.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/AnalyticsControl/DropdownPositioning.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/AnalyticsControl/AnalyticsControl.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/AverageChart/AverageChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/BandwidthClassificator/BandwidthClassificator.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/BinaryState/BinaryState.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Comparisons/Comparisons.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/ContentSearch/ContentSearch.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/CurveSketcher/CurveSketcher.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DataChart/DataChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DataChart/Helper/HelperObjects.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DataChart/Helper/DataSourcesHandler.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DataChart/Helper/DataChartPropertyHandler.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/CustomElements/Record.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/CustomElements/RecordTreeview.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/CustomElements/RecordController.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/CustomElements/HistInputSourceController.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/CustomElements/LiveInputSource.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DatasourceOverviewV2/DatasourceOverviewV2.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DataTable/DataTable.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/DenStream/DenStream.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/EdgeCounterOnOff/EdgeCounterOnOff.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/EnergyMonitoring/EnergyMonitoring.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/EventTiming/EventTiming.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/HistogramMulti/HistogramMulti.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/HistogramPeaks/HistogramPeaks.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Histogram/Histogram.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Integrator/Integrator.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/InteractiveContentManager/InteractiveContentManager.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/InteractiveNavigationItem/InteractiveNavigationItem.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/HelperObjects.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutElement.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/Layout.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/UndoRedoManager.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/MovementExaminer.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutRestorer.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutEditor.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutProperties.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/HotKeyEventlistener.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutGenerator.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/MobileLayoutGenerator.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/InteractiveControlHandler.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/DesktopLayoutGenerator.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/Helper/LayoutStoreHandler.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LayoutManager/LayoutManager.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/InteractiveNavigation/InteractiveNavigation.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/KMeans/KMeans.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/LinearRegression/LinearRegression.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/MapControl/MapControl.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/MapControl/leaflet.js" defer=""></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/UserPermissionPopup/UserPermissionPopup.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/ServerConfigPopup/ServerConfigPopup.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/Menu.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/UserManagementPopup.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/ContentManager/ContentManager.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/MovingIntervalCounter/MovingIntervalCounter.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/MultiState/MultiState.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/MultiValueControl/MultiValueControl.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/OEE/OEE.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/PieceCounter/PieceCounter.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/PieChart/PieChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Process/Process.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/ProductivityDiagnosis/ProductivityDiagnosis.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/ProductivityInterval/ProductivityInterval.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/RainflowCounting/RainflowCounting.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/SankeyChart/SankeyChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/ScopeControl/ScopeControl.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/SingleValue/SingleValue.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/SlopeAnalysis/SlopeAnalysis.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/StateChart/StateChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Tachometer/Tachometer.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Thermometer/Thermometer.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/TimeBasedEnvelope/TimeBasedEnvelope.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/TimeBasedTeachPath/TimeBasedTeachPath.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Timer/Timer.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/TimingAnalysis/TimingAnalysis.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/TrafficLight/TrafficLight.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/TrendLineChart/TrendLineChart.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/WindTurbulence/WindTurbulence.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/XTSDirection/XTSDirection.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/XTSDistance/XTSDistance.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/XTSVelocity/XTSVelocity.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/XYGateMonitor/XYGateMonitor.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/XYShapeMonitor/XYShapeMonitor.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Image/Image.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/SourceManagerPopup/SourceManagerPopup.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/ParetoChartControl/ParetoChartControl.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/Menu/LayoutControllerPopup/LayoutControllerPopup.js" type="module"></script>
-<script src="/Beckhoff.TwinCAT.HMI.Analytics.Controls/AM8xxx/AM8xxx.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/AnalyticsControl/AnalyticsControlExt.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/AnalyticsControl/DropdownPositioning.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/AnalyticsControl/AnalyticsControl.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/HelperObjects.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutElement.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/Layout.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/UndoRedoManager.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/MovementExaminer.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutRestorer.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutEditor.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutProperties.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/HotKeyEventlistener.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutGenerator.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/MobileLayoutGenerator.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/InteractiveControlHandler.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/DesktopLayoutGenerator.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutStoreHandler.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutFileTransfer.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutFileTransferHandler.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/Helper/LayoutImportDialog.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/LayoutManager/LayoutManager.js" type="module"></script>
+<script src="/Beckhoff.TwinCAT.HMI.Analytics.Framework/1_Library/Charting/Charting.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiAccordionNavigation/TcHmiAccordionNavigation.esm.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBreadcrumb/TcHmiBreadcrumb.esm.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.BaseTemplate/dist/TcHmiBurgerMenu/TcHmiBurgerMenu.esm.js" type="module"></script>
@@ -380,6 +312,7 @@
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/TogglePLCVariable.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/SetResetPLCVariable.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/OpenNCEditor.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/OpenContourWorkbench.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/SettingsRead.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/SettingsWrite.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/SettingsDelete.js" defer=""></script>
@@ -398,6 +331,7 @@
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncSymbolbar/TcHmiCncSymbolbar.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/OpenPdfView.js" defer=""></script>
 <script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncCommonFunctions/ReadServerSymbol.js" defer=""></script>
+<script src="/Beckhoff.TwinCAT.HMI.CNC.Base/TcHmiCncAdsState/TcHmiCncAdsState.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl/dist/TcHmiEcDiagnostics/TcHmiEcDiagnostics.esm.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.Functions/ActivateRecipe.js" type="module"></script>
 <script src="/Beckhoff.TwinCAT.HMI.Functions/BigIntToNumber.js" type="module"></script>
@@ -462,216 +396,588 @@
 <script src="/ReadUrlParameter.js" defer=""></script>
 </head>
 <body class="tchmi-body-designer">
-	<div id="MachineControl_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-partial-key="/Pages/MachineControl.content">
+	<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-unit="%" data-tchmi-width="100" data-tchmi-height-unit="%" data-tchmi-height="100" data-tchmi-background-image-width-unit="%" data-tchmi-background-image-height-unit="%" data-tchmi-background-image-width="100" data-tchmi-background-image-height="100" data-tchmi-creator-viewport-width="1400" data-tchmi-creator-viewport-height="1024" data-tchmi-creator-partial-key="/Desktop.view">
 
-<div id="TcHmiCncLayoutManager_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLayoutManager" data-tchmi-allow-keyboard-shortcuts="True" data-tchmi-allow-layout-edit="True" data-tchmi-always-show-edit-button="False" data-tchmi-button-size="35" data-tchmi-column-number="2" data-tchmi-custom-row-height="%f%%ctrl%TcHmiCncLayoutManager_1::RenderedWidth%/ctrl%/%ctrl%TcHmiCncLayoutManager_1::ColumnNumber%/ctrl%%/f%" data-tchmi-default-control-distance="10" data-tchmi-disable-animations="False" data-tchmi-interactivity-lock="True" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-mobile-view-width="0" data-tchmi-monitor-view-width="1000" data-tchmi-show-add-chart-button="False" data-tchmi-show-add-custom-ctrl-button="True" data-tchmi-show-edit-button-top-right="True" data-tchmi-show-popup-messages="True" data-tchmi-show-username-button="False" data-tchmi-top="5" data-tchmi-top-unit="px" data-tchmi-use-custom-row-height="True" data-tchmi-width="110" data-tchmi-width-unit="px" data-tchmi-bottom="5" data-tchmi-hide-scrollbar="False">
-<script data-tchmi-target-attribute="data-tchmi-header-color-light" type="application/json">
+    <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+        [
+          {
+            "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onResized",
+            "actions": [
+              {
+                "objectType": "JavaScript",
+                "active": true,
+                "sourceLines": [
+                  "TcHmi.EventProvider.raise(\"Navigation_Left.onResized\");"
+                ],
+                "asyncWait": true,
+                "waitMode": "Synchronous"
+              }
+            ]
+          }
+        ]
+    </script>
+    <div id="Header_Top" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncPriorityGrid" data-tchmi-height="90" data-tchmi-height-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-zindex="11" data-tchmi-cell-wrap="False" data-tchmi-right="0" data-tchmi-left="0">
+
+        <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
+            [
+              {
+                "hidden": false,
+                "maxWidthUnit": "px",
+                "minWidth": 410.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 0.0,
+                "width": 5000.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              },
+              {
+                "hidden": false,
+                "maxWidth": 70.0,
+                "maxWidthUnit": "px",
+                "minWidth": 70.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 3.0,
+                "width": 70.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              },
+              {
+                "hidden": false,
+                "maxWidth": 70.0,
+                "maxWidthUnit": "px",
+                "minWidth": 70.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 2.0,
+                "width": 70.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              },
+              {
+                "hidden": false,
+                "maxWidth": 200.0,
+                "maxWidthUnit": "px",
+                "minWidth": 170.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 0.0,
+                "width": 200.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              },
+              {
+                "hidden": false,
+                "maxWidth": 110.0,
+                "maxWidthUnit": "px",
+                "minWidth": 110.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 4.0,
+                "width": 110.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              },
+              {
+                "hidden": false,
+                "maxWidth": 160.0,
+                "maxWidthUnit": "px",
+                "minWidth": 148.0,
+                "minWidthUnit": "px",
+                "overflow": false,
+                "priority": 5.0,
+                "width": 160.0,
+                "widthMode": "Value",
+                "widthUnit": "px"
+              }
+            ]
+        </script>
+        <div id="TcHmiCncMessageLine_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncMessageLine" data-tchmicnc-showsource="true" data-tchmicnc-intervall="1500" data-tchmicnc-showonlymaxseverity="true" data-tchmi-min-width="400" data-tchmi-left="10" data-tchmi-top="20" data-tchmi-right="10" data-tchmi-bottom="20">
+            <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+                [
+                              {
+                                "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDoubleClick",
+                                "actions": [
+                                  {
+                                    "objectType": "WriteToSymbol",
+                                    "active": true,
+                                    "symbolExpression": "%ctrl%Region_Center::TargetContent%/ctrl%",
+                                    "value": {
+                                      "objectType": "StaticValue",
+                                      "valueType": "tchmi:framework#/definitions/ContentPath",
+                                      "value": "Pages/CNCEvents.content"
+                                    },
+                                    "asyncWait": true
+                                  }
+                                ]
+                              }
+                            ]</script>
+        </div>
+                        <div id="TcHmiUserManagement_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiUserManagement" data-tchmi-grid-column-index="3" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-allow-switch-user="True">
+        </div>
+        <div id="TcHmiDateTimeDisplay_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDateTimeDisplay" data-tchmi-grid-column-index="4" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-time-display-layout="TimeDateMultiLine">
+        </div>
+        <div id="TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-grid-column-index="5" data-tchmi-grid-row-index="0" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-right="10" data-tchmi-bottom="20" data-tchmi-src="Images/Beckhoff_Logo.svg">
+        </div>
+
+    <div id="TcHmiCncAdsState_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncAdsState" data-tchmi-ads-runtime="PLC1" data-tchmi-grid-column-index="2" data-tchmi-grid-row-index="0" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-iconpath="Images/PLC/plc.svg">
+<script data-tchmi-target-attribute="data-tchmi-fallback-color" type="application/json">
 {
-  "objectType": "SolidColor",
-  "color": "rgba(249, 250, 251,1)"
+  "color": "#D3D3D3"
 }
 </script>
-<script data-tchmi-target-attribute="data-tchmi-header-color-dark" type="application/json">
+<script data-tchmi-target-attribute="data-tchmi-invalid-color" type="application/json">
 {
-  "objectType": "SolidColor",
-  "color": "rgba(68, 68, 68, 1)"
+  "color": "#D3D3D3"
 }
 </script>
-<script data-tchmi-target-attribute="data-tchmi-grid-line-color" type="application/json">
+<script data-tchmi-target-attribute="data-tchmi-idle-color" type="application/json">
 {
-  "objectType": "SolidColor",
-  "color": "rgba(135, 134, 134, 1)"
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reset-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-init-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-start-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-run-color" type="application/json">
+{
+  "color": "#4CAF50"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stop-color" type="application/json">
+{
+  "color": "#D9534F"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-save-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-load-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-failure-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-good-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-error-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-shutdown-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-suspend-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-resume-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-config-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reconfig-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stopping-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-incompatible-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-exception-color" type="application/json">
+{
+  "color": "#D9A441"
 }
 </script>
 
+</div>
+<div id="TcHmiCncAdsState_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncAdsState" data-tchmi-ads-runtime="TcSysService" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-server-interval="500" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px" data-tchmi-iconpath="Images/TwinCAT/system.svg">
+<script data-tchmi-target-attribute="data-tchmi-fallback-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-invalid-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-idle-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reset-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-init-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-start-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-run-color" type="application/json">
+{
+  "color": "#4CAF50"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stop-color" type="application/json">
+{
+  "color": "#D9534F"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-save-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-load-cfg-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-failure-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-power-good-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-error-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-shutdown-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-suspend-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-resume-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-config-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-reconfig-color" type="application/json">
+{
+  "color": "#4794DA"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-stopping-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-incompatible-color" type="application/json">
+{
+  "color": "#D3D3D3"
+}
+</script>
+<script data-tchmi-target-attribute="data-tchmi-exception-color" type="application/json">
+{
+  "color": "#D9A441"
+}
+</script>
 
-<script data-tchmi-target-attribute="data-tchmi-custom-ctrl-types" type="application/json">
+</div>
+</div>
+    <div id="Container_Navigation_Left" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="%f%%ctrl%Header_Top::RenderedTop%/ctrl%+%ctrl%Header_Top::RenderedHeight%/ctrl%%/f%" data-tchmi-top-unit="px" data-tchmi-bottom="0" data-tchmi-right-unit="px" data-tchmi-width-mode="Content">
+    </div>
+
+    <div id="TcHmiCncScaleRegions_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncScaleRegions" data-tchmi-cell-wrap="False" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="%f%%ctrl%Header_Top::RenderedTop%/ctrl%+%ctrl%Header_Top::RenderedHeight%/ctrl%%/f%" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0">
+        <div id="Region_Center" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncDetachableTabNavigation" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-tab-alignment="Left" data-tchmi-bottom="2" data-tchmi-styling="IndicatorLine" data-tchmi-right="5" data-tchmi-top="-2">
+            <script data-tchmi-target-attribute="data-tchmi-tabs" type="application/json">
+                [
+                  {
+                    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-CNCMain', 'CNC Main')%/f%",
+                    "icon": {
+                      "iconPath": "Images/home.svg",
+                      "scaleHeight": 1.3,
+                      "scaleWidth": 1.3
+                    },
+                    "targetContent": "Pages/CNCMain.content"
+                  },
+                  {
+                    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-CNCEvents', 'CNC Events')%/f%",
+                    "icon": {
+                      "iconPath": "Images/message.svg",
+                      "scaleHeight": 1.3,
+                      "scaleWidth": 1.3
+                    },
+                    "targetContent": "Pages/CNCEvents.content"
+                  },
+                  {
+                    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-Diagnosis', 'Diagnosis')%/f%",
+                    "icon": {
+                      "iconPath": "Images/diagnosis.svg",
+                      "scaleHeight": 1.3,
+                      "scaleWidth": 1.3
+                    },
+                    "targetContent": "Pages/Diagnosis.content"
+                  },
+                  {
+                    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-Settings', 'Settings')%/f%",
+                    "icon": {
+                      "iconPath": "Images/settings1.svg",
+                      "scaleHeight": 1.3,
+                      "scaleWidth": 1.3
+                    },
+                    "targetContent": "Pages/Settings.content"
+                  },
+                  {
+                    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-NGSP', 'NGSP')%/f%",
+                    "icon": {
+                      "iconPath": "Images/gearsettings.svg",
+                      "scaleHeight": 1.2,
+                      "scaleWidth": 1.2
+                    },
+                    "targetContent": "Pages/ngsp.content"
+                  }
+                ]
+            </script>
+
+        </div>
+
+
+        <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
 [
   {
-    "sControlName": "TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton",
-    "sDisplayName": "MCP Button"
-  }
-]
-</script>
-<div id="TcHmiCncConfigurableButton_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncConfigurableButton" data-tchmi-amount-decimals="2" data-tchmi-cncconfigbutton-icon="edit.svg" data-tchmi-cncconfigbutton-schowtext="True" data-tchmi-cncconfigbutton-text="Edit MCP" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="50" data-tchmi-left-unit="px" data-tchmi-show-edit-properties="False" data-tchmi-show-popup-messages="True" data-tchmi-show-reset="False" data-tchmi-show-title="False" data-tchmi-top="50" data-tchmi-top-unit="px" data-tchmi-width="50" data-tchmi-width-unit="px">
-<script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
-[
-  "Default"
-]
-</script>
-<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-functionlist" type="application/json">
-[
-  {
-    "objectType": "Function",
-    "active": true,
-    "fn": "TcHmi.Functions.TcHmiCncBase.ToggleEditMode",
-    "fnParams": []
-  }
-]
-</script>
-<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-responsefunctionlist" type="application/json">
-[
-  {
-    "acitve": true,
-    "fn": "TcHmi.Functions.TcHmiCncBase.ExecuteCncFunction",
-    "fnParams": [
-      {
-        "objectType": "StaticValue",
-        "value": null,
-        "valueType": "tchmi:framework#/definitions/ContextReference"
-      },
-      {
-        "objectType": "StaticValue",
-        "value": "Selected Channel",
-        "valueType": "tchmi:framework#/definitions/CncChannelSelection"
-      },
-      {
-        "objectType": "StaticValue",
-        "value": "NC Start",
-        "valueType": "tchmi:framework#/definitions/CncFunctionEnum"
-      }
-    ],
-    "objectType": "Function"
+    "minWidth": 955.0,
+    "overflow": false,
+    "width": 1,
+    "widthMode": "Value",
+    "widthUnit": "factor"
   },
   {
-    "acitve": true,
-    "fn": "TcHmi.Functions.TcHmiCncBase.WriteServerSymbol",
-    "fnParams": [
-      {
-        "objectType": "StaticValue",
-        "value": null,
-        "valueType": "tchmi:framework#/definitions/ContextReference"
-      },
-      {
-        "objectType": "StaticValue",
-        "value": null,
-        "valueType": "tchmi:general#/definitions/String"
-      },
-      {
-        "objectType": "StaticValue",
-        "value": null,
-        "valueType": "tchmi:general#/definitions/Any"
-      }
-    ],
-    "objectType": "Function"
+    "minWidth": 60.0,
+    "width": 300.0,
+    "widthMode": "Value",
+    "widthUnit": "px"
   }
 ]
 </script>
-
-
-
-
-<script data-tchmi-target-attribute="data-tchmi-cncconfigbutton-selectedfunc" type="application/json">
-{
-  "objectType": "Function",
-  "active": true,
-  "fn": "TcHmi.Functions.TcHmiCncBase.ToggleEditMode",
-  "fnParams": []
-}
+        <div id="TcHmiRegion_1" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-grid-column-index="1" data-tchmi-grid-row-index="0" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="0" data-tchmi-target-content="Pages/MachineControl.content">
+        </div>
+    
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
 </script>
 </div>
+<div id="Proxy_TcHmiCncFileExplorer" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="1095" data-tchmi-left-unit="px" data-tchmi-top="1120" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
 
-
-
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
 [
   {
-    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMoved",
-    "actions": [
-      {
-        "objectType": "JavaScript",
-        "active": true,
-        "sourceLines": [
-          "let layoutmanager = TcHmi.Controls.get(\"TcHmiCncLayoutManager_1\");",
-          "let availableWidth = layoutmanager.__element[0].parentElement.offsetWidth - 15",
-          "let layColumns = layoutmanager.getColumnNumber();",
-          "",
-          "if(availableWidth/(layColumns + 1) >= 53 || availableWidth/layColumns < 53){",
-          "    ",
-          "    // While loops to determin the ColumnNumber",
-          "    while((availableWidth/(layColumns + 1)) >= 53){",
-          "\t\tlayoutmanager.setColumnNumber(layColumns + 1);",
-          "    \tlayColumns = layoutmanager.getColumnNumber();",
-          "\t} ",
-          "\twhile((availableWidth/layColumns) < 53){",
-          "\t\tlayoutmanager.setColumnNumber(layColumns - 1);",
-          "    \tlayColumns = layoutmanager.getColumnNumber();",
-          "\t}    ",
-          "    ",
-          "    layoutmanager.setWidth(layColumns * 55);",
-          "    let layHeight = layoutmanager.getRenderedHeight();",
-          "    let layWidth = layoutmanager.getRenderedWidth();",
-          "    ",
-          "\t// Determin the RowHeight",
-          "\tlet gridGap = layoutmanager.getElement().find('.tchmi-layout-manager-grid')[0].style.gridGap.replace('px', '');;",
-          "\t// Determin the widht of each element, to get a standard rowHeight",
-          "\tlet buff1 = gridGap*(layColumns)",
-          "\tlet buff2 = layWidth - buff1",
-          "\tlet rowHeight = (buff2/layColumns);",
-          "\t// We want any multiple of rowHeight to equal the height of the layoutmanager",
-          "\t// See how many rows fit into the current height (this could be a decimal)",
-          "\tlet rowCount = layHeight/rowHeight;",
-          "\t// the first calculation hadn't taken in account the gaps which should be done in some way.",
-          "\trowCount = (layHeight-(gridGap*rowCount))/rowHeight",
-          "\t// Make sure that this is not a decimal",
-          "\trowCount = Math.ceil(rowCount);",
-          "\t// What ever rowCount is now, it should fit perfectly into the height of the layoutmanager",
-          "\tlayoutmanager.setCustomRowHeight((layHeight-(gridGap*(rowCount+1)))/rowCount);",
-          "}"
-        ],
-        "asyncWait": true,
-        "waitMode": "Synchronous"
-      }
-    ]
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
   },
   {
-    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onResized",
-    "actions": [
-      {
-        "objectType": "JavaScript",
-        "active": true,
-        "sourceLines": [
-          "let layoutmanager = TcHmi.Controls.get(\"TcHmiCncLayoutManager_1\");",
-          "let availableWidth = layoutmanager.__element[0].parentElement.offsetWidth - 15",
-          "let layColumns = layoutmanager.getColumnNumber();",
-          "",
-          "if(availableWidth/(layColumns + 1) >= 53 || availableWidth/layColumns < 53){",
-          "    ",
-          "    // While loops to determin the ColumnNumber",
-          "    while((availableWidth/(layColumns + 1)) >= 53){",
-          "\t\tlayoutmanager.setColumnNumber(layColumns + 1);",
-          "    \tlayColumns = layoutmanager.getColumnNumber();",
-          "\t} ",
-          "\twhile((availableWidth/layColumns) < 53){",
-          "\t\tlayoutmanager.setColumnNumber(layColumns - 1);",
-          "    \tlayColumns = layoutmanager.getColumnNumber();",
-          "\t}    ",
-          "    ",
-          "    layoutmanager.setWidth(layColumns * 55);",
-          "    let layHeight = layoutmanager.getRenderedHeight();",
-          "    let layWidth = layoutmanager.getRenderedWidth();",
-          "    ",
-          "\t// Determin the RowHeight",
-          "\tlet gridGap = layoutmanager.getElement().find('.tchmi-layout-manager-grid')[0].style.gridGap.replace('px', '');;",
-          "\t// Determin the widht of each element, to get a standard rowHeight",
-          "\tlet buff1 = gridGap*(layColumns)",
-          "\tlet buff2 = layWidth - buff1",
-          "\tlet rowHeight = (buff2/layColumns);",
-          "\t// We want any multiple of rowHeight to equal the height of the layoutmanager",
-          "\t// See how many rows fit into the current height (this could be a decimal)",
-          "\tlet rowCount = layHeight/rowHeight;",
-          "\t// the first calculation hadn't taken in account the gaps which should be done in some way.",
-          "\trowCount = (layHeight-(gridGap*rowCount))/rowHeight",
-          "\t// Make sure that this is not a decimal",
-          "\trowCount = Math.ceil(rowCount);",
-          "\t// What ever rowCount is now, it should fit perfectly into the height of the layoutmanager",
-          "\tlayoutmanager.setCustomRowHeight((layHeight-(gridGap*(rowCount+1)))/rowCount);",
-          "}"
-        ],
-        "asyncWait": true,
-        "waitMode": "Synchronous"
-      }
-    ]
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div id="Proxy_xFixedTcHmiId_ContourWorkbench_Detached" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="938" data-tchmi-left-unit="px" data-tchmi-top="1070" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  }
+]
+</script>
+</div>
+<div id="Proxy_xFixedTcHmiId_NCEditor_Detached" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-horizontallayout="False" data-tchmi-iconheightscale="1" data-tchmi-iconrotation="0" data-tchmi-iconwidthscale="1" data-tchmi-left="780" data-tchmi-left-unit="px" data-tchmi-top="1020" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-visibility="Hidden">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "__SystemUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemMaintenanceUsers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "__SystemGuests",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
   }
 ]
 </script>
