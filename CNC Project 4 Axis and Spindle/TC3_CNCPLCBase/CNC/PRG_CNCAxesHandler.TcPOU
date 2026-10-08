@@ -12,6 +12,10 @@ VAR
 	MDummy						: BOOL;
 	M40, M41, M42, M43, M44, M45: BOOL;
 	
+	fbHandleSpindleTechno2		: HLI3_HandleSpindleTechno;
+	M3_1,M4_1,M5_1,M19_1				: BOOL;
+	
+	
 	fbAxesError 				: FB_AxesError;
 		
 	// FB_CNCAxis Sample
@@ -26,8 +30,14 @@ VAR
 	*)
 	bCalibrationCam: BOOL;
 	fbMoveSpindle: HLI3_MoveSpindle;
-	fbMoveSpindleControl : HLI3_MoveSpindleControl;
-	SpindleControl : ST_SpindleControl;
+	
+
+	
+	probingSignal: BOOL;
+	
+	SpindleControl: ST_SpindleControl;
+	fbMoveSpindle2: HLI3_MoveSpindleControl;
+	rTrigReset : R_TRIG;
 END_VAR
 
 
@@ -52,7 +62,7 @@ PLCStatusAxisEnabled := TRUE;
 FOR nHliAxisIdx := 0 TO UDINT_TO_INT(gNrAx-1) DO			
 	fbCNC_Axis[nHliAxisIdx](
 		nLogAxisNo :=  UINT_TO_INT(gpAx[nHliAxisIdx]^.head.log_ax_nr_r),
-		bEnable		:= PLCAxisEnable);
+		bEnable		:= PLCAxisEnable AND (nHliAxisIdx <> 1));
 		IF (NOT fbCNC_Axis[nHliAxisIdx].stStatus.bIsEnabled) THEN    // if one axis status is "not enabled" -> reset PLCStatusAxisEnabled
 			PLCStatusAxisEnabled := FALSE;
 		END_IF
@@ -62,6 +72,10 @@ FOR nHliAxisIdx := 0 TO UDINT_TO_INT(gNrAx-1) DO
 			END_IF
 		END_IF
 END_FOR
+fbCNC_Axis[0].stOptions.bDisableAutoFollowUp := TRUE;
+
+fbCNC_Axis[0].stOptions.bProbingSignal := probingSignal;
+
 
 
 	// FB_CNCAxis Sample 
@@ -112,12 +126,32 @@ END_FOR
 		stPLCopen:= stPLCopen, 
 		stStatus=> );
 *)		
- fbMoveSpindleControl(
-    stControl   := SpindleControl,
-    bBusy       => ,
-    bError      => ,
-    nErrID      => ,
-    sErrText    => );
+ 
+
+
+
+
+	fbHandleSpindleTechno2(
+		nHliAxisIdx:=15 , 		
+		bIsChannelSpecific:= FALSE, 
+		bHandleGearChange := FALSE,		
+		nRevolution=> , 
+		nPosition=> , 
+		bError=> , 
+		nErrorId=> , 
+		M03:= M3_1, 
+		M04:= M4_1, 
+		M05:= M5_1, 
+		M19:= M19_1
+		); 
+
+	(* acknowledge all spindle M funnctions immediately *)
+	M3_1 := FALSE;  
+	M4_1 := FALSE;
+	M5_1 := FALSE;
+	M19_1 := FALSE;
+	
+
 
 (* if there exits spindles use the first one for spindleoverride *)
 IF nFirstSpindle <> -1 THEN
@@ -171,6 +205,28 @@ IF nFirstSpindle <> -1 THEN
 	
 	
 END_IF
+
+
+
+(* spindle controlling form HMI *)
+FOR nHliAxisIdx := 0 TO UDINT_TO_INT(gNrAx-1) DO			
+	IF gpAx[nHliAxisIdx]^.ipo_state.spindle_axis_r  THEN
+		HLI3_SetAxisOverride(nHliAxisIdx:= nHliAxisIdx , nOverride:= PLCSpindleOverride *10);
+	END_IF	
+END_FOR
+
+rTrigReset(clk := PLCReset);
+IF rTrigReset.Q THEN
+	SpindleControl.busy := FALSE;
+END_IF
+
+fbMoveSpindle2(
+    stControl   := SpindleControl,
+	bReset		:= PLCReset,
+    bBusy       => ,
+    bError      => ,
+    nErrID      => ,	
+    sErrText    => );
 
 
 

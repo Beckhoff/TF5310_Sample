@@ -42,81 +42,12 @@
         "name": "TcHmiUserManagement"
       }
     ],
-    "profileName": "CNC-HMI-Demo",
-    "publishMode": "TcHmi",
-    "targetDirectory": "",
-    "deleteAllFilesBeforePublish": false,
-    "deleteExtensionDataBeforePublish": true,
-    "abortOnErrors": false,
-    "createPublishLog": false,
-    "createPackageInformation": false,
-    "salt": "5619d19591a94b33b3534e476120735c",
-    "encryptedTcHmiServerPassword": "DmrN2zNKIwo4TiKwxjjFig==",
-    "tcHmiServerHost": "http://cnc-hmi-demo/",
-    "tcHmiServerPort": "2010",
-    "uploadTimeout": "1000",
-    "connectionTimeout": "1000",
-    "requestTimeout": "1000",
-    "extensionStartupTimeout": "1000",
-    "clientCertificateCN": "",
-    "tcHmiUseTLS": false,
-    "useClientCertificate": false,
-    "launchBrowserAfterPublish": true,
-    "createVirtualDirectoriesOnTargetSystem": true,
-    "tcHmiServerUserName": "__SystemAdministrator",
-    "tcHmiDestinationUrl": "http://cnc-hmi-demo:2010/",
-    "publishConfiguration": "remote",
-    "tcHmiIgnoreCertificateErrors": true
-  },
-  {
-    "serverExtensions": [
-      {
-        "publishServerExtension": true,
-        "name": "ADS"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "CNC"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiAnalytics"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiEcDiagnostics"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiEventLogger"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiLua"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiMdp"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiSqliteLogger"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiSrv"
-      },
-      {
-        "publishServerExtension": true,
-        "name": "TcHmiUserManagement"
-      }
-    ],
     "profileName": "local",
     "publishMode": "TcHmi",
     "targetDirectory": "",
     "deleteAllFilesBeforePublish": false,
     "deleteExtensionDataBeforePublish": true,
-    "abortOnErrors": true,
+    "abortOnErrors": false,
     "createPublishLog": false,
     "createPackageInformation": false,
     "salt": "7ab51066ffab4f9a98e3f136622454aa",
@@ -131,7 +62,7 @@
     "tcHmiUseTLS": false,
     "useClientCertificate": false,
     "launchBrowserAfterPublish": true,
-    "createVirtualDirectoriesOnTargetSystem": true,
+    "createVirtualDirectoriesOnTargetSystem": false,
     "tcHmiServerUserName": "__SystemAdministrator",
     "tcHmiDestinationUrl": "http://127.0.0.1:2010/",
     "publishConfiguration": "remote",
