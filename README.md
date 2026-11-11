@@ -52,6 +52,7 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
 
 1. Open `CNC Project 4 Axis and Spindle/CNC Demo.tsproj` in TwinCAT XAE (Visual Studio with the TwinCAT extension installed).
 2. Make sure the `TC3_CNCPLCBase` PLC project resolves its library references (see `_Libraries`); install any missing libraries through the TwinCAT Library Repository if needed.
+      - If problems occur while building the PLC project, right-click `TC3_CNCPLCBase` in the Solution Explorer and select **Install Project Libraries**. This installs the current libraries required by the project.
 3. Build and activate the PLC project on a local or remote TwinCAT runtime. It provides all the CNC settings and configuration required by the HMI project, so it must be running for the HMI to work correctly.
 
 
