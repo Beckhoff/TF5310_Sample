@@ -9,6 +9,26 @@ This repository currently contains two sample projects:
 
 ## Getting Started
 
+### Prerequisites
+
+- Visual Studio 2022/2026 with the TwinCAT extension, or TwinCAT XAE
+- TwinCAT Package Manager (TcPkg), installed and configured (feeds, integration)
+- Licenses for TF5310 (TC3 CNC HMI Base) and the other required TwinCAT components (7-day trial licenses can be used for evaluation)
+
+### Repository Structure
+
+| Folder | Content |
+| --- | --- |
+| `TF5310_HmiProject/` | TwinCAT HMI solution (`TwinCAT-HMI-CNC.sln`) including the `downloadPackages.ps1` setup script |
+| `CNC Project 4 Axis and Spindle/` | TwinCAT project (`CNC Demo.tsproj`) with the CNC configuration and the `TC3_CNCPLCBase` PLC project |
+
+### Quick Start
+
+1. Clone or download this repository.
+2. Set up, build and activate the CNC PLC project (see [CNC PLC Project](#cnc-plc-project)).
+3. Install the required packages and open the HMI project (see [HMI Project](#hmi-project)).
+4. Start the HMI LiveView or publish the HMI to connect to the running CNC PLC project.
+
 ## Build and Test
 
 The HMI project is the primary sample in this repository. The CNC PLC project is required alongside it, since it contains all the necessary CNC configuration and settings that the HMI connects to.
