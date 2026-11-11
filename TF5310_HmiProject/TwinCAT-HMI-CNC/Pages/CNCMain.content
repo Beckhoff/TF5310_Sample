@@ -1,5 +1,5 @@
 <div id="CNCMain" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
-        <div id="TcHmiCncDetachableTabNavigation_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncDetachableTabNavigation" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-styling="IndicatorLine">
+        <div id="CncMain-DetachableTabNavigation" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncDetachableTabNavigation" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-styling="IndicatorLine">
 <script data-tchmi-target-attribute="data-tchmi-tabs" type="application/json">
 [
   {
@@ -30,7 +30,7 @@
     "targetContent": "Pages/CNCMain/ZeroOffsets.content"
   },
   {
-    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-Variableview', 'Variableview')%/f%",
+    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-VariableView', 'Variable View')%/f%",
     "icon": {
       "iconPath": "Images/cncvariables.svg",
       "scaleHeight": 1.3,
@@ -39,7 +39,7 @@
     "targetContent": "Pages/CNCMain/VariabeView.content"
   },
   {
-    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-CNCSimulation', 'Simulation')%/f%",
+    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-Simulation', 'Simulation')%/f%",
     "icon": {
       "iconPath": "Images/simulation.svg",
       "scaleHeight": 1.3,

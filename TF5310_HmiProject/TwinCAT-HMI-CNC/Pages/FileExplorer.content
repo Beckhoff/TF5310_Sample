@@ -1,0 +1,34 @@
+<div id="FileExplorer" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-height-mode="Value" data-tchmi-width-mode="Value" data-tchmi-creator-viewport-width="1920">
+    <div id="TcHmiCncFileExplorer_10" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncFileExplorer" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-right="5" data-tchmi-right-unit="px" data-tchmi-bottom="10" data-tchmi-bottom-unit="px" data-tchmi-Mode="Browse" data-tchmi-filter=".nc|.cyc|.cnccontour|.pdf|.dxf|.NC|.CNCCONTOUR|.PDF|.DXF">
+    
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Deny"
+  },
+  {
+    "accessright": "observe",
+    "group": "Viewers",
+    "permission": "Deny"
+  }
+]
+</script>
+</div>
+</div>

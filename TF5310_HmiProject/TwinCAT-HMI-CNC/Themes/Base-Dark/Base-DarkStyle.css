@@ -437,7 +437,7 @@ div[data-tchmi-type="TcHmi.Controls.System.TcHmiView"] {
     color: var(--CNC-HMI-NormalFontColor);
 }
 /************************** Textblock *************************************/
-.tchmi-textblock-template-text-container {
+.tchmi-textblock-template {
     font-size: var(--CNC-HMI-SubTitleFontSize);
     color: var(--CNC-HMI-NormalFontColor);
 }

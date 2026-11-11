@@ -2,6 +2,31 @@
 
 
                                                         <div id="TcHmiCncChannelStatus_1" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncChannelStatus" data-tchmi-channelstatus-stopconditionsfilter1="0x1000 | 0x200" data-tchmi-channelstatus-stopconditionsfilter2="0b10000000" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="5" data-tchmi-channelstatus-stopconditions2="%s%CNC.Data.ChannelClientSelected.StopConditions2%/s%" data-tchmi-channelstatus-channelmode="%s%CNC.Data.ChannelClientSelected.Mode%/s%" data-tchmi-channelstatus-channelstate="%s%CNC.Data.ChannelClientSelected.State%/s%" data-tchmi-channelstatus-stopconditions1="%s%CNC.Data.ChannelClientSelected.StopConditions1%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Allow"
+  }
+]
+</script>
 </div>
 <div id="TcHmiCncScaleRegions_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncScaleRegions" data-tchmi-cell-wrap="False" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="%f%%ctrl%TcHmiCncChannelStatus_1::RenderedTop%/ctrl%+%ctrl%TcHmiCncChannelStatus_1::RenderedHeight%/ctrl%+5%/f%" data-tchmi-top-unit="px" data-tchmi-bottom="0" data-tchmi-right="0">
 
@@ -526,8 +551,8 @@
         "fnParams": [
           {
             "objectType": "StaticValue",
-            "valueType": "tchmi:general#/definitions/String",
-            "value": "CNCSelect"
+            "valueType": "tchmi:framework#/definitions/CNC-FileExplorerMode",
+            "value": "SelectProgram"
           },
           {
             "objectType": "StaticValue",
@@ -641,7 +666,7 @@
 </script>
 <div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncTechnoData" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncTechnoData" data-tchmi-version="%s%CNC.Data::Version%/s%" data-tchmi-technodata="%s%CNC.Data::ChannelClientSelected::TechnoData%/s%" data-tchmi-left="0" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_3::RenderedHeight%/ctrl% + %ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl% + 5%/f%" data-tchmi-top="0" data-tchmi-technodata-show-g="True" data-tchmi-technodata-show-m="True" data-tchmi-technodata-show-h="False" data-tchmi-technodata-show-n="True" data-tchmi-technodata-show-msg="True" data-tchmi-right="5">
 </div>
-<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="F" data-tchmi-cncoverride-realvalue100percent="%s%CNC.Data.ChannelClientSelected.CommandFeedrate|Interval=150%/s%" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="mm/min" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCFeedOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/feedrate.svg" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-cncoverride-currvaluepercentdisplay="%s%CNC.Data.ChannelClientSelected.Override%/s%" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCFeedOverride|Interval=150%/s%" data-tchmi-cncoverride-realityvaluepercent="%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%" data-tchmi-cncoverride-displaytexttopleft="%f%%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-cncoverride-displaytexttopright="%f%%s%CNC.Data.ChannelClientSelected.CommandFeedrate%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-left="0" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-right="5" data-tchmi-bottom="5">
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-isspindle="False" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-override-designation="F" data-tchmi-cncoverride-override-realvalue100percent="%s%CNC.Data.ChannelClientSelected.CommandFeedrate|Interval=150%/s%" data-tchmi-cncoverride-override-unit="mm/min" data-tchmi-cncoverride-override-icon="Images/feedrate.svg" data-tchmi-cncoverride-override-currvaluepercentdisplay="%s%CNC.Data.ChannelClientSelected.Override%/s%" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCFeedOverride|Interval=150%/s%" data-tchmi-cncoverride-override-realityvaluepercent="%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%" data-tchmi-cncoverride-override-displaytexttopleft="%f%%s%CNC.Data.ChannelClientSelected.ActiveFeedrate|Interval=150%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-cncoverride-override-displaytexttopright="%f%%s%CNC.Data.ChannelClientSelected.CommandFeedrate%/s%.toFixed(0) + &quot; mm/min&quot;%/f%" data-tchmi-left="0" data-tchmi-cncoverride-rediucedmode="True" data-tchmi-right="5" data-tchmi-bottom="5">
 
 <script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
 [
@@ -683,7 +708,7 @@
 ]
 </script>
 </div>
-<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-designation="S" data-tchmi-cncoverride-maxvaluepercent="100" data-tchmi-cncoverride-minvaluepercent="0" data-tchmi-cncoverride-specialdisplaytext="RAPID" data-tchmi-cncoverride-unit="rpm" data-tchmi-top-unit="px" data-tchmi-cncoverride-currvaluepercent="%s%PLC1.Global_HMI.PLCSpindleOverride|BindingMode=TwoWay%/s%" data-tchmi-cncoverride-icon="Images/spindle.svg" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCSpindleOverride%/s%" data-tchmi-cncoverride-specialdisplay="False" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-cncoverride-spindlesymbol="%s%CNC.Data.ChannelClientSelected.Spindles|Interval=150%/s%" data-tchmi-cncoverride-spindlecontrolsymbol="%s%ADS.PLC1.PRG_CNCAxesHandler.SpindleControl%/s%" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl%+5%/f%" data-tchmi-right="5" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-cncoverride-spindlecontrollingenable="%f%%s%CNC.Data.ChannelClientSelected.Mode%/s%==4 || %s%CNC.Data.ChannelClientSelected.Mode%/s%==3 %/f%">
+<div data-tchmi-grid-row-index="1" data-tchmi-grid-column-index="0" id="TcHmiCncLinearOverride_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncLinearOverride" data-tchmi-cncoverride-isspindle="True" data-tchmi-cncoverride-activemode="True" data-tchmi-cncoverride-spindle-designation="S" data-tchmi-cncoverride-maxvaluepercent="100" data-tchmi-cncoverride-minvaluepercent="0" data-tchmi-cncoverride-spindle-unit="rpm" data-tchmi-top-unit="px" data-tchmi-cncoverride-spindle-icon="Images/spindle.svg" data-tchmi-cncoverride-currvaluepercentwritesymbol="%s%PLC1.Global_HMI.PLCSpindleOverride%/s%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-cncoverride-spindle-datasymbol="%s%CNC.Data.ChannelClientSelected.Spindles|Interval=150%/s%" data-tchmi-cncoverride-spindle-controlsymbol="%s%ADS.PLC1.PRG_CNCAxesHandler.SpindleControl%/s%" data-tchmi-bottom="%f%%ctrl%TcHmiCncLinearOverride_2::RenderedHeight%/ctrl%+5%/f%" data-tchmi-right="5" data-tchmi-cncoverride-rediucedmode="False" data-tchmi-cncoverride-spindle-controllingenable="%f%%s%CNC.Data.ChannelClientSelected.Mode%/s%==4 || %s%CNC.Data.ChannelClientSelected.Mode%/s%==3 %/f%">
 
 <script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
 [

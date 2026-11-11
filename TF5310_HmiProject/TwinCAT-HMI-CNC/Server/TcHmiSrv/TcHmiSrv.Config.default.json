@@ -684,6 +684,52 @@
                 ],
                 "type": "integer"
             },
+            "ADS-PLC1.Tc3_CNC.ST_CNC_ManualOption": {
+                "additionalProperties": false,
+                "properties": {
+                    "bCAXActive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "bEcsActive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "bTrafoActive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "eZeroOffset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.E_CNC_ManualZeroOffset"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    }
+                },
+                "type": "object"
+            },
             "ADS-PLC1.Tc3_CNC.ST_CNC_TOOL_DATA_EXT": {
                 "additionalProperties": false,
                 "properties": {
@@ -811,6 +857,185 @@
                             },
                             {
                                 "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.Tc3_CNC.ST_ManualMode": {
+                "additionalProperties": false,
+                "properties": {
+                    "bKeyNeg": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "bKeyPos": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "bKeyRapid": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "nHwResolution": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "comment": "Handradauflösung in 0.1 um / Umdrehung",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "nInc": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "nLogAxisNumber": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "nManualTyp": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "nSpeed": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "stManualOption": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.ST_CNC_ManualOption"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    }
+                },
+                "type": "object"
+            },
+            "ADS-PLC1.Tc3_CNC.ST_SpindleControl": {
+                "additionalProperties": false,
+                "properties": {
+                    "busy": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Bool shows if spindle is busy",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "ccw": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Start counter clock wise",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "cw": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Start clock wise",
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "logId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "mode": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "comment": "0 = MOVE_ENDLOS, 1 = MOVE_LIN, 2 = MOVREF",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "stop": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Stop spindle",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "value": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "comment": "rpm or position, depending on mode",
+                                "propertyOrder": 6
                             }
                         ]
                     }
@@ -1556,7 +1781,6 @@
                 "type": "object"
             }
         },
-        "TcHmiCnc": {},
         "TcHmiSrv": {
             "PLC1.Tc3_CNC.E_CNC_ManualZeroOffset": {
                 "enum": [
@@ -1751,8 +1975,8 @@
     ],
     "DISCOVERY": 2,
     "ENDPOINTS": [
-        "http://127.0.0.1:13006",
-        "http://127.0.0.1:3099"
+        "http://127.0.0.1:13007",
+        "http://127.0.0.1:3129"
     ],
     "ETAGENABLED": true,
     "EXTENSIONS": {
@@ -1779,7 +2003,7 @@
                 ]
             },
             "NAME": "CNC",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Server.0.3.25\\runtimes\\win-x64\\native\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Server.25.0.1\\runtimes\\win-x64\\native\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -1792,7 +2016,7 @@
                 ]
             },
             "NAME": "TcHmiAnalytics",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.ControlsExtension.1.36.88\\runtimes\\any\\net8.0\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.ControlsExtension.1.36.98\\runtimes\\any\\net8.0\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -2055,10 +2279,40 @@
     "SELFSIGNEDROOTCA": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVXRENDQTBDZ0F3SUJBZ0lKQUpqamlydlFTREpBTUEwR0NTcUdTSWIzRFFFQkN3VUFNRWd4Q3pBSkJnTlYKQkFZVEFrUkZNUnN3R1FZRFZRUUtEQkpVZDJsdVEwRlVJRWhOU1NCVFpYSjJaWEl4SERBYUJnTlZCQU1NRTAxcApZMmhoWld4Q1lTMU9RakEyWDNKdmIzUXdJQmNOTWpZd09URTRNRFl4T0RVM1doZ1BNakEyTlRBeE1UWXdOakU0Ck5UZGFNRWd4Q3pBSkJnTlZCQVlUQWtSRk1Sc3dHUVlEVlFRS0RCSlVkMmx1UTBGVUlFaE5TU0JUWlhKMlpYSXgKSERBYUJnTlZCQU1NRTAxcFkyaGhaV3hDWVMxT1FqQTJYM0p2YjNRd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQQpBNElCRHdBd2dnRUtBb0lCQVFDMnNmY09zaW5aRnZVZEpEV2x1dmNvR0JNby9OcURNM0pIMnF3OUs4aVVkaXFjClVKcXBLWWxPeEl2MnBXdTdrL2VoWmczNm5Pb0xBejlySmFZd2hFRlptTVRGdllMY3ZFL0lzZzUxcldDUEJCQi8KSWxaRkJWUUtNSjlrZEpPZTFnMCs2K0lnenB0L0JJNDdNNHNJZUFXcUJNc0t3QWtxZ0dJdFFrWXFRRVNXWDZobQp4NVN2WDNMZEo0NkU5UFR5MjB5TTJMMEJ4U1czdXVjd0VRWHFHK2g5TUp1TEZ4NHhtVHh0aXdQbU81SVYyNVh5CnAwRzdtQWM4VVRKWjJiM2YrN2I4U2lHL04veFJOZUFDVkxKYXFITDZ0VWtSeHA4VVhGSS9IUjQwNFlGWGFPVk4KNVhWdFdYZ2R5eVo0ZUdiazI1QkU3TndMU1BCaXp0R1NDTlAyVGRhOUFnTUJBQUdqZ2dGQk1JSUJQVENCMlFZRApWUjBSQklIUk1JSE9nZ2xzYjJOaGJHaHZjM1NIQkg4QUFBR0hFQUFBQUFBQUFBQUFBQUFBQUFBQUFBR0NEazFwClkyaGhaV3hDWVMxT1FqQTJnaHROYVdOb1lXVnNRbUV0VGtJd05pNWlaV05yYUc5bVppNWpiMjJIQkt3UmdEK0gKQkt3UjBBR0hCTUNvYXdHSEJNQ29lNGVIQk1Db09BR0hCTUNvV0FHSEVQNkFBQUFBQUFBQUo5aWZ6cDhQaTFPSApFUDZBQUFBQUFBQUFoU2dJVDV1ckxzeUhFUDZBQUFBQUFBQUFoaFNQTHloV0d6dUhFUDZBQUFBQUFBQUFoNlhPCkdqamJxODJIRVA2QUFBQUFBQUFBMkQzR1FBVGRXZlF3SFFZRFZSME9CQllFRkFCR096cUx1UnFoZURBY3h3YzgKVEpyNUZsVGJNQjhHQTFVZEl3UVlNQmFBRkFCR096cUx1UnFoZURBY3h3YzhUSnI1RmxUYk1BOEdBMVVkRXdFQgovd1FGTUFNQkFmOHdEZ1lEVlIwUEFRSC9CQVFEQWdFR01BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQnZYN0VZCndkK0NjanU4MjZ1aWJqSENkZWVYRWhjaUdiL0lURDBjY3FjS00xLzVOMjBIWUp1Nzh0amxBTXQ4aHlGZnhERGEKaFZoVGF3SDdJMFdDVkZJN2VpeVRIQy84VVRrY3I3citkZy84YzdjTlZSU0ZaaUFXMkNNNTBuQ0JrUmpuak5ZZAo2SC9NSFpPOVRvWndybmhyZlAzOWhNU1AvamRVWFV1MXV0ZUV1eEdIVGNUcUE3NDk0N291dVF1ZW1GVllSYktFCnNrZDRJb2YrUVBpNTNIRDJHMXU1eWNWWXFCcS9aS2hUMEpJNElKSU9kTEtPWW1JOU5Qa20zMXJBYjRybW15OVEKMGM0Y01YZ2JOODIyd0kwTlFJQ3pkZGQxNzZUWEhKdDBGNyt6TW1MdmQ1YjVZbWg5bFo5MmtvSkZrUGlWMU5PQwpMa2x2L0JPenhhbUszckhwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
     "SELFSIGNEDROOTCAKEY": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2QUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktZd2dnU2lBZ0VBQW9JQkFRQzJzZmNPc2luWkZ2VWQKSkRXbHV2Y29HQk1vL05xRE0zSkgycXc5SzhpVWRpcWNVSnFwS1lsT3hJdjJwV3U3ay9laFpnMzZuT29MQXo5cgpKYVl3aEVGWm1NVEZ2WUxjdkUvSXNnNTFyV0NQQkJCL0lsWkZCVlFLTUo5a2RKT2UxZzArNitJZ3pwdC9CSTQ3Ck00c0llQVdxQk1zS3dBa3FnR0l0UWtZcVFFU1dYNmhteDVTdlgzTGRKNDZFOVBUeTIweU0yTDBCeFNXM3V1Y3cKRVFYcUcraDlNSnVMRng0eG1UeHRpd1BtTzVJVjI1WHlwMEc3bUFjOFVUSloyYjNmKzdiOFNpRy9OL3hSTmVBQwpWTEphcUhMNnRVa1J4cDhVWEZJL0hSNDA0WUZYYU9WTjVYVnRXWGdkeXlaNGVHYmsyNUJFN053TFNQQml6dEdTCkNOUDJUZGE5QWdNQkFBRUNnZ0VBQkVmNTFlQ1RiZmlsZ0V3UnJNTkxtT2N0aGNPZEhEOTNvVnJzdDljL2tVa08KbVJDamV5elR3S0tHOUIzdXZ4dkp6UUN1K2EwMUo5Sm82VW9kMFp1N3kwMXk2UDVXbzNVUE9wRC9tVDdabVNoYgplWnMwb2RQczR2cytOUFN0WSthNHN6MkVWRWY3S1ZnU1BDMXFSK1hHSGpTVURIbXhEVXVxWVV5aEI4cnZRSVhOCm5KZURRU2hZajlIeVgrOFo0ZkxSK2t5c1R1TENqbWZ0UTF3UHZDQ25tNHBUTzBzdWhNdjUvenFHRVlsNzRNMGEKLyt4RnR0dTZsNHB4dUlMZ2wwWkZRQ1IyNERRV2FOVWRxOEVpZ0lMYnpqcFRBcngwSC9vSnlHb04vTWcrL2dWTQplbktnZmNwWTE3aHp1dlp4R0VPUysvT3VjbGJrdGg1UEJZR0JMYlVNMFFLQmdRRDEyVTZCZ1htWVpoazAySFJPCk1vT3dXQ2RjaTF3MnBWbHg3UFh2NHp6dkpKd2N2ekxVRlE2c3luRXpZbUQxcmgyRk5lZzZEd2p4dGZiTUZmeEoKMGhUNFljMlJWb0FRc1RkM0NzL2hZSFl2UGJhRGZhNUpSUklwanBuZGZZN3ozQVVGTVFveWYxUWxSaHRBTTZPWgpLaGU0Mi9MdmE3OTFTazhSM2JDbmZhUGdrUUtCZ1FDK1BSc1YwV2hoTlpYc1Y3TjdYR3JLMFliUGJkc0E5clpjClFJSjJUWHYxMnNkMVVSZzBSemMwOXBHK0t5b0RWVE5UYzZXMkdPdGJmY01xSTBLVDZNQnhSYVV4VXUzcERmYzkKMjBGRE9MclJQelA5bm9UMW1PdVpySlN3VFptRXVrOXArQlU5UnFVK2ZwK2RCV3JSaDNwL0dZVGhhTml4ajVrdwpJUERxOTVBcGJRS0JnQWtjcGNFOUNFR3l2d3ByWDF3cW1TRG5FNFpsaitSaW1uOFRka1lPMlFwUUJBMDR0T3lSClh6cmVRZlhTbHA5a2RhbWpSdGtvQjMvVjY3REN1OWdNbGtSaWM1a0lhTFMxck1XWHUvNnhjWS9zcktBUS8yMnQKeHErTm5ueE1GQWxMeFUvYzhuRE9zVkswVjN3NHJiNldoY3lQTW1EWFVJQkxZY1RhdjVwbG1MWlJBb0dBZnA4agplUWt4NVlvS0tRNVN1MmhPK0lJdnJiOGNCdTh2Z0FXOEVFd1FseHF3cWVoNUtNckI5ekdxM2gzU3ovY1V1NVg5CkZWQk96MDNNNmk0ZjhWejVRaXV1QVQrR2RSbkRsOXRvKy9vMWRuTVFBdDVROXp0NmpZV3VUZzdJZ095VlVSNDcKM05ZNXhIZjVlMFVRelRmVWsrYURhSmtscWtHL0g2YTlWRmZGRDUwQ2dZQkxOU2F3NEFERnlhazZTMmtzRVUrTgplUXQrSUl1T3lFZ3lLaHE2eElid1Fvc0hidm8xZmpnc2pFRmhtT3NNWUJjWnNUZWZFR0V0SmJpdEtCOFBxV0xqClArNG43dXVZRnFnZXg3cFVxaktiR1RNZW9BV0FCMHF6Mk9GVWtVTlFBUi9pTDJXZ1cyRTRTc3pLMFh6V0NtQ1EKRUFkN29RWWhSdmJDNlU4Y0Q4Ny82QT09Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K",
     "SESSIONSTORAGE": {
+        "04522d16ff0a36dc92309738275d9eabc183a79cbf5d683a26f39049d80cb8bf": {
+            "created": "2026-11-05T15:13:54.4420195Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
+        "1c2a12d5f667538b67e13099abe8018d0c10b71a95325918e2b20fb3e66b0dbf": {
+            "created": "2026-11-03T18:43:56.3565959Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
         "24edd452044bac098b75c6d58adb73a462277e41be2287d9cdd40256d48811f41ed432ee1ea4ef883ff2cdcf223ca989dab0e33c8c3f4f496772f546b7e1f0d5": {
             "created": "2025-07-14T13:38:09.0205789Z",
             "domain": "TcHmiUserManagement",
             "userName": "Admin"
+        },
+        "421aa6891c488f88fdbe501d99f13ae2c0a1dccb3c7fbb320bf42485d8af10614193c8c9afb2c53000a7312161cca040f9d0cfe57adae93887ecf35559b098d7": {
+            "created": "2026-10-08T14:11:41.3179668Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Viewer"
+        },
+        "48f0d3b5ca7070017213391ad58822dffb2182c0a74144ca70c3c3f56b36ca47": {
+            "created": "2026-10-21T13:57:08.0868435Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "4cdd744d28b3d24ac8d6d3ca8ca6066a028ab5a04bb80651ed31dd533ff4d4bcc50d2d854a506f2c7d6fcf6a260e2bee06ddf98ccdf190909f12d4ebda0dec79": {
+            "created": "2026-10-02T16:09:57.5248572Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Viewer"
+        },
+        "58f8a2b5315d6b3be08deaa96da4302d3f74418631776dfe985afcdabff05fd0": {
+            "created": "2026-10-30T09:50:54.124869Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "AdvancedOperator"
         },
         "5c613f33535b6bd93406dc9d67dc92b4042c50f2757d67645bd8332c09d4eda5f126a29ca2b37d67f5d1dc187c10ca2db411264c9cff14e65917e772a8c32631": {
             "created": "2026-09-08T15:17:28.7420406Z",
@@ -2075,10 +2329,40 @@
             "domain": "TcHmiUserManagement",
             "userName": "Admin"
         },
+        "807ad5879e8b959271d7c358404d9fbfdd7e5d7423576c77d6415a5bd0e22660": {
+            "created": "2026-11-03T17:38:07.2416888Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
         "867f8556b5dfa253fac13d2324e4a673cd82f16af96d902286c4a47eb85172d376f61b35090c9197ce8233435f23f99841f9bf13f6df55f7abb26714269489ec": {
             "created": "2025-09-10T11:35:01.5805367Z",
             "domain": "TcHmiUserManagement",
             "userName": "Admin"
+        },
+        "8bc932ed0479daf0702ad5c3f189b21b765e9e56e28c87aa378c31aaf8d6d6a0": {
+            "created": "2026-10-22T16:00:49.8460333Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "8c222023071cae9f39bcefbe9debcfa2decaed782a7abdb378c65b6937cb3a1af644a40395a725e055bd2153a8238db1590bd1c252fba07dbbd55e7d1674048d": {
+            "created": "2026-10-07T11:55:43.2389646Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
+        "99363f5df5dfc2445436f867a35994466f70d773b7824735eea17b18dadc9317a74c42fab321fb0b323372e7d96b2690f49d36a69fcfe2e3e718fcc6704c23fa": {
+            "created": "2026-10-15T13:32:05.4506281Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "9cb3b82baa37c78c8cccc2846f90d83fc616b24efaf915659b10cd6bb11ca231": {
+            "created": "2026-11-03T18:04:25.6925037Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "a702cac4784607b9d4e8fe0db38ef459431f316413c46ac0e8cf7e04ffa7f72b": {
+            "created": "2026-11-03T18:52:36.255459Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
         },
         "c5d85c80a914ceee1019de313461dcd32f5b895d7642b8d6edb6600d965a31b901bb8260a5d317284763bb840b484e2bfc4560be3f1766c6fd87569f0add7410": {
             "created": "2025-09-10T10:39:12.010716Z",
@@ -2089,6 +2373,41 @@
             "created": "2026-10-01T15:10:21.2555546Z",
             "domain": "TcHmiUserManagement",
             "userName": "__SystemAdministrator"
+        },
+        "c8e334ccc8050e1edd13ebd3e246aa2dffe07af95e7d08f475854c81c2c94334": {
+            "created": "2026-10-29T12:54:38.493813Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "d284591ccdec18b184bb7c6189bfe8a301c68155a04f7ff4f3ded316a7d063491dc5be1a79d29b628d835c9f13143dc0b43bded4c67ffced5509f2892a841460": {
+            "created": "2026-10-12T13:06:54.0841333Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
+        },
+        "dbb2e3597cdb25668cd0339d6d508f9e082e99b02361ca518f55f40b5025686c": {
+            "created": "2026-10-29T15:03:56.5167162Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
+        "e5e8ebd812ad115405d79588d659eb692d26a3dd377e350d7b5043add02076ec": {
+            "created": "2026-10-28T13:24:06.6458292Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Viewer"
+        },
+        "ec30f6d2ba721b3f7e34d0a1b627f3e5115fafddbd1fc7310a5603299a65cd68775719548b7dc16a0946864f3d2c397d6bfcc392ad75efbbd896dbbf0a71d2f3": {
+            "created": "2026-10-09T11:19:01.4806406Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
+        "ee9d26b34bfc02cc885e1fa176d7c73f8e3d36252515d91b261bcbe16f7491cf1a8f855df3a976dbb176ca6c9d660c112a796ef6afd91da13dd418d2258c99f5": {
+            "created": "2026-10-16T06:29:27.067132Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "__SystemAdministrator"
+        },
+        "f0604e27ad65794ea27a68eaff0a9b5eac30f6e8dfb989cb21aca2aab8bfb35b": {
+            "created": "2026-10-27T16:21:42.6451198Z",
+            "domain": "TcHmiUserManagement",
+            "userName": "Admin"
         },
         "fc5958c36b17e6009cd618c46cebf84881d0a02ea485a9c935d454744cc69fbdd3e6466820dda8ac9a8e6d44057a259a4aa5601765a5666c4fdacc57ad5ec9d7": {
             "created": "2026-10-01T15:49:26.5429444Z",
@@ -2646,53 +2965,13 @@
             },
             "USEMAPPING": true
         },
-        "ADS.PLC1.MAIN.MyPlcVar": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::MyPlcVar",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "USEMAPPING": true
-        },
-        "ADS.PLC1.MAIN.bTriggerTeachIN": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::bTriggerTeachIN",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "USEMAPPING": true
-        },
         "ADS.PLC1.PRG_CNCAxesHandler.SpindleControl": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
             "MAPPING": "PLC1::PRG_CNCAxesHandler::SpindleControl",
             "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_SpindleControl"
-            },
-            "USEMAPPING": true
-        },
-        "ADS.PLC1.PRG_MessagesV2.bAlarmTest": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::PRG_MessagesV2::bAlarmTest",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "USEMAPPING": true
-        },
-        "ADS.PLC1.PRG_MessagesV2.bConfirmTest": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::PRG_MessagesV2::bConfirmTest",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
+                "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.ST_SpindleControl"
             },
             "USEMAPPING": true
         },
@@ -3062,210 +3341,6 @@
             },
             "USEMAPPING": true
         },
-        "AppSettingsExtension.ApplySettings": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ApplySettings",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.CheckClientLicenseAndListLocalRoutes": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "CheckClientLicenseAndListLocalRoutes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "properties": {
-                    "clientLicense": {
-                        "type": "object"
-                    },
-                    "localRoutes": {
-                        "type": "object"
-                    }
-                },
-                "required": [
-                    "clientLicense",
-                    "localRoutes"
-                ],
-                "type": "object"
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.Config": {
-            "ACCESS": 0,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Config",
-            "OPTIONS": {},
-            "SCHEMA": {},
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.DoubleAdsTimeout": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "DoubleAdsTimeout",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.GetSchema": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "GetSchema",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.ListLocalRoutes": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ListLocalRoutes",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "type": "object"
-                },
-                "type": "array"
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.ListSymbols": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ListSymbols",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.ModuleNames": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ModuleNames",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "type": "object"
-                },
-                "type": "array",
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.PropertyValue": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "PropertyValue",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "type": "object"
-                },
-                "type": "array",
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.PropertyValueEx": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "PropertyValueEx",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "items": {
-                    "type": "object"
-                },
-                "type": "array",
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.ReadSettings": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ReadSettings",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.SaveSettings": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "SaveSettings",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true,
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "AppSettingsExtension.TimestampModified": {
-            "ACCESS": 3,
-            "DOMAIN": "AppSettingsExtension",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "TimestampModified",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "function": true
-            },
-            "USEMAPPING": true
-        },
         "CNC.Config": {
             "ACCESS": 0,
             "DOMAIN": "CNC",
@@ -3326,29 +3401,6 @@
             "DOMAIN": "CNC",
             "DYNAMIC": true,
             "MAPPING": "Data::Channel[0]::Axes",
-            "SCHEMA": {
-                "items": {
-                    "$ref": "tchmi:server#/definitions/CNC-AxesType"
-                },
-                "type": "array"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Data.Channel.0.MainSpindle": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Data::Channel[0]::MainSpindle",
-            "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/CNC-AxesType"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Data.Channel.0.Spindles": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Data::Channel[0]::Spindles",
             "SCHEMA": {
                 "items": {
                     "$ref": "tchmi:server#/definitions/CNC-AxesType"
@@ -3451,16 +3503,6 @@
             },
             "USEMAPPING": true
         },
-        "CNC.Data.ChannelClientSelected.Control.Automatic": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Data::ChannelClientSelected::Control::Automatic",
-            "SCHEMA": {
-                "type": "boolean"
-            },
-            "USEMAPPING": true
-        },
         "CNC.Data.ChannelClientSelected.Control.BlockIgnore": {
             "ACCESS": 3,
             "DOMAIN": "CNC",
@@ -3529,16 +3571,6 @@
             "MAPPING": "Data::ChannelClientSelected::FileOffset",
             "SCHEMA": {
                 "type": "integer"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Data.ChannelClientSelected.MainFileName": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Data::ChannelClientSelected::MainFileName",
-            "SCHEMA": {
-                "type": "string"
             },
             "USEMAPPING": true
         },
@@ -3831,6 +3863,32 @@
             "SCHEMA": {
                 "type": "string",
                 "writeValue": {
+                    "type": "object"
+                }
+            },
+            "USEMAPPING": true
+        },
+        "CNC.MapSymbol": {
+            "ACCESS": 3,
+            "DOMAIN": "CNC",
+            "DYNAMIC": false,
+            "HIDDEN": true,
+            "MAPPING": "MapSymbol",
+            "OPTIONS": {},
+            "SCHEMA": {
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "success": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object",
+                "writeValue": {
                     "type": "string"
                 }
             },
@@ -3874,51 +3932,12 @@
             },
             "USEMAPPING": true
         },
-        "CNC.Settings.Values.TcCncExtension.AmsNetId": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Settings.Values::TcCncExtension.AmsNetId",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/String"
-            },
-            "USEMAPPING": true
-        },
         "CNC.Settings.Values.TcCncHmi.AutoKeyboard": {
             "ACCESS": 3,
             "DOMAIN": "CNC",
             "DYNAMIC": true,
+            "HIDDEN": false,
             "MAPPING": "Settings.Values::TcCncHmi.AutoKeyboard",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/Boolean"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Settings.Values.TcCncHmi.DynamicNavigation": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Settings.Values::TcCncHmi.DynamicNavigation",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/Boolean"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Settings.Values.TcCncHmi.Navigation": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Settings.Values::TcCncHmi.Navigation",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/String"
-            },
-            "USEMAPPING": true
-        },
-        "CNC.Settings.Values.TcCncHmi.SetNavigation": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Settings.Values::TcCncHmi.SetNavigation",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/Boolean"
             },
@@ -3928,6 +3947,7 @@
             "ACCESS": 3,
             "DOMAIN": "CNC",
             "DYNAMIC": true,
+            "HIDDEN": false,
             "MAPPING": "Settings.Values::TcCncHmi.Theme",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/String"
@@ -3950,6 +3970,7 @@
             "ACCESS": 3,
             "DOMAIN": "CNC",
             "DYNAMIC": true,
+            "HIDDEN": false,
             "MAPPING": "Simulation::Workpiece",
             "SCHEMA": {
                 "description": "json string representing the workpiece data",
@@ -4142,16 +4163,6 @@
             "MAPPING": "Data::ChannelClientSelected::Control::Mdi",
             "SCHEMA": {
                 "type": "boolean"
-            }
-        },
-        "Data.ChannelClientSelected.Control.ProgName": {
-            "ACCESS": 3,
-            "DOMAIN": "CNC",
-            "DYNAMIC": true,
-            "MAPPING": "Data::ChannelClientSelected::Control::ProgName",
-            "SCHEMA": {
-                "description": "program name for the cnc which is started in automatic mode",
-                "type": "string"
             }
         },
         "Data.ChannelClientSelected.Control.Reference": {
@@ -6708,6 +6719,7 @@
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
+            "HIDDEN": false,
             "MAPPING": "PLC1::Global_HMI::PLCAxisEnable",
             "SCHEMA": {
                 "allOf": [
@@ -6988,15 +7000,13 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "maxLength": 299,
-                        "propertyOrder": 17
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.STRING-299"
                     },
                     {
-                        "$ref": "tchmi:general#/definitions/String"
+                        "propertyOrder": 17
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.0.Manual": {
             "ACCESS": 3,
@@ -7025,14 +7035,13 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "$ref": "tchmi:server#/definitions/PLC1.Tc3_CNC.ST_ManualMode"
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.ST_ManualMode"
                     },
                     {
                         "propertyOrder": 15
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.0.ManualMode.bKeyNeg": {
             "ACCESS": 3,
@@ -7236,16 +7245,14 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "comment": "Strings",
-                        "maxLength": 299,
-                        "propertyOrder": 16
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.STRING-299"
                     },
                     {
-                        "$ref": "tchmi:general#/definitions/String"
+                        "comment": "Strings",
+                        "propertyOrder": 16
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.0.Reset": {
             "ACCESS": 3,
@@ -7520,14 +7527,13 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "$ref": "tchmi:server#/definitions/PLC1.Tc3_CNC.ST_ManualMode"
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.ST_ManualMode"
                     },
                     {
                         "propertyOrder": 15
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.1.ManualMode.bKeyNeg": {
             "ACCESS": 3,
@@ -7697,16 +7703,14 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "comment": "Strings",
-                        "maxLength": 299,
-                        "propertyOrder": 16
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.STRING-299"
                     },
                     {
-                        "$ref": "tchmi:general#/definitions/String"
+                        "comment": "Strings",
+                        "propertyOrder": 16
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.1.Reset": {
             "ACCESS": 3,
@@ -7725,6 +7729,24 @@
                 ]
             },
             "USEMAPPING": true
+        },
+        "PLC1.Global_HMI.PLCMachineMode.1.Standby": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::Global_HMI::PLCMachineMode[1]::Standby",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Operation Mode",
+                        "propertyOrder": 1
+                    }
+                ]
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.1.Start": {
             "ACCESS": 3,
@@ -7865,6 +7887,24 @@
                 ]
             }
         },
+        "PLC1.Global_HMI.PLCMachineMode.2.Homing": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::Global_HMI::PLCMachineMode[2]::Homing",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "REFERENCE\t\t: BOOL;  TC3HR",
+                        "propertyOrder": 5
+                    }
+                ]
+            }
+        },
         "PLC1.Global_HMI.PLCMachineMode.2.MDI": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -7927,14 +7967,13 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "$ref": "tchmi:server#/definitions/PLC1.Tc3_CNC.ST_ManualMode"
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.Tc3_CNC.ST_ManualMode"
                     },
                     {
                         "propertyOrder": 15
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.2.ManualMode.bKeyNeg": {
             "ACCESS": 3,
@@ -8016,16 +8055,14 @@
             "SCHEMA": {
                 "allOf": [
                     {
-                        "comment": "Strings",
-                        "maxLength": 299,
-                        "propertyOrder": 16
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.STRING-299"
                     },
                     {
-                        "$ref": "tchmi:general#/definitions/String"
+                        "comment": "Strings",
+                        "propertyOrder": 16
                     }
                 ]
-            },
-            "USEMAPPING": true
+            }
         },
         "PLC1.Global_HMI.PLCMachineMode.2.Reset": {
             "ACCESS": 3,
@@ -8040,6 +8077,24 @@
                     },
                     {
                         "propertyOrder": 10
+                    }
+                ]
+            }
+        },
+        "PLC1.Global_HMI.PLCMachineMode.2.Standby": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::Global_HMI::PLCMachineMode[2]::Standby",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Operation Mode",
+                        "propertyOrder": 1
                     }
                 ]
             }
@@ -8112,22 +8167,20 @@
             },
             "USEMAPPING": true
         },
-        "PLC1.MAIN.MyPlcVar": {
+        "PLC1.Global_HMI.bPLCAllUsersAllowedMapping2": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
             "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::MyPlcVar",
+            "MAPPING": "PLC1::Global_HMI::bPLCAllUsersAllowedMapping2",
             "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            }
-        },
-        "PLC1.MAIN.bTestVar": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::MAIN::bTestVar",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "HMI -> PLC"
+                    }
+                ]
             }
         },
         "RefreshDefinitions": {
@@ -8671,70 +8724,6 @@
                 "writeValue": {
                     "$ref": "tchmi:general#/definitions/String"
                 }
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiCnc.Config": {
-            "ACCESS": 0,
-            "DOMAIN": "TcHmiCnc",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Config",
-            "OPTIONS": {},
-            "SCHEMA": {},
-            "USEMAPPING": true
-        },
-        "TcHmiCnc.Data": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiCnc",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Data",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/TcHmiCnc-CncDataType"
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiCnc.ErrorMessages": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiCnc",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "ErrorMessages",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "$ref": "tchmi:server#/definitions/TcHmiCnc-ErrorMessageArr"
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiCnc.Filesystem": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiCnc",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "Filesystem",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "items": {
-                    "type": "object"
-                },
-                "type": "array",
-                "writeValue": {
-                    "type": "string"
-                }
-            },
-            "USEMAPPING": true
-        },
-        "TcHmiCnc.SelectedChannel": {
-            "ACCESS": 3,
-            "DOMAIN": "TcHmiCnc",
-            "DYNAMIC": false,
-            "HIDDEN": true,
-            "MAPPING": "SelectedChannel",
-            "OPTIONS": {},
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/INT"
             },
             "USEMAPPING": true
         },
@@ -10274,6 +10263,387 @@
             },
             "USEMAPPING": true
         },
+        "TcHmiMdp.Local.CPU.0.CpuFrequency": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::CPU[0]::CpuFrequency",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT32"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.CPU.0.CurrentCpuTemperature": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::CPU[0]::CurrentCpuTemperature",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT16"
+                    },
+                    {
+                        "comment": "requires BIOS API",
+                        "readOnly": true,
+                        "unit": "°C"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.CPU.0.CurrentCpuUsage": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::CPU[0]::CurrentCpuUsage",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT16"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "%"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.DeviceArea.BTN": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::DeviceArea::BTN",
+            "SCHEMA": {
+                "readOnly": true,
+                "type": "string"
+            }
+        },
+        "TcHmiMdp.Local.DiskManagement.0.FreeSpace.0": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::DiskManagement[0]::FreeSpace[0]",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "byte"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.DiskManagement.0.TotalSize.0": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::DiskManagement[0]::TotalSize[0]",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "byte"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Fan.0.FanSpeed": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Fan[0]::FanSpeed",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT16"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "rpm"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Fan.1.FanSpeed": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Fan[1]::FanSpeed",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT16"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "rpm"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.GeneralArea.DeviceName": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::GeneralArea::DeviceName",
+            "SCHEMA": {
+                "type": "string"
+            }
+        },
+        "TcHmiMdp.Local.GeneralArea.OperatingSystemAndImageVersion": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::GeneralArea::OperatingSystemAndImageVersion",
+            "SCHEMA": {
+                "readOnly": true,
+                "type": "string"
+            }
+        },
+        "TcHmiMdp.Local.Mainboard.0.MainboardTemperature": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Mainboard[0]::MainboardTemperature",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT16"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "°C"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Mainboard.0.MaxBoardTemperature": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Mainboard[0]::MaxBoardTemperature",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT32"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "°C"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Mainboard.0.MinBoardTemperature": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Mainboard[0]::MinBoardTemperature",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT32"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "°C"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Memory.0.ProgramMemoryAllocated_MoreThan4GbRam": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Memory[0]::ProgramMemoryAllocated_MoreThan4GbRam",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "byte"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.Memory.0.ProgramMemoryAvailable_MoreThan4GbRam": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::Memory[0]::ProgramMemoryAvailable_MoreThan4GbRam",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true,
+                        "unit": "byte"
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.OperatingSystem.0.ModuleHeader.Name": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::OperatingSystem[0]::ModuleHeader::Name",
+            "SCHEMA": {
+                "readOnly": true,
+                "type": "string"
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.AmsNetID": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::AmsNetID",
+            "SCHEMA": {
+                "type": "string"
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.Build": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::Build",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT16"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.MajorVersion": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::MajorVersion",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT16"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.MinorVersion": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::MinorVersion",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT16"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.RouterMemoryAvailable": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::RouterMemoryAvailable",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.RouterMemoryMaximum": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::RouterMemoryMaximum",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT64"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.TwinCatRevision": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::TwinCatRevision",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "anyOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT16"
+                            },
+                            {
+                                "$ref": "tchmi:general#/definitions/VOID"
+                            }
+                        ]
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.TwinCatStatus": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::TwinCatStatus",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT16"
+                    },
+                    {
+                        "readOnly": true
+                    }
+                ]
+            }
+        },
+        "TcHmiMdp.Local.TwinCAT.0.TwinCatSystemID": {
+            "ACCESS": 1,
+            "DOMAIN": "TcHmiMdp",
+            "DYNAMIC": true,
+            "MAPPING": "Local::TwinCAT[0]::TwinCatSystemID",
+            "SCHEMA": {
+                "readOnly": true,
+                "type": "string"
+            }
+        },
         "TcHmiSqliteLogger.Clear": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSqliteLogger",
@@ -11000,9 +11370,11 @@
             "ENABLED": true,
             "FILEACCESS": 3,
             "FILES": {},
-            "SYMBOLACCESS": 3,
+            "SYMBOLACCESS": 0,
             "SYMBOLS": {
                 "AddOrChangeUser": 0,
+                "AddSymbol": 3,
+                "AddSymbols": 3,
                 "ChangeUserSettings": 0,
                 "RemoveUser": 0,
                 "TcHmiUserManagement.AddUser": 0,
@@ -11016,11 +11388,22 @@
             "ENABLED": true,
             "FILEACCESS": 3,
             "FILES": {},
-            "SYMBOLACCESS": 3,
+            "SYMBOLACCESS": 0,
             "SYMBOLS": {
                 "AddOrChangeUser": 0,
+                "AddSymbol": 3,
+                "AddSymbols": 3,
                 "ChangeUserSettings": 0,
                 "RemoveUser": 0,
+                "TcHmiEcDiagnostics.ClearCrc": 0,
+                "TcHmiEcDiagnostics.ClearFrames": 0,
+                "TcHmiEcDiagnostics.DisableSlave": 0,
+                "TcHmiEcDiagnostics.EnableSlave": 0,
+                "TcHmiEcDiagnostics.ForceProcessDataValues": 0,
+                "TcHmiEcDiagnostics.ReleaseProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetMasterStateMachine": 0,
+                "TcHmiEcDiagnostics.SetProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetSlaveStateMachine": 0,
                 "TcHmiUserManagement.AddUser": 0,
                 "TcHmiUserManagement.DisableUser": 0,
                 "TcHmiUserManagement.EnableUser": 0,
@@ -11032,11 +11415,20 @@
             "ENABLED": true,
             "FILEACCESS": 3,
             "FILES": {},
-            "SYMBOLACCESS": 3,
+            "SYMBOLACCESS": 0,
             "SYMBOLS": {
                 "AddOrChangeUser": 0,
                 "ChangeUserSettings": 0,
                 "RemoveUser": 0,
+                "TcHmiEcDiagnostics.ClearCrc": 0,
+                "TcHmiEcDiagnostics.ClearFrames": 0,
+                "TcHmiEcDiagnostics.DisableSlave": 0,
+                "TcHmiEcDiagnostics.EnableSlave": 0,
+                "TcHmiEcDiagnostics.ForceProcessDataValues": 0,
+                "TcHmiEcDiagnostics.ReleaseProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetMasterStateMachine": 0,
+                "TcHmiEcDiagnostics.SetProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetSlaveStateMachine": 0,
                 "TcHmiUserManagement.AddUser": 0,
                 "TcHmiUserManagement.DisableUser": 0,
                 "TcHmiUserManagement.EnableUser": 0,
@@ -11048,11 +11440,20 @@
             "ENABLED": true,
             "FILEACCESS": 3,
             "FILES": {},
-            "SYMBOLACCESS": 3,
+            "SYMBOLACCESS": 0,
             "SYMBOLS": {
                 "AddOrChangeUser": 0,
                 "ChangeUserSettings": 0,
                 "RemoveUser": 0,
+                "TcHmiEcDiagnostics.ClearCrc": 0,
+                "TcHmiEcDiagnostics.ClearFrames": 0,
+                "TcHmiEcDiagnostics.DisableSlave": 0,
+                "TcHmiEcDiagnostics.EnableSlave": 0,
+                "TcHmiEcDiagnostics.ForceProcessDataValues": 0,
+                "TcHmiEcDiagnostics.ReleaseProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetMasterStateMachine": 0,
+                "TcHmiEcDiagnostics.SetProcessDataValues": 0,
+                "TcHmiEcDiagnostics.SetSlaveStateMachine": 0,
                 "TcHmiUserManagement.AddUser": 0,
                 "TcHmiUserManagement.DisableUser": 0,
                 "TcHmiUserManagement.EnableUser": 0,
@@ -11113,26 +11514,16 @@
                 "ADS.CNC551": 3,
                 "ADS.CheckLicense": 3,
                 "ADS.Diagnostics": 3,
+                "ADS.ListSymbols": 3,
                 "ADS.PLC1.Global_HMI.PLCMachineMode.0.SyntaxCheck.nType": 3,
-                "ADS.PLC1.MAIN.MyPlcVar": 3,
-                "ADS.PLC1.MAIN.bTriggerTeachIN": 3,
                 "ADS.PLC1.PRG_CNCAxesHandler.SpindleControl": 3,
-                "ADS.PLC1.PRG_MessagesV2.bAlarmTest": 3,
-                "ADS.PLC1.PRG_MessagesV2.bConfirmTest": 3,
-                "AppSettingsExtension.ApplySettings": 3,
-                "AppSettingsExtension.DynamicNavigation": 3,
-                "AppSettingsExtension.ReadSettings": 3,
-                "AppSettingsExtension.SaveSettings": 3,
-                "AppSettingsExtension.SetNavigation": 3,
-                "AppSettingsExtension.Settings.DynamicNavigation": 3,
-                "AppSettingsExtension.Settings.ExpandNavigationBar": 3,
-                "AppSettingsExtension.Settings.SetNavigation": 3,
+                "AddSymbol": 3,
+                "AddSymbols": 3,
+                "CNC.Data": 3,
                 "CNC.Data.Axes": 3,
                 "CNC.Data.Axes.1": 3,
                 "CNC.Data.Channel.0": 3,
                 "CNC.Data.Channel.0.Axes": 3,
-                "CNC.Data.Channel.0.MainSpindle": 3,
-                "CNC.Data.Channel.0.Spindles": 3,
                 "CNC.Data.Channel.0.UsedFiles": 3,
                 "CNC.Data.Channel.0.Variables": 3,
                 "CNC.Data.Channel.1": 3,
@@ -11142,7 +11533,6 @@
                 "CNC.Data.ChannelClientSelected.ActiveFeedrate": 3,
                 "CNC.Data.ChannelClientSelected.Axes.0": 3,
                 "CNC.Data.ChannelClientSelected.CommandFeedrate": 3,
-                "CNC.Data.ChannelClientSelected.Control.Automatic": 3,
                 "CNC.Data.ChannelClientSelected.Control.BlockIgnore": 3,
                 "CNC.Data.ChannelClientSelected.Control.M01Stop": 3,
                 "CNC.Data.ChannelClientSelected.Control.MdiString": 3,
@@ -11150,7 +11540,6 @@
                 "CNC.Data.ChannelClientSelected.Control.SingleStep": 3,
                 "CNC.Data.ChannelClientSelected.Control.Start": 3,
                 "CNC.Data.ChannelClientSelected.FileOffset": 3,
-                "CNC.Data.ChannelClientSelected.MainFileName": 3,
                 "CNC.Data.ChannelClientSelected.MainSpindle": 3,
                 "CNC.Data.ChannelClientSelected.MainSpindle.AcActiveFeedrate": 3,
                 "CNC.Data.ChannelClientSelected.MainSpindle.Override": 3,
@@ -11172,17 +11561,36 @@
                 "CNC.Data.Spindles.0": 3,
                 "CNC.Data.Spindles.1": 3,
                 "CNC.Data.Version": 3,
-                "CNC.Settings.Values.TcCncExtension.AmsNetId": 3,
+                "CNC.ErrorMessages": 3,
+                "CNC.Filesystem": 3,
+                "CNC.GetSchema": 3,
+                "CNC.ListSymbols": 3,
+                "CNC.Localisation": 3,
+                "CNC.MapSymbol": 3,
+                "CNC.PlcLockState": 3,
+                "CNC.SelectedChannel": 3,
+                "CNC.Settings": 3,
                 "CNC.Settings.Values.TcCncHmi.AutoKeyboard": 3,
-                "CNC.Settings.Values.TcCncHmi.DynamicNavigation": 3,
-                "CNC.Settings.Values.TcCncHmi.Navigation": 3,
-                "CNC.Settings.Values.TcCncHmi.SetNavigation": 3,
                 "CNC.Settings.Values.TcCncHmi.Theme": 3,
+                "CNC.Simulation": 3,
                 "CNC.Simulation.Workpiece": 3,
                 "ChangeUserSettings": 3,
                 "CncChannelControl.ZeroOffsetControl": 3,
                 "ConfirmAlarm": 3,
                 "CreateEvent": 3,
+                "Data.ChannelClientSelected.Control.Automatic": 3,
+                "Data.ChannelClientSelected.Control.Backwards": 3,
+                "Data.ChannelClientSelected.Control.BlockIgnore": 3,
+                "Data.ChannelClientSelected.Control.Feedhold": 3,
+                "Data.ChannelClientSelected.Control.M01Stop": 3,
+                "Data.ChannelClientSelected.Control.Manual": 3,
+                "Data.ChannelClientSelected.Control.Mdi": 3,
+                "Data.ChannelClientSelected.Control.Reference": 3,
+                "Data.ChannelClientSelected.Control.Reset": 3,
+                "Data.ChannelClientSelected.Control.SingleStep": 3,
+                "Data.ChannelClientSelected.Control.Standby": 3,
+                "Data.ChannelClientSelected.Control.Start": 3,
+                "Data.ChannelClientSelected.Control.Stop": 3,
                 "DefaultAuthExtension": 1,
                 "DefaultUserGroup": 1,
                 "Diagnostics": 3,
@@ -11199,17 +11607,23 @@
                 "IsAuthRequired": 3,
                 "ListDomains": 3,
                 "ListEvents": 3,
+                "ListFiles": 3,
+                "ListInternalSymbols": 3,
                 "ListSymbols": 3,
+                "ListUserGroups": 3,
                 "ListUserNames": 3,
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
                 "PLC1.Global_HMI.PLCAxisEnable": 3,
                 "PLC1.Global_HMI.PLCFeedOverride": 3,
+                "PLC1.Global_HMI.PLCMachineMode.0.Automatic": 3,
                 "PLC1.Global_HMI.PLCMachineMode.0.Manual": 3,
-                "PLC1.Global_HMI.PLCMachineMode.0.ProgramName": 3,
+                "PLC1.Global_HMI.PLCMachineMode.0.SyntaxCheck.nType": 3,
+                "PLC1.Global_HMI.PLCMachineMode.1.Automatic": 3,
+                "PLC1.Global_HMI.PLCMachineMode.2.Automatic": 3,
                 "PLC1.Global_HMI.PLCSpindleOverride": 3,
-                "PLC1.MAIN.MyPlcVar": 3,
+                "PLC1.Global_HMI.bPLCAllUsersAllowedMapping2": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiAnalytics.AddAnalyticsSymbol": 3,
@@ -11225,8 +11639,6 @@
                 "TcHmiAnalytics.ResetUserLayouts": 3,
                 "TcHmiAnalytics.SetUserData": 3,
                 "TcHmiAnalytics.ShareUserLayouts": 3,
-                "TcHmiCnc.CncChannelControl.MdiString": 3,
-                "TcHmiCnc.Filesystem": 3,
                 "TcHmiEcDiagnostics.Diagnostics": 3,
                 "TcHmiEcDiagnostics.GetMaster": 3,
                 "TcHmiEcDiagnostics.GetMasterOnlineInfo": 3,
@@ -11242,6 +11654,31 @@
                 "TcHmiEventLogger.Diagnostics": 3,
                 "TcHmiEventLogger.ListEnabledTargetSystems": 3,
                 "TcHmiMdp.Diagnostics": 3,
+                "TcHmiMdp.Local.CPU.0.CpuFrequency": 1,
+                "TcHmiMdp.Local.CPU.0.CurrentCpuTemperature": 1,
+                "TcHmiMdp.Local.CPU.0.CurrentCpuUsage": 1,
+                "TcHmiMdp.Local.DeviceArea.BTN": 1,
+                "TcHmiMdp.Local.DiskManagement.0.FreeSpace.0": 1,
+                "TcHmiMdp.Local.DiskManagement.0.TotalSize.0": 1,
+                "TcHmiMdp.Local.Fan.0.FanSpeed": 1,
+                "TcHmiMdp.Local.Fan.1.FanSpeed": 1,
+                "TcHmiMdp.Local.GeneralArea.DeviceName": 1,
+                "TcHmiMdp.Local.GeneralArea.OperatingSystemAndImageVersion": 1,
+                "TcHmiMdp.Local.Mainboard.0.MainboardTemperature": 1,
+                "TcHmiMdp.Local.Mainboard.0.MaxBoardTemperature": 1,
+                "TcHmiMdp.Local.Mainboard.0.MinBoardTemperature": 1,
+                "TcHmiMdp.Local.Memory.0.ProgramMemoryAllocated_MoreThan4GbRam": 1,
+                "TcHmiMdp.Local.Memory.0.ProgramMemoryAvailable_MoreThan4GbRam": 1,
+                "TcHmiMdp.Local.OperatingSystem.0.ModuleHeader.Name": 1,
+                "TcHmiMdp.Local.TwinCAT.0.AmsNetID": 1,
+                "TcHmiMdp.Local.TwinCAT.0.Build": 1,
+                "TcHmiMdp.Local.TwinCAT.0.MajorVersion": 1,
+                "TcHmiMdp.Local.TwinCAT.0.MinorVersion": 1,
+                "TcHmiMdp.Local.TwinCAT.0.RouterMemoryAvailable": 1,
+                "TcHmiMdp.Local.TwinCAT.0.RouterMemoryMaximum": 1,
+                "TcHmiMdp.Local.TwinCAT.0.TwinCatRevision": 1,
+                "TcHmiMdp.Local.TwinCAT.0.TwinCatStatus": 1,
+                "TcHmiMdp.Local.TwinCAT.0.TwinCatSystemID": 1,
                 "TcHmiSqliteLogger.Diagnostics": 3,
                 "TcHmiUserManagement.AddSecret": 3,
                 "TcHmiUserManagement.ChangePassword": 3,
@@ -11256,8 +11693,7 @@
                 "__SystemUser__MachineControl_1__LayoutManager_2_LayoutManager_20_Info": 3,
                 "__SystemUser__MachineControl_1__LayoutManager_2_LayoutManager_20_RawData": 3,
                 "__SystemUser__PageMCP_new_1__LayoutManager_1_LayoutManager_10_Info": 3,
-                "__SystemUser__PageMCP_new_1__LayoutManager_1_LayoutManager_10_RawData": 3,
-                "mibtest": 3
+                "__SystemUser__PageMCP_new_1__LayoutManager_1_LayoutManager_10_RawData": 3
             }
         }
     },
@@ -11267,8 +11703,8 @@
                 "USERGROUPUSERS_AUTO_LOGOFF": "P30D",
                 "USERGROUPUSERS_FORCE_PASSWORD_CHANGE": false,
                 "USERGROUPUSERS_GROUPS": [
-                    "__SystemUsers",
-                    "Admins"
+                    "Admins",
+                    "__SystemUsers"
                 ],
                 "USERGROUPUSERS_LOCALE": "en",
                 "USERGROUPUSERS_TIMEFORMATLOCALE": "project",
@@ -11313,25 +11749,27 @@
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemAdministrators"
                 ],
-                "USERGROUPUSERS_LOCALE": "project",
+                "USERGROUPUSERS_LOCALE": "en",
                 "USERGROUPUSERS_TIMEFORMATLOCALE": "project",
                 "USERGROUPUSERS_TIMEZONE": "project"
             },
             "__SystemGuest": {
                 "USERGROUPUSERS_AUTO_LOGOFF": "PT0S",
+                "USERGROUPUSERS_FORCE_PASSWORD_CHANGE": false,
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemGuests"
                 ],
-                "USERGROUPUSERS_LOCALE": "project",
+                "USERGROUPUSERS_LOCALE": "en",
                 "USERGROUPUSERS_TIMEFORMATLOCALE": "project",
                 "USERGROUPUSERS_TIMEZONE": "project"
             },
             "__SystemUser": {
                 "USERGROUPUSERS_AUTO_LOGOFF": "PT0S",
+                "USERGROUPUSERS_FORCE_PASSWORD_CHANGE": false,
                 "USERGROUPUSERS_GROUPS": [
                     "__SystemUsers"
                 ],
-                "USERGROUPUSERS_LOCALE": "project",
+                "USERGROUPUSERS_LOCALE": "en",
                 "USERGROUPUSERS_TIMEFORMATLOCALE": "project",
                 "USERGROUPUSERS_TIMEZONE": "project"
             }
@@ -11341,17 +11779,19 @@
     "VIDEOSEGMENTSIZE": 1048576,
     "VIRTUALDIRECTORIES": {
         "/": "..\\..\\TwinCAT-HMI-CNC\\",
-        "/Beckhoff.TwinCAT.HMI.Analytics.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Framework.1.36.88\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.Analytics.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Framework.1.36.98\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.Analytics.Interactive": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Interactive.1.36.98\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.BaseTemplate": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.BaseTemplate.14.4.4\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.CNC.Base": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Base.0.0.155\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.CNC.Base": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Base.1.0.1\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Controls": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Controls.14.6.20\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnosticsControl.14.4.3\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Framework.14.4.42\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Functions": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Functions.14.4.3\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.PDFViewer": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.PDFViewer.14.4.4\\runtimes\\native1.12-tchmi",
-        "/PDFs": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc\\Documents",
+        "/Beckhoff.TwinCAT.HMI.ResponsiveNavigation": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.ResponsiveNavigation.14.3.348\\runtimes\\native1.12-tchmi",
         "/TcHmiCncComponentsFolder": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc",
-        "/TcHmiCncFileFolder": "c:\\cnc",
+        "/TcHmiCncFileFolder": "C:\\cnc",
+        "/TcHmiCncPDFs": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc\\Documents",
         "/bin": "..\\..\\TwinCAT-HMI-CNC\\bin\\"
     }
 }

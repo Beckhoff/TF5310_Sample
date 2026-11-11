@@ -1,37 +1,7 @@
 <div id="Settings" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-height-mode="Value" data-tchmi-width-mode="Value" data-tchmi-creator-viewport-width="1920">
 
             
-    <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
-        [
-          {
-            "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onAttached",
-            "actions": [
-              {
-                "objectType": "JavaScript",
-                "active": true,
-                "sourceLines": [
-                  "var settingsCtl = TcHmi.Controls.get(\"TcHmiAppSettingsControl_10\");",
-                  "if (settingsCtl !== undefined) {",
-                  "    TcHmi.Functions.TcHmiCncBase.ModuleNames(\"\", (data) => {",
-                  "        var moduleNames = data.split(\"|\");",
-                  "        if (moduleNames && moduleNames.length > 0) {",
-                  "            settingsCtl.setSrc(moduleNames[0]);",
-                  "            }",
-                  "                                                 ",
-                  "        TcHmi.Functions.TcHmiCncBase.ShowModules(\"TcHmiTreeView_10\", data);",
-                  "    });",
-                  "}"
-                ],
-                "asyncWait": true,
-                "waitMode": "Synchronous"
-              }
-            ]
-          }
-        ]
-    </script>
-    <div id="TcHmiCncScaleRegions_5" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncScaleRegions" data-tchmi-cell-wrap="False" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
-<div id="TcHmiCncSettings_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncSettings" data-tchmi-height-unit="%" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="%" data-tchmi-settings-treeview-jsontree="%s%CNC.Settings|Interval=100|UniqueHash=True%/s%" data-tchmi-settings-treeview-hierarchical-data-property="subSections" data-tchmi-settings-treeview-hierarchical-name-data-property="name" data-tchmi-left="10" data-tchmi-top="10" data-tchmi-width="98.9" data-tchmi-height="100">
-
+    <div id="TcHmiCncSettings_2" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncSettings" data-tchmi-height-unit="%" data-tchmi-left-unit="px" data-tchmi-top-unit="px" data-tchmi-width-unit="%" data-tchmi-settings-treeview-jsontree="%s%CNC.Settings|Interval=100|UniqueHash=True%/s%" data-tchmi-settings-treeview-hierarchical-data-property="subSections" data-tchmi-settings-treeview-hierarchical-name-data-property="name" data-tchmi-left="0" data-tchmi-top="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-grid-row-index="0" data-tchmi-grid-column-index="0">
 <script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
 [
   {
@@ -68,63 +38,6 @@
     "accessright": "operate",
     "group": "AdvancedOperators",
     "permission": "Deny"
-  }
-]
-</script>
-</div>
-
-<script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
-[
-  {
-    "overflow": false,
-    "width": 1000.0,
-    "widthMode": "Value",
-    "widthUnit": "px"
-  },
-  {
-    "width": 1,
-    "widthMode": "Value",
-    "widthUnit": "factor"
-  }
-]
-</script>
-
-<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
-[
-  {
-    "accessright": "operate",
-    "group": "__SystemUsers",
-    "permission": "Deny"
-  },
-  {
-    "accessright": "operate",
-    "group": "__SystemMaintenanceUsers",
-    "permission": "Deny"
-  },
-  {
-    "accessright": "operate",
-    "group": "__SystemGuests",
-    "permission": "Deny"
-  },
-  {
-    "accessright": "operate",
-    "group": "Viewers",
-    "permission": "Deny"
-  },
-  {
-    "accessright": "operate",
-    "group": "Operators",
-    "permission": "Allow"
-  },
-  {
-    "accessright": "operate",
-    "group": "AdvancedOperators",
-    "permission": "Allow"
-  },
-  {
-    "accessright": "operate",
-    "group": "Admins",
-    "permission": "Allow"
   }
 ]
 </script>

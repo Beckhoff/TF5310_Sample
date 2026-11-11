@@ -23,7 +23,7 @@
     <HmiCommunicationRouterPort>10142</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13000</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.42</HmiInitial>
-    <HmiRecent>14.19.7.1</HmiRecent>
+    <HmiRecent>14.19.60.1</HmiRecent>
     <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
     <HmiServerNodeAdvancedSettingsView>True</HmiServerNodeAdvancedSettingsView>
     <NuGetPackageImportStamp>
@@ -56,8 +56,8 @@
     <PlatformTarget>TwinCAT HMI</PlatformTarget>
     <DefaultNamespace>TwinCAT_HMI_CNC</DefaultNamespace>
     <ServerParameters />
-    <HmiCommunicationServerPort>3099</HmiCommunicationServerPort>
-    <HmiCommunicationServerAuthPort>13006</HmiCommunicationServerAuthPort>
+    <HmiCommunicationServerPort>3129</HmiCommunicationServerPort>
+    <HmiCommunicationServerAuthPort>13007</HmiCommunicationServerAuthPort>
     <HmiCommunicationRouterPort>10291</HmiCommunicationRouterPort>
     <ListenOnAllInterfaces>False</ListenOnAllInterfaces>
     <HmiCommunicationServerPublicPort>3443</HmiCommunicationServerPublicPort>
@@ -241,36 +241,6 @@
     <Content Include="KeyboardLayouts\United States-International - with NumPad.keyboard.json">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Localization\cnc-CncAdditional-de.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncAdditional-en.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncKinematicOptimization-de.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncKinematicOptimization-en.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncMeasurement-de.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncMeasurement-en.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncMillingBase-de.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-CncMillingBase-en.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc-en.localization">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Localization\cnc.de.localization">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Pages\CNCEvents.content">
       <SubType>Content</SubType>
     </Content>
@@ -305,15 +275,15 @@
     <Content Include="Pages\Diagnosis\EtherCATDiagnosis.content">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Pages\FileExplorer.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Pages\MachineControl.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Pages\Settings.content">
       <SubType>Content</SubType>
       <Cache>False</Cache>
-    </Content>
-    <Content Include="ReadUrlParameter.js">
-      <SubType>Content</SubType>
     </Content>
     <Content Include="Server\ADS\ADS.Config.default.json">
       <SubType>Content</SubType>
@@ -636,6 +606,10 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Desktop.view">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="CNC_Baselayout.alylayout">
       <SubType>Content</SubType>
       <Visible>true</Visible>
     </Content>

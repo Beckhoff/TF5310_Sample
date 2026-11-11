@@ -6,7 +6,7 @@
 <script data-tchmi-target-attribute="data-tchmi-tabs" type="application/json">
 [
   {
-    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-CNCDiagData', 'CNC Diag Data')%/f%",
+    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncDiagnose-CNCDiagData', 'CNC Diag Data')%/f%",
     "icon": {
       "iconPath": "Images/cncdiagnosis.svg",
       "scaleHeight": 1.3,
@@ -15,7 +15,7 @@
     "targetContent": "Pages/Diagnosis/CNCDiagData.content"
   },
   {
-    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-EtherCATDiagnosis', 'EtherCAT Diagnosis')%/f%",
+    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncDiagnose-EtherCATDiagnosis', 'EtherCAT Diagnosis')%/f%",
     "icon": {
       "iconPath": "Images/ethercat.svg",
       "scaleHeight": 1.3,
@@ -24,7 +24,7 @@
     "targetContent": "Pages/Diagnosis/EtherCATDiagnosis.content"
   },
   {
-    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncMain-IPCDiagnosis', 'IPC Diagnosis')%/f%",
+    "displayName": "%f%GetLocalizedTextCnc('TcHmiCncDiagnose-IPCDiagnosis', 'IPC Diagnosis')%/f%",
     "icon": {
       "iconPath": "Images/ipcdiagnosis.svg",
       "scaleHeight": 1.3,

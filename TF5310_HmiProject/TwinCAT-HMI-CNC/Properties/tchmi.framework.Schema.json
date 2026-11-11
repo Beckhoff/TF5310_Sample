@@ -11358,6 +11358,475 @@
       "frameworkControlType": "Charting",
       "frameworkControlNamespace": "TcHmi.Controls.Analytics"
     },
+    "TcHmi.Controls.Analytics.ContentSearch": {
+      "type": "object",
+      "frameworkInstanceOf": "ContentSearch",
+      "frameworkControlType": "ContentSearch",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.ControlSymbol": {
+      "allOf": [
+        {
+          "$ref": "tchmi:framework#/definitions/Symbol"
+        },
+        {
+          "frameworkSymbolSubType": {
+            "$ref": "tchmi:framework#/definitions/Control"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.Analytics.InteractiveContentManager": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "InteractiveContentManager",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigationItem": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "InteractiveNavigationItem",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigation": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.Analytics.AnalyticsControl",
+      "frameworkControlType": "InteractiveNavigation",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigation.NavigationItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "NavigationItemList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "NavigationItem",
+        "description": "One entry in the navigation bar",
+        "engineeringColumns": [
+          "name",
+          "page",
+          "parameter"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "name",
+            "displayName": "Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Name of the menu entry",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "page",
+            "displayName": "Page",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Page that should be called if the entry was pressed",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "parameter",
+            "displayName": "Parameter",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Free selectable parameter that can be read if the onPageCalled event is called",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "subtitle",
+            "displayName": "Subtitle",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Subtitle that is shown in the optional drop-down navigation content",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "image",
+            "displayName": "Image",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Optional image that is shown on the left side of the menu entry",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageWidth",
+            "displayName": "Image Width",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Width of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageWidthUnit",
+            "displayName": "Image Width Unit",
+            "refTo": "imageWidth",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Width unit of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageHeight",
+            "displayName": "Image Height",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Height of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageHeightUnit",
+            "displayName": "Image Height Unit",
+            "refTo": "imageHeight",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Height unit of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "children",
+            "displayName": "Children",
+            "category": "Children",
+            "displayPriority": 10,
+            "description": "Sub column entries for the optional drop-down content",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "accessRight",
+            "displayName": "Access Right",
+            "category": "AccessRights",
+            "displayPriority": 10,
+            "description": "Access rights of the menu entry for user management",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "page": {
+            "$ref": "tchmi:framework#/definitions/ContentPath"
+          },
+          "parameter": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "image": {
+            "$ref": "tchmi:framework#/definitions/Path"
+          },
+          "imageWidth": {
+            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+          },
+          "imageWidthUnit": {
+            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+          },
+          "imageHeight": {
+            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+          },
+          "imageHeightUnit": {
+            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+          },
+          "children": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Analytics.InteractiveNavigation.ColumnItemList"
+          },
+          "accessRight": {
+            "$ref": "tchmi:framework#/definitions/AccessConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigation.ColumnItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "ColumnItemList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "ColumnItem",
+        "description": "One column entry in the drop-down menu",
+        "engineeringColumns": [
+          "name"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "name",
+            "displayName": "Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Name of the column",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "showColumnName",
+            "displayName": "Show Column Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "If it is set, the name of the column is shown in the content in bold font.",
+            "defaultValue": true,
+            "defaultValueInternal": true
+          },
+          {
+            "name": "children",
+            "category": "Children",
+            "displayName": "Children",
+            "displayPriority": 10,
+            "description": "Optional sub page entries for the column",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "accessRight",
+            "displayName": "Access Right",
+            "category": "AccessRights",
+            "displayPriority": 10,
+            "description": "Access rights of the column entry for user management",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "showColumnName": {
+            "type": "boolean"
+          },
+          "children": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Analytics.InteractiveNavigation.RowItemList"
+          },
+          "accessRight": {
+            "$ref": "tchmi:framework#/definitions/AccessConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigation.RowItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "RowItemList",
+      "type": "array",
+      "items": {
+        "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Analytics.InteractiveNavigation.RowItem"
+      }
+    },
+    "TcHmi.Controls.Analytics.InteractiveNavigation.RowItem": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "object",
+      "title": "RowItem",
+      "description": "Row entry in the current column",
+      "engineeringColumns": [
+        "name",
+        "page",
+        "parameter"
+      ],
+      "propertiesMeta": [
+        {
+          "name": "name",
+          "displayName": "Name",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Name of the row item",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "page",
+          "displayName": "Page",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Page that should be called if the entry was pressed",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "parameter",
+          "displayName": "Parameter",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Free selectable parameter that can be read if the onPageCalled event is called",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "image",
+          "displayName": "Image",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Optional image that is shown on the left side of the menu entry",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageWidth",
+          "displayName": "Image Width",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Width of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageWidthUnit",
+          "displayName": "Image Width Unit",
+          "refTo": "imageWidth",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Width unit of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageHeight",
+          "displayName": "Image Height",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Height of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageHeightUnit",
+          "displayName": "Image Height Unit",
+          "refTo": "imageHeight",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Height unit of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "children",
+          "displayName": "Children",
+          "category": "Children",
+          "displayPriority": 10,
+          "description": "Optional sub-entries for the row item",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "accessRight",
+          "displayName": "Access Right",
+          "category": "AccessRights",
+          "displayPriority": 10,
+          "description": "Access rights of the menu entry for user management",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        }
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "page": {
+          "$ref": "tchmi:framework#/definitions/ContentPath"
+        },
+        "parameter": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "tchmi:framework#/definitions/Path"
+        },
+        "imageWidth": {
+          "$ref": "tchmi:framework#/definitions/MeasurementValue"
+        },
+        "imageWidthUnit": {
+          "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+        },
+        "imageHeight": {
+          "$ref": "tchmi:framework#/definitions/MeasurementValue"
+        },
+        "imageHeightUnit": {
+          "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+        },
+        "children": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Analytics.InteractiveNavigation.RowItemList"
+        },
+        "accessRight": {
+          "$ref": "tchmi:framework#/definitions/AccessConfig"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
+    },
+    "TcHmi.Controls.Analytics.RegionSymbol": {
+      "allOf": [
+        {
+          "$ref": "tchmi:framework#/definitions/Symbol"
+        },
+        {
+          "frameworkSymbolSubType": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.Analytics.UserPermissionPopup": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "UserPermissionPopup",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.ServerConfigPopup": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "ServerConfigPopup",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.Menu": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.Analytics.AnalyticsControl",
+      "frameworkControlType": "Menu",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.Menu.ViewType": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "ViewType",
+      "type": "string",
+      "enum": [
+        "Desktop",
+        "Tablet",
+        "Mobile"
+      ]
+    },
+    "TcHmi.Controls.Analytics.SourceManagerPopup": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "SourceManagerPopup",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.LayoutControllerPopup": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "LayoutControllerPopup",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
+    "TcHmi.Controls.Analytics.DataChart": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "DataChart",
+      "frameworkControlNamespace": "TcHmi.Controls.Analytics"
+    },
     "TcHmi.Controls.BaseTemplate.TcHmiAccordionNavigation": {
       "type": "object",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
@@ -11572,7 +12041,7 @@
       "frameworkControlNamespace": "TcHmi.Controls.BaseTemplate"
     },
     "TcHmiBreadcrumb": {
-      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.BaseTemplate.TcHmiBreadcrumb"
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb"
     },
     "TcHmi.Controls.BaseTemplate.TcHmiBurgerMenu": {
       "type": "object",
@@ -13893,7 +14362,26 @@
       "frameworkControlType": "TcHmiCncTechnoData",
       "frameworkControlNamespace": "TcHmi.Controls.TcHmiCncBase"
     },
+    "CNC-FileExplorerMode": {
+      "type": "string",
+      "description": "Designer modes. PickFile is available only through the TypeScript API.",
+      "enum": [
+        "Browse",
+        "SelectProgram"
+      ],
+      "options": [
+        {
+          "value": "Browse",
+          "label": null
+        },
+        {
+          "value": "SelectProgram",
+          "label": null
+        }
+      ]
+    },
     "TcHmi.Controls.TcHmiCncBase.TcHmiCncFileExplorer": {
+      "properties": {},
       "type": "object",
       "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
       "frameworkControlType": "TcHmiCncFileExplorer",
@@ -14434,7 +14922,8 @@
           "description": "Name to be displayed for the tab"
         },
         "targetContent": {
-          "$ref": "tchmi:framework#/definitions/ContentPath",
+          "$id": "tchmi:framework#/definitions/ContentPath",
+          "type": "string",
           "title": "Content",
           "description": "Content to be shown by this tab"
         },
@@ -14446,7 +14935,8 @@
         "icon": {
           "properties": {
             "iconPath": {
-              "$ref": "tchmi:framework#/definitions/Path",
+              "$id": "tchmi:framework#/definitions/Path",
+              "type": "string",
               "title": "Icon Path",
               "description": "Path of the icon to be displayed"
             },
@@ -14573,6 +15063,504 @@
       "enum": [
         "Select",
         "Hand"
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiNavigationBar",
+      "frameworkControlNamespace": "TcHmi.Controls.ResponsiveNavigation"
+    },
+    "TcHmiNavigationBar": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar"
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.Alignment": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "NavigationBarAlignment",
+      "type": "string",
+      "enum": [
+        "Top",
+        "Bottom"
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.MenuItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "MenuItemList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "MenuItem",
+        "description": "One entry in the navigation bar",
+        "engineeringColumns": [
+          "name",
+          "page",
+          "parameter"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "name",
+            "displayName": "Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Name of the menu entry",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "page",
+            "displayName": "Page",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Page that should be called if the entry was pressed",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "parameter",
+            "displayName": "Parameter",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Free selectable parameter that can be read if the onPageCalled event is called",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "subtitle",
+            "displayName": "Subtitle",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Subtitle that is shown in the optional drop-down navigation content",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "image",
+            "displayName": "Image",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Optional image that is shown on the left side of the menu entry",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageWidth",
+            "displayName": "Image Width",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Width of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageWidthUnit",
+            "displayName": "Image Width Unit",
+            "refTo": "imageWidth",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Width unit of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageHeight",
+            "displayName": "Image Height",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Height of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "imageHeightUnit",
+            "displayName": "Image Height Unit",
+            "refTo": "imageHeight",
+            "category": "Image",
+            "displayPriority": 10,
+            "description": "Height unit of the image",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "children",
+            "displayName": "Children",
+            "category": "Children",
+            "displayPriority": 10,
+            "description": "Sub column entries for the optional drop-down content",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "accessRight",
+            "displayName": "Access Right",
+            "category": "AccessRights",
+            "displayPriority": 10,
+            "description": "Access rights of the menu entry for user management",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "page": {
+            "$ref": "tchmi:framework#/definitions/ContentPath"
+          },
+          "parameter": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "image": {
+            "$ref": "tchmi:framework#/definitions/Path"
+          },
+          "imageWidth": {
+            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+          },
+          "imageWidthUnit": {
+            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+          },
+          "imageHeight": {
+            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+          },
+          "imageHeightUnit": {
+            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+          },
+          "children": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.ColumnItemList"
+          },
+          "accessRight": {
+            "$ref": "tchmi:framework#/definitions/AccessConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.ColumItemList": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.ColumnItemList"
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.ColumnItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "ColumnItemList",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "ColumnItem",
+        "description": "One column entry in the drop-down menu",
+        "engineeringColumns": [
+          "name"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "name",
+            "displayName": "Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "Name of the column",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "showColumnName",
+            "displayName": "Show Column Name",
+            "category": "General",
+            "displayPriority": 10,
+            "description": "If it is set, the name of the column is shown in the content in bold font.",
+            "defaultValue": true,
+            "defaultValueInternal": true
+          },
+          {
+            "name": "children",
+            "category": "Children",
+            "displayName": "Children",
+            "displayPriority": 10,
+            "description": "Optional sub page entries for the column",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          },
+          {
+            "name": "accessRight",
+            "displayName": "Access Right",
+            "category": "AccessRights",
+            "displayPriority": 10,
+            "description": "Access rights of the column entry for user management",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "showColumnName": {
+            "type": "boolean"
+          },
+          "children": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.RowItemList"
+          },
+          "accessRight": {
+            "$ref": "tchmi:framework#/definitions/AccessConfig"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.RowItemList": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "title": "RowItemList",
+      "type": "array",
+      "items": {
+        "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.RowItem"
+      }
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.RowItem": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "object",
+      "title": "RowItem",
+      "description": "Row entry in the current column",
+      "engineeringColumns": [
+        "name",
+        "page",
+        "parameter"
+      ],
+      "propertiesMeta": [
+        {
+          "name": "name",
+          "displayName": "Name",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Name of the row item",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "page",
+          "displayName": "Page",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Page that should be called if the entry was pressed",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "parameter",
+          "displayName": "Parameter",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Free selectable parameter that can be read if the onPageCalled event is called",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "image",
+          "displayName": "Image",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Optional image that is shown on the left side of the menu entry",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageWidth",
+          "displayName": "Image Width",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Width of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageWidthUnit",
+          "displayName": "Image Width Unit",
+          "refTo": "imageWidth",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Width unit of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageHeight",
+          "displayName": "Image Height",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Height of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "imageHeightUnit",
+          "displayName": "Image Height Unit",
+          "refTo": "imageHeight",
+          "category": "Image",
+          "displayPriority": 10,
+          "description": "Height unit of the image",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "children",
+          "displayName": "Children",
+          "category": "Children",
+          "displayPriority": 10,
+          "description": "Optional sub-entries for the row item",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "accessRight",
+          "displayName": "Access Right",
+          "category": "AccessRights",
+          "displayPriority": 10,
+          "description": "Access rights of the menu entry for user management",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        }
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "page": {
+          "$ref": "tchmi:framework#/definitions/ContentPath"
+        },
+        "parameter": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "tchmi:framework#/definitions/Path"
+        },
+        "imageWidth": {
+          "$ref": "tchmi:framework#/definitions/MeasurementValue"
+        },
+        "imageWidthUnit": {
+          "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+        },
+        "imageHeight": {
+          "$ref": "tchmi:framework#/definitions/MeasurementValue"
+        },
+        "imageHeightUnit": {
+          "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+        },
+        "children": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.RowItemList"
+        },
+        "accessRight": {
+          "$ref": "tchmi:framework#/definitions/AccessConfig"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.BreadCrumbControlSymbol": {
+      "allOf": [
+        {
+          "$ref": "tchmi:framework#/definitions/Symbol"
+        },
+        {
+          "frameworkSymbolSubType": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.NavigationContentControlSymbol": {
+      "allOf": [
+        {
+          "$ref": "tchmi:framework#/definitions/Symbol"
+        },
+        {
+          "frameworkSymbolSubType": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationContent"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.TargetRegionControlSymbol": {
+      "allOf": [
+        {
+          "$ref": "tchmi:framework#/definitions/Symbol"
+        },
+        {
+          "frameworkSymbolSubType": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion"
+          }
+        }
+      ]
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.PageEventObject": {
+      "type": "object",
+      "properties": {
+        "parameter": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "page": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "TcHmiNavigationBarPageEventObject": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationBar.PageEventObject"
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationContent": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiNavigationContent",
+      "frameworkControlNamespace": "TcHmi.Controls.ResponsiveNavigation"
+    },
+    "TcHmiNavigationContent": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiNavigationContent"
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb": {
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiBreadcrumb",
+      "frameworkControlNamespace": "TcHmi.Controls.ResponsiveNavigation"
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb.Path": {
+      "type": "array",
+      "items": {
+        "$ref": "tchmi:framework#/definitions/TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb.PathElement"
+      }
+    },
+    "TcHmi.Controls.ResponsiveNavigation.TcHmiBreadcrumb.PathElement": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "page": {
+          "$ref": "tchmi:framework#/definitions/ContentPath"
+        },
+        "data": {
+          "type": "string"
+        },
+        "clickable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "name"
       ]
     },
     "TcHmi.Functions.BaseTemplate.MediaQueryList": {

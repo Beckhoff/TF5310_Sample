@@ -11,5 +11,30 @@
 
 </div>
 <div id="TcHmiCncChannelStatus_4" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncChannelStatus" data-tchmi-channelstatus-stopconditionsfilter1="0x1000 | 0x200" data-tchmi-channelstatus-stopconditionsfilter2="0b10000000" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="5" data-tchmi-left-unit="px" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-right="5" data-tchmi-channelstatus-stopconditions2="%s%CNC.Data.ChannelClientSelected.StopConditions2%/s%" data-tchmi-channelstatus-channelmode="%s%CNC.Data.ChannelClientSelected.Mode%/s%" data-tchmi-channelstatus-channelstate="%s%CNC.Data.ChannelClientSelected.State%/s%" data-tchmi-channelstatus-stopconditions1="%s%CNC.Data.ChannelClientSelected.StopConditions1%/s%">
+
+<script data-tchmi-target-attribute="data-tchmi-access-config" type="application/json">
+[
+  {
+    "accessright": "operate",
+    "group": "Admins",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "AdvancedOperators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Operators",
+    "permission": "Allow"
+  },
+  {
+    "accessright": "operate",
+    "group": "Viewers",
+    "permission": "Allow"
+  }
+]
+</script>
 </div>
 </div>

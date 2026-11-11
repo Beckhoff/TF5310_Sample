@@ -52,11 +52,6 @@
   },
   "dependencyFiles": [
     {
-      "name": "ReadUrlParameter.js",
-      "description": "",
-      "type": "JavaScript"
-    },
-    {
       "name": "Fonts/Fonts.css",
       "description": "",
       "type": "Stylesheet"
@@ -143,6 +138,13 @@
       "preloadBindings": false
     },
     {
+      "url": "Pages/FileExplorer.content",
+      "preload": false,
+      "keepAlive": false,
+      "loadSync": false,
+      "preloadBindings": false
+    },
+    {
       "url": "Pages/MachineControl.content",
       "preload": false,
       "keepAlive": false,
@@ -176,22 +178,8 @@
   "trigger": [],
   "actionTemplates": [],
   "languages": {
-    "de": [
-      "Localization/cnc-CncAdditional-de.localization",
-      "Localization/cnc-CncKinematicOptimization-de.localization",
-      "Localization/cnc-CncMeasurement-de.localization",
-      "Localization/cnc-CncMillingBase-de.localization",
-      "Localization/cnc.de.localization",
-      "Localization/de.localization"
-    ],
-    "en": [
-      "Localization/cnc-CncAdditional-en.localization",
-      "Localization/cnc-CncKinematicOptimization-en.localization",
-      "Localization/cnc-CncMeasurement-en.localization",
-      "Localization/cnc-CncMillingBase-en.localization",
-      "Localization/cnc-en.localization",
-      "Localization/en.localization"
-    ]
+    "de": "Localization/de.localization",
+    "en": "Localization/en.localization"
   },
   "languageFallback": "",
   "disableLoadingOptimization": false,
@@ -209,6 +197,13 @@
     {
       "name": "Beckhoff.TwinCAT.HMI.Analytics.Framework",
       "basePath": "/Beckhoff.TwinCAT.HMI.Analytics.Framework",
+      "symbols": {
+        "package": {}
+      }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.Analytics.Interactive",
+      "basePath": "/Beckhoff.TwinCAT.HMI.Analytics.Interactive",
       "symbols": {
         "package": {}
       }
@@ -261,6 +256,13 @@
       "symbols": {
         "package": {}
       }
+    },
+    {
+      "name": "Beckhoff.TwinCAT.HMI.ResponsiveNavigation",
+      "basePath": "/Beckhoff.TwinCAT.HMI.ResponsiveNavigation",
+      "symbols": {
+        "package": {}
+      }
     }
   ],
   "keyboardLayouts": [
@@ -300,14 +302,12 @@
       "de": {
         "text": "KeyboardLayouts/German - CNC with NumPad.keyboard.json",
         "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
-        "numeric": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
-        "cncpad": "KeyboardLayouts/CNCpad - compact.keyboard.json"
+        "numeric": "KeyboardLayouts/Numpad (plusminus).keyboard.json"
       },
       "en": {
         "text": "KeyboardLayouts/United States-International - CNC with NumPad.keyboard.json",
         "decimal": "KeyboardLayouts/Numpad (plusminus).keyboard.json",
-        "numeric": "",
-        "cncpad": "KeyboardLayouts/CNCpad - compact.keyboard.json"
+        "numeric": "KeyboardLayouts/Numpad (plusminus).keyboard.json"
       }
     },
     "layout": {

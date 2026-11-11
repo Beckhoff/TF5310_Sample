@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.10.12217.157
+VisualStudioVersion = 18.11.12328.437 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FE7A1B72-C5B7-4D7C-BB7D-76384D4DE8E1}") = "TwinCAT-HMI-CNC", "TwinCAT-HMI-CNC\TwinCAT-HMI-CNC.hmiproj", "{CCC3B865-0D86-46AC-8338-9FB7A1893231}"
 EndProject
