@@ -49,7 +49,8 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
 
 ### Step-By-Step Repo Setup:
 
-1. Download this repository and place it in your desired engineering project folder location.
+1. Download this repository and place it in your desired engineering project folder location. 
+   Be aware of the Windows Path Default-Limit of 260 characters. It is recommended to use a shallow folder structure like "C:/Downloads". Or change the Limit with the Registry-Key "LongPathsEnabled".
 
 2. Run ".\TF5310_HmiProject\TwinCAT-HMI-CNC\downloadPackages.ps1" to download the required TcPkg packages.
       - This script will install the required TcPkg packages for the TwinCAT HMI CNC project.
