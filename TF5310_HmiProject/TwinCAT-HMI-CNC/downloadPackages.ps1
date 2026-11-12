@@ -4,6 +4,71 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+Write-Host 'Starting package installation...'
+Write-Host
+
+function Get-InstalledTcpkgPackage {
+	param([string]$PackageName)
+
+	$installedPackagesJson = & tcpkg list --installed --all --include-prereleases --exact $PackageName --as-json
+	if ($LASTEXITCODE -ne 0) {
+		throw "tcpkg list failed for $PackageName (exit $LASTEXITCODE)."
+	}
+
+	($installedPackagesJson | ConvertFrom-Json -ErrorAction Stop) |
+		Where-Object { $_.Id -eq $PackageName }
+}
+
+function Test-InstalledTcpkgPackage {
+	param(
+		[string]$PackageName,
+		[string]$PackageVersion
+	)
+
+	$matchingPackages = @(Get-InstalledTcpkgPackage -PackageName $PackageName |
+		Where-Object { $_.Version -eq $PackageVersion })
+	return $matchingPackages.Count -gt 0
+}
+
+function Compare-TcpkgVersion {
+	param([string]$Left, [string]$Right)
+
+	$pattern = '\A(?<Core>[0-9]+(?:\.[0-9]+){1,3})(?:-(?<Pre>[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?\z'
+	if ($Left -notmatch $pattern) { throw "Invalid installed package version: '$Left'" }
+	$leftCore = $Matches.Core.Split('.')
+	$leftPre = $Matches.Pre
+	if ($Right -notmatch $pattern) { throw "Invalid requested package version: '$Right'" }
+	$rightCore = $Matches.Core.Split('.')
+	$rightPre = $Matches.Pre
+
+	for ($i = 0; $i -lt 4; $i++) {
+		$leftNumber = if ($i -lt $leftCore.Count) { [decimal]$leftCore[$i] } else { 0 }
+		$rightNumber = if ($i -lt $rightCore.Count) { [decimal]$rightCore[$i] } else { 0 }
+		if ($leftNumber -ne $rightNumber) { return $leftNumber.CompareTo([decimal]$rightNumber) }
+	}
+	if (-not $leftPre -and -not $rightPre) { return 0 }
+	if (-not $leftPre) { return 1 }
+	if (-not $rightPre) { return -1 }
+
+	$leftParts = $leftPre.Split('.')
+	$rightParts = $rightPre.Split('.')
+	for ($i = 0; $i -lt [Math]::Min($leftParts.Count, $rightParts.Count); $i++) {
+		$leftNumeric = $leftParts[$i] -match '\A[0-9]+\z'
+		$rightNumeric = $rightParts[$i] -match '\A[0-9]+\z'
+		if ($leftNumeric -and $rightNumeric) {
+			$comparison = ([decimal]$leftParts[$i]).CompareTo([decimal]$rightParts[$i])
+		}
+		elseif ($leftNumeric -ne $rightNumeric) {
+			$comparison = if ($leftNumeric) { -1 } else { 1 }
+		}
+		else {
+			$comparison = [string]::CompareOrdinal($leftParts[$i], $rightParts[$i])
+		}
+		if ($comparison -ne 0) { return $comparison }
+	}
+	return $leftParts.Count.CompareTo($rightParts.Count)
+}
+
 try {
 $packageMapping = @{
 	'Beckhoff.TwinCAT.HMI.Analytics.ControlsExtension' = 'TwinCAT.HMI.AnalyticsControls'
@@ -62,6 +127,38 @@ foreach ($tcpkgName in $installVersions.Keys) {
 }
 
 $installFailures = [System.Collections.Generic.List[string]]::new()
+$packageCheckFailures = @{}
+$downgradePackages = [System.Collections.Generic.List[string]]::new()
+foreach ($tcpkgName in $installVersions.Keys) {
+	try {
+		$packageVersion = $installVersions[$tcpkgName]
+		$installedPackages = @(Get-InstalledTcpkgPackage -PackageName $tcpkgName)
+		if (@($installedPackages | Where-Object { $_.Version -eq $packageVersion }).Count -gt 0) {
+			continue
+		}
+		$newerPackages = @($installedPackages | Where-Object {
+			(Compare-TcpkgVersion -Left $_.Version -Right $packageVersion) -gt 0
+		})
+		if ($newerPackages.Count -gt 0) {
+			$downgradePackages.Add("$tcpkgName`: installed $($newerPackages.Version -join ', '); requested $packageVersion")
+		}
+	}
+	catch {
+		$packageCheckFailures[$tcpkgName] = $true
+		$installFailures.Add("Could not check ${tcpkgName}: $($_.Exception.Message)")
+	}
+}
+
+$allowDowngrade = $false
+if ($downgradePackages.Count -gt 0) {
+	Write-Host "These packages have newer versions installed:"
+	$downgradePackages | ForEach-Object { Write-Host "- $_" }
+	Write-Host
+	$downgradeAnswer = Read-Host 'Allow all listed downgrades? Newer versions may be replaced. Choose n to skip these packages. [y/n]'
+	$allowDowngrade = $downgradeAnswer -match '\A(?i:y|yes)\z'
+	Write-Host
+}
+
 $workloadName = 'TE2000.HMIEngineering.XAE'
 Write-Host "Checking latest version of $workloadName"
 try {
@@ -113,21 +210,44 @@ catch {
 Write-Host
 $isFirstInstall = $true
 foreach ($tcpkgName in $installVersions.Keys) {
+	if ($packageCheckFailures.ContainsKey($tcpkgName)) {
+		continue
+	}
 	$packageVersion = $installVersions[$tcpkgName]
 	if (-not $isFirstInstall) {
 		Write-Host
 	}
 	$isFirstInstall = $false
-	Write-Host "Installing $tcpkgName=$packageVersion"
 	try {
-		& tcpkg install -y "$tcpkgName=$packageVersion"
+		$installedPackages = @(Get-InstalledTcpkgPackage -PackageName $tcpkgName)
+		if (@($installedPackages | Where-Object { $_.Version -eq $packageVersion }).Count -gt 0) {
+			Write-Host "$tcpkgName=$packageVersion is already installed"
+			continue
+		}
+
+		$newerPackages = @($installedPackages | Where-Object {
+			(Compare-TcpkgVersion -Left $_.Version -Right $packageVersion) -gt 0
+		})
+		if ($newerPackages.Count -gt 0 -and -not $allowDowngrade) {
+			Write-Host "Skipping $tcpkgName=$packageVersion because a newer version is installed and downgrades were not approved"
+			continue
+		}
+
+		Write-Host "Installing $tcpkgName=$packageVersion"
+		$installArguments = @('install', '-y', "$tcpkgName=$packageVersion")
+		if ($allowDowngrade) {
+			$installArguments += '--allow-downgrade'
+		}
+		& tcpkg @installArguments
+		if ($LASTEXITCODE -ne 0) {
+			throw "tcpkg install failed (exit $LASTEXITCODE). Check configured tcpkg sources and package availability."
+		}
+		if (-not (Test-InstalledTcpkgPackage -PackageName $tcpkgName -PackageVersion $packageVersion)) {
+			throw "tcpkg install completed but the requested version is not installed."
+		}
 	}
 	catch {
-		$installFailures.Add("tcpkg install could not run for ${tcpkgName}=${packageVersion}: $($_.Exception.Message)")
-		continue
-	}
-	if ($LASTEXITCODE -ne 0) {
-		$installFailures.Add("tcpkg install failed for $tcpkgName=$packageVersion (exit $LASTEXITCODE). Check configured tcpkg sources and package availability.")
+		$installFailures.Add("Could not install ${tcpkgName}=${packageVersion}: $($_.Exception.Message)")
 	}
 }
 
@@ -144,4 +264,6 @@ catch {
 }
 
 Write-Host
-Read-Host 'Package download completed. Press Enter to close'
+Write-Host 'Package download completed.'
+Write-Host
+Read-Host 'Press Enter to close'
