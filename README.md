@@ -1,41 +1,4 @@
-# TF5310 Samples (V1.0.0)
-
-## Introduction
-
-This repository currently contains two sample projects:
-
-- **TF5310_HmiProject** – a template HMI project for TE2000 (TwinCAT HMI), showcasing a CNC-oriented user interface.
-- **CNC Project 4 Axis and Spindle** – a sample TwinCAT PLC project implementing a 4-axis CNC channel with spindle control.
-
-## Getting Started
-
-### Prerequisites
-
-- Visual Studio 2022/2026 with the TwinCAT extension, or TwinCAT XAE
-- TwinCAT Package Manager (TcPkg), installed and configured (feeds, integration)
-- Licenses for TF5310 (TC3 CNC HMI Base) and the other required TwinCAT components (7-day trial licenses can be used for evaluation)
-
-### Repository Structure
-
-| Folder | Content |
-| --- | --- |
-| `TF5310_HmiProject/` | TwinCAT HMI solution (`TwinCAT-HMI-CNC.sln`) including the `downloadPackages.ps1` setup script |
-| `CNC Project 4 Axis and Spindle/` | TwinCAT project (`CNC Demo.tsproj`) with the CNC configuration and the `TC3_CNCPLCBase` PLC project |
-
-### Quick Start
-
-1. Clone or download this repository.
-2. Set up, build and activate the CNC PLC project (see [CNC PLC Project](#cnc-plc-project)).
-3. Install the required packages and open the HMI project (see [HMI Project](#hmi-project)).
-4. Start the HMI LiveView or publish the HMI to connect to the running CNC PLC project.
-
-## Build and Test
-
-The HMI project is the primary sample in this repository. The CNC PLC project is required alongside it, since it contains all the necessary CNC configuration and settings that the HMI connects to.
-
-### HMI Project
-
-### How to set up TwinCAT-HMI-CNC:
+# How to set up TwinCAT-HMI-CNC:
 
 Make sure you have Visual Studio 2022/2026 or TwinCAT XAE installed.  
 Make sure you have TwinCAT TcPkg installed and correctly configured. (Feed, Integration, etc.)  
@@ -49,14 +12,17 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
 
 ### Step-By-Step Repo Setup:
 
-1. Download this repository and place it in your desired engineering project folder location. 
-   Be aware of the Windows Path Default-Limit of 260 characters. It is recommended to use a shallow folder structure like "C:/Downloads". Or change the Limit with the Registry-Key "LongPathsEnabled".
+1. Download this repository and place it in your desired engineering project folder location.
 
-2. Run ".\TF5310_HmiProject\TwinCAT-HMI-CNC\downloadPackages.ps1" to download the required TcPkg packages.
+2. Run `TwinCAT-HMI-CNC\downloadPackages.ps1` to download the required TcPkg packages.
       - This script will install the required TcPkg packages for the TwinCAT HMI CNC project.
       - First it will install the TcHMI Engineering Workload and ask to update if newer versions are available.
       - Then it will proceed to install any additional required TcPkg packages for the TwinCAT HMI CNC project.
-      - Make sure you have PowerShell execution policy set to allow running scripts. You can set it by running `Set-ExecutionPolicy RemoteSigned` in an elevated PowerShell window, before executing the downloadPackages.ps1 script.
+      - In File Explorer, right-click the actual `TwinCAT-HMI-CNC\downloadPackages.ps1` and select **Copy as path**.
+      - In a PowerShell window, run `Unblock-File -LiteralPath "C:\path\to\downloadPackages.ps1"`, replacing the example path, including its quotes, with the copied quoted path. Only unblock scripts you trust.
+      - In the same PowerShell window, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned`. This setting lasts only until the window closes; administrator privileges are not required to set it.
+      - Launch the script with `& "C:\path\to\downloadPackages.ps1"`, replacing the example path with the same copied quoted path. 
+      - Follow any prompts that appear during the script execution to complete the installation of the required TcPkg packages.
 
 3. Open the TwinCAT HMI CNC project in Visual Studio or TwinCAT XAE.
       - Navigate to the project folder where you placed this repository.
@@ -66,15 +32,4 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
 4. Use the TwinCAT HMI CNC project like you would with any other TwinCAT HMI project.
       - LiveView, Publish, User-/Permission management, and other standard TwinCAT HMI functionalities.
 
-##### Refer to the TwinCAT HMI/CNC documentation for detailed guidance on using specific features and functionalities within the project.
-
-
-### CNC PLC Project
-
-1. Open `CNC Project 4 Axis and Spindle/CNC Demo.tsproj` in TwinCAT XAE (Visual Studio with the TwinCAT extension installed).
-2. Make sure the `TC3_CNCPLCBase` PLC project resolves its library references (see `_Libraries`); install any missing libraries through the TwinCAT Library Repository if needed.
-      - If problems occur while building the PLC project, right-click `TC3_CNCPLCBase` in the Solution Explorer and select **Install Project Libraries**. This installs the current libraries required by the project.
-3. Build and activate the PLC project on a local or remote TwinCAT runtime. It provides all the CNC settings and configuration required by the HMI project, so it must be running for the HMI to work correctly.
-
-
-
+### Refer to the TwinCAT HMI/CNC documentation for detailed guidance on using specific features and functionalities within the project.

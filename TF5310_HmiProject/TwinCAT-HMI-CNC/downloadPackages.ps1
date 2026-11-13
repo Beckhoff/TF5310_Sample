@@ -7,6 +7,23 @@ $ErrorActionPreference = 'Stop'
 Write-Host 'Starting package installation...'
 Write-Host
 
+function Read-YesNo {
+	param([string]$Prompt)
+
+	do {
+		$answer = Read-Host $Prompt
+		if ($null -eq $answer) {
+			throw 'Input ended before a yes/no answer was provided.'
+		}
+		$answer = $answer.Trim()
+		if ($answer -notmatch '\A(?i:y|yes|n|no)\z') {
+			Write-Host 'Please enter y or n.'
+		}
+	} while ($answer -notmatch '\A(?i:y|yes|n|no)\z')
+
+	return $answer -match '\A(?i:y|yes)\z'
+}
+
 function Get-InstalledTcpkgPackage {
 	param([string]$PackageName)
 
@@ -127,38 +144,6 @@ foreach ($tcpkgName in $installVersions.Keys) {
 }
 
 $installFailures = [System.Collections.Generic.List[string]]::new()
-$packageCheckFailures = @{}
-$downgradePackages = [System.Collections.Generic.List[string]]::new()
-foreach ($tcpkgName in $installVersions.Keys) {
-	try {
-		$packageVersion = $installVersions[$tcpkgName]
-		$installedPackages = @(Get-InstalledTcpkgPackage -PackageName $tcpkgName)
-		if (@($installedPackages | Where-Object { $_.Version -eq $packageVersion }).Count -gt 0) {
-			continue
-		}
-		$newerPackages = @($installedPackages | Where-Object {
-			(Compare-TcpkgVersion -Left $_.Version -Right $packageVersion) -gt 0
-		})
-		if ($newerPackages.Count -gt 0) {
-			$downgradePackages.Add("$tcpkgName`: installed $($newerPackages.Version -join ', '); requested $packageVersion")
-		}
-	}
-	catch {
-		$packageCheckFailures[$tcpkgName] = $true
-		$installFailures.Add("Could not check ${tcpkgName}: $($_.Exception.Message)")
-	}
-}
-
-$allowDowngrade = $false
-if ($downgradePackages.Count -gt 0) {
-	Write-Host "These packages have newer versions installed:"
-	$downgradePackages | ForEach-Object { Write-Host "- $_" }
-	Write-Host
-	$downgradeAnswer = Read-Host 'Allow all listed downgrades? Newer versions may be replaced. Choose n to skip these packages. [y/n]'
-	$allowDowngrade = $downgradeAnswer -match '\A(?i:y|yes)\z'
-	Write-Host
-}
-
 $workloadName = 'TE2000.HMIEngineering.XAE'
 Write-Host "Checking latest version of $workloadName"
 try {
@@ -179,8 +164,7 @@ try {
 		$outdatedWorkload = @(($outdatedWorkloadJson | ConvertFrom-Json -ErrorAction Stop) |
 			Where-Object { $_.Id -eq $workloadName })
 		if ($outdatedWorkload.Count -gt 0) {
-			$updateWorkload = Read-Host "A newer $workloadName version is available. Update it? [y/n]"
-			if ($updateWorkload -match '\A(?i:y|yes)\z') {
+			if (Read-YesNo "A newer $workloadName version is available. Update it? [y/n]") {
 				Write-Host "Updating $workloadName to the latest version"
 				& tcpkg upgrade -y $workloadName
 				$workloadAction = 'upgrade'
@@ -208,6 +192,40 @@ catch {
 }
 
 Write-Host
+Write-Host 'Starting project-specific packages...'
+Write-Host
+
+$packageCheckFailures = @{}
+$downgradePackages = [System.Collections.Generic.List[string]]::new()
+foreach ($tcpkgName in $installVersions.Keys) {
+	try {
+		$packageVersion = $installVersions[$tcpkgName]
+		$installedPackages = @(Get-InstalledTcpkgPackage -PackageName $tcpkgName)
+		if (@($installedPackages | Where-Object { $_.Version -eq $packageVersion }).Count -gt 0) {
+			continue
+		}
+		$newerPackages = @($installedPackages | Where-Object {
+			(Compare-TcpkgVersion -Left $_.Version -Right $packageVersion) -gt 0
+		})
+		if ($newerPackages.Count -gt 0) {
+			$downgradePackages.Add("$tcpkgName`: installed $($newerPackages.Version -join ', '); requested $packageVersion")
+		}
+	}
+	catch {
+		$packageCheckFailures[$tcpkgName] = $true
+		$installFailures.Add("Could not check ${tcpkgName}: $($_.Exception.Message)")
+	}
+}
+
+$allowDowngrade = $false
+if ($downgradePackages.Count -gt 0) {
+	Write-Host "These packages have newer versions installed:"
+	$downgradePackages | ForEach-Object { Write-Host "- $_" }
+	Write-Host
+	$allowDowngrade = Read-YesNo 'Allow all listed downgrades? Newer versions may be replaced if needed. Choose y to allow downgrades. [y/n]'
+	Write-Host
+}
+
 $isFirstInstall = $true
 foreach ($tcpkgName in $installVersions.Keys) {
 	if ($packageCheckFailures.ContainsKey($tcpkgName)) {
