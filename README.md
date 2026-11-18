@@ -35,3 +35,6 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
       - LiveView, Publish, User-/Permission management, and other standard TwinCAT HMI functionalities.
 
 ### Refer to the TwinCAT HMI/CNC documentation for detailed guidance on using specific features and functionalities within the project.
+
+- [TF5310 CNC HMI Base documentation (German)](https://download.beckhoff.com/download/document/automation/twincat3/TF5310_CNC_HMI_Base_DE.pdf)
+- English documentation: coming soon
