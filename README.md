@@ -17,7 +17,9 @@ A PLC-example is included in the repository under the "CNC Project 4 Axis and Sp
 2. Run `TwinCAT-HMI-CNC\downloadPackages.ps1` to download the required TcPkg packages.
       - This script will install the required TcPkg packages for the TwinCAT HMI CNC project.
       - First it will install the TcHMI Engineering Workload and ask to update if newer versions are available.
+      - Then it will check all active TcPkg feeds for newer versions of the project packages. If there are any, it lists them and asks whether to use them. If you accept, the newer versions are installed and the project configuration is updated to them.
       - Then it will proceed to install any additional required TcPkg packages for the TwinCAT HMI CNC project.
+      - If a project package is not installed in the version from `packages.config` but a newer version of it is, the script asks once whether to allow downgrades. Choose **y** to install the pinned version anyway; with **n** those packages are skipped and the newer installed version stays.
       - In File Explorer, right-click the actual `TwinCAT-HMI-CNC\downloadPackages.ps1` and select **Copy as path**.
       - In a PowerShell window, run `Unblock-File -LiteralPath "C:\path\to\downloadPackages.ps1"`, replacing the example path, including its quotes, with the copied quoted path. Only unblock scripts you trust.
       - In the same PowerShell window, run `Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned`. This setting lasts only until the window closes; administrator privileges are not required to set it.
