@@ -2,7 +2,7 @@
 
 
 
-<div id="TcHmiCncDetachableTabNavigation_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncDetachableTabNavigation" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%">
+<div id="TcHmiCncDetachableTabNavigation_3" data-tchmi-type="TcHmi.Controls.TcHmiCncBase.TcHmiCncDetachableTabNavigation" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0">
 <script data-tchmi-target-attribute="data-tchmi-tabs" type="application/json">
 [
   {

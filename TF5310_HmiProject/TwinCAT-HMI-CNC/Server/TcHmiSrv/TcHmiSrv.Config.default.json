@@ -2003,7 +2003,7 @@
                 ]
             },
             "NAME": "CNC",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Server.25.0.2\\runtimes\\win-x64\\native\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Server.25.0.5\\runtimes\\win-x64\\native\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -2029,7 +2029,7 @@
                 ]
             },
             "NAME": "TcHmiEcDiagnostics",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnostics.25.0.100\\runtimes\\win-x64\\native\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnostics.25.0.319\\runtimes\\win-x64\\native\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -2042,7 +2042,7 @@
                 ]
             },
             "NAME": "TcHmiEventLogger",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EventLogger.25.0.100\\runtimes\\win-x64\\native\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EventLogger.25.0.319\\runtimes\\win-x64\\native\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -2069,7 +2069,7 @@
                 ]
             },
             "NAME": "TcHmiMdp",
-            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Mdp.25.0.100\\runtimes\\win-x64\\native\\",
+            "PATH": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Mdp.25.0.319\\runtimes\\win-x64\\native\\",
             "REQUIRED": false,
             "STARTUPTYPE": 1
         },
@@ -3966,6 +3966,18 @@
             },
             "USEMAPPING": true
         },
+        "CNC.Simulation.Tool": {
+            "ACCESS": 3,
+            "DOMAIN": "CNC",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "Simulation::Tool",
+            "SCHEMA": {
+                "description": "json string representing the tool data of actual tool",
+                "type": "string"
+            },
+            "USEMAPPING": true
+        },
         "CNC.Simulation.Workpiece": {
             "ACCESS": 3,
             "DOMAIN": "CNC",
@@ -3975,6 +3987,17 @@
             "SCHEMA": {
                 "description": "json string representing the workpiece data",
                 "type": "string"
+            },
+            "USEMAPPING": true
+        },
+        "CNC.TF5310License": {
+            "ACCESS": 1,
+            "DOMAIN": "CNC",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "TF5310License",
+            "SCHEMA": {
+                "type": "boolean"
             },
             "USEMAPPING": true
         },
@@ -9232,10 +9255,14 @@
                             "type": "string"
                         },
                         "forceUpdate": {
+                            "description": "Deprecated, use 'update' instead. true is 'update': 'all', false is 'update': 'unread'. Ignored when 'update' is set.",
                             "type": "boolean"
                         },
                         "slaveAddr": {
                             "type": "integer"
+                        },
+                        "update": {
+                            "type": "string"
                         }
                     },
                     "required": [
@@ -11573,7 +11600,9 @@
                 "CNC.Settings.Values.TcCncHmi.AutoKeyboard": 3,
                 "CNC.Settings.Values.TcCncHmi.Theme": 3,
                 "CNC.Simulation": 3,
+                "CNC.Simulation.Tool": 3,
                 "CNC.Simulation.Workpiece": 3,
+                "CNC.TF5310License": 1,
                 "ChangeUserSettings": 3,
                 "CncChannelControl.ZeroOffsetControl": 3,
                 "ConfirmAlarm": 3,
@@ -11781,14 +11810,14 @@
         "/": "..\\..\\TwinCAT-HMI-CNC\\",
         "/Beckhoff.TwinCAT.HMI.Analytics.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Framework.1.36.98\\runtimes\\native1.12-tchmi",
         "/Beckhoff.TwinCAT.HMI.Analytics.Interactive": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Analytics.Interactive.1.36.98\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.BaseTemplate": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.BaseTemplate.14.4.4\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.CNC.Base": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Base.1.0.1\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.Controls": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Controls.14.6.20\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnosticsControl.14.4.3\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Framework.14.4.42\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.Functions": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Functions.14.4.3\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.PDFViewer": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.PDFViewer.14.4.4\\runtimes\\native1.12-tchmi",
-        "/Beckhoff.TwinCAT.HMI.ResponsiveNavigation": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.ResponsiveNavigation.14.3.348\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.BaseTemplate": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.BaseTemplate.14.8.11\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.CNC.Base": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.CNC.Base.1.0.7\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.Controls": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Controls.14.10.41\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.EcDiagnosticsControl": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.EcDiagnosticsControl.14.8.14\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.Framework": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Framework.14.8.48\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.Functions": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.Functions.14.8.7\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.PDFViewer": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.PDFViewer.14.7.5\\runtimes\\native1.12-tchmi",
+        "/Beckhoff.TwinCAT.HMI.ResponsiveNavigation": "..\\..\\Packages\\Beckhoff.TwinCAT.HMI.ResponsiveNavigation.14.7.6\\runtimes\\native1.12-tchmi",
         "/TcHmiCncComponentsFolder": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc",
         "/TcHmiCncFileFolder": "C:\\cnc",
         "/TcHmiCncPDFs": "C:\\Program Files (x86)\\Beckhoff\\TwinCAT\\3.1\\Components\\Mc\\Cnc\\Documents",

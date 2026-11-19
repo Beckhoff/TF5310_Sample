@@ -192,6 +192,9 @@
     "TcHmi.Controls.System.TcHmiPopup.TargetFile": {
       "title": "TargetFile",
       "type": "object",
+      "engineeringColumns": [
+        "path"
+      ],
       "properties": {
         "path": {
           "anyOf": [
@@ -229,6 +232,9 @@
       "items": {
         "title": "Button",
         "type": "object",
+        "engineeringColumns": [
+          "name"
+        ],
         "propertiesMeta": [
           {
             "name": "name",
@@ -1375,6 +1381,24 @@
           "defaultValueInternal": null
         },
         {
+          "name": "gridAutoColumns",
+          "category": "Layout",
+          "displayName": "Grid Auto Columns",
+          "displayPriority": 15,
+          "description": "Defines the size of columns which are created implicitly, because items are placed outside of the columns defined by 'Grid Template Columns'. The value is a space separated list of column definitions which is repeated for every implicit column. \nA column definition can be a pixel value (42px), percent value (42%), 'max-content' or 'min-content' for automatic sizing based on the widest or narrowest content in the column or '1fr' for deviding the remaining free space in the grid into fractions. \nExample: '100px'",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "gridAutoRows",
+          "category": "Layout",
+          "displayName": "Grid Auto Rows",
+          "displayPriority": 15,
+          "description": "Defines the size of rows which are created implicitly, because items are placed outside of the rows defined by 'Grid Template Rows'. The value is a space separated list of row definitions which is repeated for every implicit row. \nA row definition can be a pixel value (42px), percent value (42%), 'max-content' or 'min-content' for automatic sizing based on the tallest or shortest content in the row or '1fr' for deviding the remaining free space in the grid into fractions. \nExample: '100px'",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
           "name": "gridAutoFlow",
           "category": "Layout",
           "displayName": "Grid Auto Flow",
@@ -1457,6 +1481,12 @@
         "gridTemplateRows": {
           "$ref": "tchmi:general#/definitions/String"
         },
+        "gridAutoColumns": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "gridAutoRows": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
         "gridAutoFlow": {
           "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiGridContainer.AutoFlow"
         },
@@ -1502,7 +1532,8 @@
       "enum": [
         "Left",
         "Center",
-        "Right"
+        "Right",
+        "Stretch"
       ],
       "default": "Left"
     },
@@ -1512,7 +1543,8 @@
       "enum": [
         "Start",
         "Center",
-        "End"
+        "End",
+        "Stretch"
       ],
       "default": "Start"
     },
@@ -1766,6 +1798,224 @@
     },
     "TcHmiRegion": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.ZoomMode": {
+      "title": "Zoom Mode",
+      "description": "Controls whether the user can zoom/pan the region content. 'Off' disables it. 'Auto' keeps the zoom/pan gestures always active: a tap or click still reaches the content, and a drag pans the region unless the content control under the pointer claims the drag for itself. 'Toggle' adds a toolbox button switching between region zoom/pan and content interaction.",
+      "type": "string",
+      "enum": [
+        "Off",
+        "Auto",
+        "Toggle"
+      ],
+      "default": "Off"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.PanBounds": {
+      "title": "Pan Bounds",
+      "description": "Controls how far the content can be panned. 'Free' allows moving the content out of the region. 'KeepContentInFrame' keeps the content inside the region: content larger than the region always covers it completely and content smaller than the region cannot be moved beyond its edges.",
+      "type": "string",
+      "enum": [
+        "Free",
+        "KeepContentInFrame"
+      ],
+      "default": "Free"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.WhenContentFits": {
+      "title": "When Content Fits",
+      "description": "Controls what happens per direction while the content is small enough to fit into the region, regardless of its current pan position. 'KeepPan' keeps panning enabled. 'LockCenter' centers the content on that axis and disables panning there.",
+      "type": "string",
+      "enum": [
+        "KeepPan",
+        "LockCenter"
+      ],
+      "default": "KeepPan"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.RememberView": {
+      "title": "Remember View",
+      "description": "Controls whether the zoom level and pan offset are stored and restored after a reload or a page switch. \n'No' always starts at the configured initial zoom level and initial position. \n'ForCurrentContent' restores the view of the content that is currently loaded and discards it as soon as a different content is loaded. \n'ForEachContent' keeps a view per content, so returning to a content restores the view it was left with.",
+      "type": "string",
+      "enum": [
+        "No",
+        "ForCurrentContent",
+        "ForEachContent"
+      ],
+      "default": "No"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.PreviewVisibility": {
+      "title": "Preview Visibility",
+      "description": "Controls when the minimap preview of the region is shown. 'WhenContentOverflows' shows it whenever the content does not fully fit the region (including while zoomed in).",
+      "type": "string",
+      "enum": [
+        "Always",
+        "Never",
+        "OnlyWhenZoomedIn",
+        "WhenContentOverflows"
+      ],
+      "default": "OnlyWhenZoomedIn"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.PreviewSnapshot": {
+      "title": "Preview Snapshot",
+      "description": "Controls whether the minimap preview renders a static content snapshot. 'No' shows only the visible section. 'Initial' creates the snapshot once after the configured snapshot time. 'Interval' additionally refreshes it at that rate and can have a performance impact.",
+      "type": "string",
+      "enum": [
+        "No",
+        "Initial",
+        "Interval"
+      ],
+      "default": "No"
+    },
+    "TcHmi.Controls.System.TcHmiRegion.ZoomAndPan": {
+      "title": "Zoom and Pan",
+      "description": "Configuration of the zoom feature of the region.",
+      "type": "object",
+      "propertiesMeta": [
+        {
+          "name": "mode",
+          "displayName": "Mode",
+          "displayPriority": 5,
+          "description": "Controls whether the content can be zoomed/panned: 'Off', 'Auto' or 'Toggle'. 'Off' disables it. 'Auto' keeps the zoom/pan gestures always active: a tap or click still reaches the content, and a drag pans the region unless the content control under the pointer claims the drag for itself (e.g. an editable slider). 'Toggle' adds a toolbox button switching between region zoom/pan and content interaction.",
+          "defaultValue": null,
+          "defaultValueInternal": "Off"
+        },
+        {
+          "name": "minZoomLevel",
+          "displayName": "Min Zoom Level",
+          "displayPriority": 10,
+          "description": "Minimum zoom level in percent the content can be zoomed to. Absolute like in the browser: 100 is the unzoomed size, 10 is a tenth of it. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": 100
+        },
+        {
+          "name": "maxZoomLevel",
+          "displayName": "Max Zoom Level",
+          "displayPriority": 11,
+          "description": "Maximum zoom level in percent the content can be zoomed to. Absolute like in the browser: 100 is the unzoomed size, 1000 is ten times of it. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": 1000
+        },
+        {
+          "name": "initialZoomLevel",
+          "displayName": "Initial Zoom Level",
+          "displayPriority": 15,
+          "description": "Initial zoom level in percent the content starts at. Absolute like in the browser: 100 is the unzoomed size. Clamped to the configured min/max zoom range. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": 100
+        },
+        {
+          "name": "initialPositionX",
+          "displayName": "Initial Position X",
+          "displayPriority": 20,
+          "description": "Initial horizontal pan offset in pixels the content starts at. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": 0
+        },
+        {
+          "name": "initialPositionY",
+          "displayName": "Initial Position Y",
+          "displayPriority": 21,
+          "description": "Initial vertical pan offset in pixels the content starts at. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": 0
+        },
+        {
+          "name": "panBounds",
+          "displayName": "Pan Bounds",
+          "displayPriority": 22,
+          "description": "Controls how far the content can be panned: 'Free' allows moving the content out of the region, 'KeepContentInFrame' keeps it inside (content larger than the region always covers it completely, content smaller than the region cannot be moved beyond its edges). Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": "Free"
+        },
+        {
+          "name": "whenContentFits",
+          "displayName": "When Content Fits",
+          "displayPriority": 23,
+          "description": "Controls what happens per direction while the content is small enough to fit into the region, regardless of its current pan position: 'KeepPan' keeps panning enabled, 'LockCenter' centers the content on that axis and disables panning there. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": "KeepPan"
+        },
+        {
+          "name": "showZoomButtons",
+          "displayName": "Show Zoom Buttons",
+          "displayPriority": 25,
+          "description": "If set to 'true', the zoom in (+) and zoom out (-) buttons are shown. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": true
+        },
+        {
+          "name": "rememberView",
+          "displayName": "Remember View",
+          "displayPriority": 26,
+          "description": "Controls whether the zoom level and pan offset are stored and restored after a reload or a page switch. \n'No' always starts at the configured initial zoom level and initial position. \n'ForCurrentContent' restores the view of the content that is currently loaded and discards it as soon as a different content is loaded. \n'ForEachContent' keeps a view per content, so returning to a content restores the view it was left with. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": "No"
+        },
+        {
+          "name": "previewVisibility",
+          "displayName": "Preview Visibility",
+          "displayPriority": 30,
+          "description": "Controls when the minimap preview is shown: 'Always', 'Never', 'OnlyWhenZoomedIn' or 'WhenContentOverflows' (whenever the content does not fully fit the region, including while zoomed in). Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": "OnlyWhenZoomedIn"
+        },
+        {
+          "name": "previewSnapshot",
+          "displayName": "Preview Snapshot",
+          "displayPriority": 31,
+          "description": "Controls whether the minimap preview renders a static content snapshot: 'No' shows only the visible section, 'Initial' creates the snapshot once after the configured snapshot time and 'Interval' additionally refreshes it at that rate and can have a performance impact. Only applied while zooming is active.",
+          "defaultValue": null,
+          "defaultValueInternal": "No"
+        },
+        {
+          "name": "snapshotTime",
+          "displayName": "Snapshot Time",
+          "displayPriority": 32,
+          "description": "Time in milliseconds after which the static content snapshot is created. With Preview Snapshot set to 'Interval' the snapshot is additionally refreshed at this rate. Only applied when Preview Snapshot is 'Initial' or 'Interval'.",
+          "defaultValue": null,
+          "defaultValueInternal": 5000
+        }
+      ],
+      "properties": {
+        "mode": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.ZoomMode"
+        },
+        "minZoomLevel": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "maxZoomLevel": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "initialZoomLevel": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "initialPositionX": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "initialPositionY": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "panBounds": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.PanBounds"
+        },
+        "whenContentFits": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.WhenContentFits"
+        },
+        "showZoomButtons": {
+          "$ref": "tchmi:general#/definitions/Boolean"
+        },
+        "rememberView": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.RememberView"
+        },
+        "previewVisibility": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.PreviewVisibility"
+        },
+        "previewSnapshot": {
+          "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiRegion.PreviewSnapshot"
+        },
+        "snapshotTime": {
+          "$ref": "tchmi:general#/definitions/Number"
+        }
+      },
+      "additionalProperties": false
     },
     "TcHmi.Controls.System.TcHmiUserControlHost": {
       "$schema": "http://json-schema.org/draft-04/schema",
@@ -4857,6 +5107,9 @@
           {
             "title": "Event Property",
             "type": "object",
+            "engineeringColumns": [
+              "name"
+            ],
             "propertiesMeta": [
               {
                 "name": "name",
@@ -4996,6 +5249,70 @@
         "MarqueeLeftToRight",
         "MarqueeRightToLeft"
       ]
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEventLine.VerticalEventRotation": {
+      "title": "VerticalEventRotation",
+      "type": "object",
+      "propertiesMeta": [
+        {
+          "name": "enabled",
+          "displayName": "Enabled",
+          "category": "General",
+          "displayPriority": 5,
+          "description": "Enables the vertical event rotation. When disabled only a single event is shown and no rotation takes place.",
+          "defaultValue": true,
+          "defaultValueInternal": true
+        },
+        {
+          "name": "displayTime",
+          "displayName": "Display Time",
+          "category": "General",
+          "displayPriority": 10,
+          "description": "Time in milliseconds an event stays visible before switching to the next event. Runs independently of the horizontal text overflow (marquee).",
+          "defaultValue": 3000,
+          "defaultValueInternal": 3000
+        },
+        {
+          "name": "eventCount",
+          "displayName": "Event Count",
+          "category": "General",
+          "displayPriority": 20,
+          "description": "Number of events shown in the rotating list.",
+          "defaultValue": 5,
+          "defaultValueInternal": 1
+        },
+        {
+          "name": "rotationTime",
+          "displayName": "Rotation Time",
+          "category": "General",
+          "displayPriority": 30,
+          "description": "Duration in milliseconds of the switch animation from one event to the next (how fast the vertical rotation moves). Set to 0 to switch instantly without any animation (useful on slow systems).",
+          "defaultValue": 500,
+          "defaultValueInternal": 500
+        }
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "rotationTime": {
+          "type": "number",
+          "minimum": 0
+        },
+        "eventCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "displayTime": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "eventCount",
+        "displayTime"
+      ],
+      "additionalProperties": false
     },
     "TcHmi.Controls.Beckhoff.TcHmiFileExplorer": {
       "type": "object",
@@ -7576,6 +7893,16 @@
     "TcHmiPasswordInput": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiPasswordInput"
     },
+    "TcHmi.Controls.Beckhoff.TcHmiPasswordInput.PasswordRevealMode": {
+      "title": "PasswordRevealMode",
+      "type": "string",
+      "enum": [
+        "Off",
+        "PressAndHold",
+        "Toggle"
+      ],
+      "default": "Off"
+    },
     "TcHmi.Controls.Beckhoff.TcHmiPermissionManagement": {
       "$schema": "http://json-schema.org/draft-04/schema",
       "type": "object",
@@ -7585,6 +7912,15 @@
     },
     "TcHmiPermissionManagement": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiPermissionManagement"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiPermissionManagement.ResourceType": {
+      "title": "ResourceType",
+      "type": "string",
+      "enum": [
+        "Symbols",
+        "Files"
+      ],
+      "default": "Symbols"
     },
     "FillMode": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiPolygon.FillMode"
@@ -9610,6 +9946,10 @@
         "type": "object",
         "title": "Line graph description",
         "description": "Defines one line graph descriptions.",
+        "engineeringColumns": [
+          "symbol",
+          "yAxisId"
+        ],
         "propertiesMeta": [
           {
             "name": "lineColor",
@@ -10275,7 +10615,7 @@
           "category": "General",
           "displayName": "Decimal Places",
           "displayPriority": 10,
-          "description": "Describes whether the decimal places of the axis labeling.",
+          "description": "Describes how many decimal places are shown.",
           "defaultValue": null,
           "defaultValueInternal": 2
         },
@@ -10311,7 +10651,7 @@
           "category": "General",
           "displayName": "Axis Name",
           "displayPriority": 10,
-          "description": "Describes whether the axis name.",
+          "description": "Describes the axis name.",
           "defaultValue": null,
           "defaultValueInternal": "y axis 1"
         },
@@ -10795,6 +11135,9 @@
         "type": "object",
         "title": "Historized symbol description",
         "description": "Defines a historized symbol.",
+        "engineeringColumns": [
+          "symbol"
+        ],
         "propertiesMeta": [
           {
             "name": "symbol",
@@ -11010,9 +11353,12 @@
     "TcHmi.Controls.Beckhoff.TcHmiUserGuidance.UserControlInterop": {
       "type": "object",
       "title": "User Control Interop",
-      "description": "The User Control Interop object used by the User Guidance control. \nA User Control with a parameter of this type can enable the 'Next' button of the User Guidance control.",
+      "description": "The User Control Interop object used by the User Guidance control. \nA User Control with a parameter of this type can enable the 'Next' and 'Back' buttons of the User Guidance control.",
       "properties": {
         "confirmNext": {
+          "type": "boolean"
+        },
+        "confirmBack": {
           "type": "boolean"
         }
       },
@@ -14996,6 +15342,112 @@
     "TcHmiEcDiagnostics": {
       "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics"
     },
+    "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.TargetControls": {
+      "title": "Target Controls",
+      "description": "TcHmiEcSlave controls which show the slave selected in the topology.",
+      "type": "array",
+      "items": {
+        "title": "Target Control",
+        "type": "object",
+        "engineeringColumns": [
+          "control"
+        ],
+        "propertiesMeta": [
+          {
+            "name": "control",
+            "category": "general",
+            "displayName": "Control",
+            "displayPriority": 10,
+            "description": "TcHmiEcSlave control which shows the slave selected in the topology.",
+            "defaultValue": null,
+            "defaultValueInternal": null
+          }
+        ],
+        "properties": {
+          "control": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEcSlave"
+          }
+        },
+        "required": [
+          "control"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.ZoomMode": {
+      "title": "Zoom Mode",
+      "description": "Reference of the zoom levels. 'Absolute' renders a terminal with 400px x 100px at 100 %. 'ScaleToFit' shows the complete topology at 100 %.",
+      "type": "string",
+      "enum": [
+        "Absolute",
+        "ScaleToFit"
+      ],
+      "default": "Absolute"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.PanBounds": {
+      "title": "Pan Bounds",
+      "description": "Controls how far the topology can be panned. 'Free' allows moving it out of view. 'KeepContentInFrame' keeps the topology inside the visible frame.",
+      "type": "string",
+      "enum": [
+        "Free",
+        "KeepContentInFrame"
+      ],
+      "default": "Free"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.PreviewVisibility": {
+      "title": "Preview Visibility",
+      "description": "Controls when the topology preview is shown. 'OnlyWhenZoomedIn' shows it when the topology is zoomed beyond its fitted view.",
+      "type": "string",
+      "enum": [
+        "Always",
+        "Never",
+        "OnlyWhenZoomedIn"
+      ],
+      "default": "OnlyWhenZoomedIn"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.TopologyView": {
+      "title": "TopologyView",
+      "description": "Position and zoom of the topology view.",
+      "type": "object",
+      "propertiesMeta": [
+        {
+          "name": "posX",
+          "displayName": "Pos X",
+          "displayPriority": 10,
+          "description": "Horizontal translation of the topology view in pixels.",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "posY",
+          "displayName": "Pos Y",
+          "displayPriority": 11,
+          "description": "Vertical translation of the topology view in pixels.",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        },
+        {
+          "name": "zoom",
+          "displayName": "Zoom",
+          "displayPriority": 12,
+          "description": "Zoom of the topology view in percent, relative to the reference of the zoom mode.",
+          "defaultValue": null,
+          "defaultValueInternal": null
+        }
+      ],
+      "properties": {
+        "posX": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "posY": {
+          "$ref": "tchmi:general#/definitions/Number"
+        },
+        "zoom": {
+          "$ref": "tchmi:general#/definitions/Number"
+        }
+      },
+      "additionalProperties": false
+    },
     "TcHmi.Controls.Beckhoff.TcHmiEcDiagnostics.InitTopologyView": {
       "title": "InitTopologyView",
       "description": "Definition of cell options in the grid.",
@@ -15038,6 +15490,187 @@
         }
       },
       "additionalProperties": false
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcSlave": {
+      "$schema": "http://json-schema.org/draft-04/schema",
+      "type": "object",
+      "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+      "frameworkControlType": "TcHmiEcSlave",
+      "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+    },
+    "TcHmiEcSlave": {
+      "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEcSlave"
+    },
+    "TcHmi.Controls.Beckhoff.TcHmiEcSlave.Layout": {
+      "title": "Layout",
+      "description": "Sections of the slave view, they are shown below each other in the configured order.",
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 4,
+      "items": {
+        "anyOf": [
+          {
+            "title": "Slave Selection",
+            "type": "object",
+            "propertiesMeta": [
+              {
+                "name": "type",
+                "category": "general",
+                "displayName": "Type",
+                "displayPriority": 10,
+                "description": "Part of the slave view which is shown by this section.",
+                "defaultValue": "SlaveSelection",
+                "defaultValueInternal": "SlaveSelection"
+              },
+              {
+                "name": "sticky",
+                "category": "general",
+                "displayName": "Sticky",
+                "displayPriority": 20,
+                "description": "Keeps the selection in place while the other sections scroll. Its position in the list decides whether it is shown above or below them.",
+                "defaultValue": true,
+                "defaultValueInternal": true
+              }
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "SlaveSelection"
+                ]
+              },
+              "sticky": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "Trace",
+            "type": "object",
+            "propertiesMeta": [
+              {
+                "name": "type",
+                "category": "general",
+                "displayName": "Type",
+                "displayPriority": 10,
+                "description": "Part of the slave view which is shown by this section.",
+                "defaultValue": "Trace",
+                "defaultValueInternal": "Trace"
+              }
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "Trace"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "Slave Details",
+            "type": "object",
+            "propertiesMeta": [
+              {
+                "name": "type",
+                "category": "general",
+                "displayName": "Type",
+                "displayPriority": 10,
+                "description": "Part of the slave view which is shown by this section.",
+                "defaultValue": "SlaveDetails",
+                "defaultValueInternal": "SlaveDetails"
+              }
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "SlaveDetails"
+                ]
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "title": "Process Data",
+            "type": "object",
+            "propertiesMeta": [
+              {
+                "name": "type",
+                "category": "general",
+                "displayName": "Type",
+                "displayPriority": 10,
+                "description": "Part of the slave view which is shown by this section.",
+                "defaultValue": "ProcessData",
+                "defaultValueInternal": "ProcessData"
+              },
+              {
+                "name": "showApply",
+                "category": "general",
+                "displayName": "Show Apply",
+                "displayPriority": 20,
+                "description": "Shows the buttons which write the prepared process data values.",
+                "defaultValue": true,
+                "defaultValueInternal": true
+              },
+              {
+                "name": "showForce",
+                "category": "general",
+                "displayName": "Show Force",
+                "displayPriority": 30,
+                "description": "Shows the buttons which force the process data values to the prepared ones.",
+                "defaultValue": true,
+                "defaultValueInternal": true
+              },
+              {
+                "name": "showRelease",
+                "category": "general",
+                "displayName": "Show Release",
+                "displayPriority": 40,
+                "description": "Shows the buttons which release forced process data values.",
+                "defaultValue": true,
+                "defaultValueInternal": true
+              }
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "ProcessData"
+                ]
+              },
+              "showApply": {
+                "type": "boolean",
+                "default": true
+              },
+              "showForce": {
+                "type": "boolean",
+                "default": true
+              },
+              "showRelease": {
+                "type": "boolean",
+                "default": true
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
     },
     "TcHmi.Controls.Beckhoff.TcHmiPdfViewer": {
       "$schema": "http://json-schema.org/draft-04/schema",
